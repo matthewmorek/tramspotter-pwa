@@ -12,6 +12,7 @@
     "reset-css": "^4.0.1",
     "tachyons-sass": "^4.9.5",
     "vue": "^2.5.22",
+    "vue-browser-geolocation": "^1.5.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
