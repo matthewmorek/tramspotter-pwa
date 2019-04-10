@@ -6,11 +6,10 @@
 </template>
 
 <script>
-import AppHeader from "./components/AppHeader.vue";
-import WelcomeScreen from "./components/WelcomeScreen.vue";
+import AppHeader from './components/AppHeader.vue';
+import WelcomeScreen from './components/WelcomeScreen.vue';
 
 export default {
-  name: "app",
   components: {
     AppHeader,
     WelcomeScreen
@@ -19,13 +18,13 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~reset-css/sass/reset";
-@import "~tachyons-sass/tachyons.scss";
+@import '~reset-css/sass/reset';
+@import '~tachyons-sass/tachyons.scss';
 
 html,
 body {
-  font-family: "Muli", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Muli', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.4rem;
   font-size: 1.125rem;
   font-weight: 400;
