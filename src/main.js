@@ -11,5 +11,8 @@ Vue.config.productionTip = false;
 
 new Vue({
   store,
+  beforeCreate() {
+    this.$store.commit("INIT_STORE");
+  },
   render: h => h(App)
 }).$mount("#app");
