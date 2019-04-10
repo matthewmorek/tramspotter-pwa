@@ -11,24 +11,27 @@
     <p>
       <button @click="enableGeolocation">Locate a nearest tram stop</button>
     </p>
+    <p class="tc">{{ coordinates }}</p>
   </article>
 </template>
 
 <script>
 export default {
-  name: "WelcomeScreen",
-
-  data() {
-    return {};
+  name: 'WelcomeScreen',
+  computed: {
+    coordinates: function() {
+      const { latitude, longitude } = this.$store.state.coordinates;
+      return `Coordinates: ${latitude}, ${longitude}`;
+    }
   },
   methods: {
     enableGeolocation: function() {
       this.$getLocation({
         enableHighAccuracy: true,
         timeout: Infinity,
-        maximumAge: 86400
+        maximumAge: 1800
       }).then(coordinates => {
-        console.log(coordinates);
+        this.$store.commit('update_coordinates', coordinates);
       });
     }
   }
