@@ -28,6 +28,11 @@ export default new Vuex.Store({
         latitude: lat,
         longitude: lng
       };
+    },
+    update_current_stop(state, atcocode) {
+      state.current = {
+        atcocode
+      };
     }
   },
   actions: {},
