@@ -12,7 +12,8 @@
     <ul v-else>
       <li><span class="b">Lat:</span> {{ coordinates.latitude }}</li>
       <li><span class="b">Lon:</span> {{ coordinates.longitude }}</li>
-      <li v-if="atcocode"><span class="b">ATCODE:</span> {{ atcocode }}</li>
+      <li v-if="atcoCode"><span class="b">ATCODE:</span> {{ atcoCode }}</li>
+      <li v-if="stopId"><span class="b">Stop ID:</span> {{ stopId }}</li>
     </ul>
     <p>
       A permission to access your device location is required.
@@ -23,7 +24,6 @@
 
 <script>
 import isEmpty from 'lodash/fp/isEmpty';
-import axios from 'axios';
 
 export default {
   name: 'WelcomeScreen',
@@ -39,9 +39,13 @@ export default {
       const { coordinates } = this.$store.state;
       return coordinates;
     },
-    atcocode: function() {
-      const { atcocode } = this.$store.state.current;
-      return atcocode;
+    atcoCode: function() {
+      const { atcoCode } = this.$store.state.current;
+      return atcoCode;
+    },
+    stopId: function() {
+      const { id } = this.$store.state.current;
+      return id;
     }
   },
   mounted() {
@@ -53,62 +57,57 @@ export default {
   },
   methods: {
     isEmpty,
-    getNearestStop: function() {
-      Promise.resolve()
-        .then(() => this.getCoordinates())
-        .then(() => this.getStopCode())
-        .then(() => this.getStopInfo());
-    },
+    getData: ({ data }) => data,
     getCoordinates: function() {
-      this.$getLocation({
-        enableHighAccuracy: true,
-        timeout: Infinity,
-        maximumAge: 1800
-      }).then(
-        coordinates => {
-          this.$store.commit('update_coordinates', coordinates);
-        },
-        error => {
-          console.log(error);
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              this.error = 'User denied the request for Geolocation.';
-              break;
-            case error.POSITION_UNAVAILABLE:
-              this.error = 'Location information is unavailable.';
-              break;
-            case error.TIMEOUT:
-              this.error = 'The request to get user location timed out.';
-              break;
-            case error.UNKNOWN_ERROR:
-              this.error = 'An unknown error occurred.';
-              break;
-          }
-        }
-      );
+      this.error = null;
+      return new Promise(resolve => {
+        this.$getLocation({
+          enableHighAccuracy: true,
+          timeout: Infinity,
+          maximumAge: 1800
+        })
+          .then(coordinates => {
+            this.$store.dispatch('setCoordinates', { coordinates });
+            resolve();
+          })
+          .catch(error => {
+            console.error(error);
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                this.error = 'User denied the request for Geolocation.';
+                break;
+              case error.POSITION_UNAVAILABLE:
+                this.error = 'Location information is unavailable.';
+                break;
+              case error.TIMEOUT:
+                this.error = 'The request to get user location timed out.';
+                break;
+              case error.UNKNOWN_ERROR:
+                this.error = 'An unknown error occurred.';
+                break;
+            }
+          });
+      });
     },
     getStopCode: function() {
-      const { latitude, longitude } = this.$store.state.coordinates;
-      axios
-        .get('https://transportapi.com/v3/uk/places.json', {
-          params: {
-            app_id: '63ef49e1',
-            app_key: 'b657d1ba2817c35cf3c85f412d1d277a',
-            lat: latitude,
-            lon: longitude,
-            type: 'tram_stop'
-          }
-        })
-        .then(response => {
-          const { atcocode } = response.data.member[0];
-          this.$store.commit('update_current_stop', atcocode);
-        });
+      this.$store.dispatch('setStopCode').catch(error => console.error(error));
+    },
+    getAllStops: function() {
+      this.$store.dispatch('setAllStops').catch(error => console.error(error));
     },
     getStopInfo: function() {
-      // const { atcocode } = this.$store.state.current;
-      axios.get('/.netlify/functions/fetch-trams').then(response => {
-        console.log(response.data);
-      });
+      this.$store.dispatch('setStopInfo').catch(error => console.error(error));
+    },
+    getNearestStop: function() {
+      const getCoordinates = this.getCoordinates;
+      const getStopCode = this.getStopCode;
+      const getAllStops = this.getAllStops;
+      const getStopInfo = this.getStopInfo;
+
+      getCoordinates()
+        .then(getStopCode)
+        .then(getAllStops)
+        .then(getStopInfo);
     }
   }
 };
