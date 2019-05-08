@@ -78,8 +78,10 @@ export default new Vuex.Store({
           .then(() => {
             const { stops, current } = state;
             const requestedStopId = stops[current.atcoCode].id;
+
             if (isNil(requestedStopId))
               reject(new Error('Stop ATCOCODE is missing!'));
+
             commit('update_current_stop', { id: requestedStopId });
           })
           .finally(() => resolve());
