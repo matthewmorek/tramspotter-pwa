@@ -98,25 +98,25 @@ export default {
           });
       });
     },
-    getStopCode: function() {
-      this.$store.dispatch('setStopCode').catch(error => console.error(error));
+    fetchStopCode: async function() {
+      await this.$store.dispatch('setStopCode');
     },
-    getAllStops: function() {
-      this.$store.dispatch('setAllStops').catch(error => console.error(error));
+    fetchAllStops: async function() {
+      await this.$store.dispatch('setAllStops');
     },
-    getStopInfo: function() {
-      this.$store.dispatch('setStopInfo').catch(error => console.error(error));
+    fetchStopInfo: async function() {
+      await this.$store.dispatch('setStopInfo');
     },
     getNearestStop: function() {
       const getCoordinates = this.getCoordinates;
-      const getStopCode = this.getStopCode;
-      const getAllStops = this.getAllStops;
-      const getStopInfo = this.getStopInfo;
+      const fetchStopCode = this.fetchStopCode;
+      const fetchAllStops = this.fetchAllStops;
+      const fetchStopInfo = this.fetchStopInfo;
 
       getCoordinates()
-        .then(getStopCode)
-        .then(getAllStops)
-        .then(getStopInfo);
+        .then(fetchStopCode)
+        .then(fetchAllStops)
+        .then(fetchStopInfo);
     }
   }
 };

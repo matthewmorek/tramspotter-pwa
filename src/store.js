@@ -49,59 +49,75 @@ export default new Vuex.Store({
       commit('update_coordinates', coordinates);
     },
     setStopCode({ commit, state }) {
-      const { latitude, longitude } = state.coordinates;
-      return new Promise(resolve => {
-        axios
-          .get('https://transportapi.com/v3/uk/places.json', {
-            params: {
-              app_id: '63ef49e1',
-              app_key: 'b657d1ba2817c35cf3c85f412d1d277a',
-              lat: latitude,
-              lon: longitude,
-              type: 'tram_stop'
-            }
-          })
-          .then(response => {
-            const { atcocode } = response.data.member[0];
-            commit('update_current_stop', { atcoCode: atcocode });
-          })
-          .finally(() => resolve());
-      });
-    },
-    setAllStops({ commit, state }) {
       return new Promise((resolve, reject) => {
-        axios
-          .get('/.netlify/functions/fetch-trams')
-          .then(({ data }) => {
-            commit('update_stops', data);
-          })
-          .then(() => {
-            const { stops, current } = state;
-            const requestedStopId = stops[current.atcoCode].id;
-
-            if (isNil(requestedStopId))
-              reject(new Error('Stop ATCOCODE is missing!'));
-
-            commit('update_current_stop', { id: requestedStopId });
-          })
-          .finally(() => resolve());
-      });
-    },
-    setStopInfo({ commit, state }) {
-      return new Promise((resolve, reject) => {
-        const { id } = state.current;
-        if (!isNil(id)) {
+        try {
+          const { latitude, longitude } = state.coordinates;
           axios
-            .get(`/.netlify/functions/fetch-single?id=${id}`)
+            .get('https://transportapi.com/v3/uk/places.json', {
+              params: {
+                app_id: '63ef49e1',
+                app_key: 'b657d1ba2817c35cf3c85f412d1d277a',
+                lat: latitude,
+                lon: longitude,
+                type: 'tram_stop'
+              }
+            })
+            .then(response => {
+              const { atcocode } = response.data.member[0];
+              commit('update_current_stop', { atcoCode: atcocode });
+            })
+            .finally(() => resolve());
+        } catch (error) {
+          reject(new Error(error));
+        }
+      });
+    },
+    setAllStops({ commit, getters }) {
+      return new Promise((resolve, reject) => {
+        try {
+          axios
+            .get('/.netlify/functions/fetch-trams')
+            .then(async ({ data }) => {
+              await commit('update_stops', data);
+            })
+            .then(() => {
+              const stops = getters.currentStops;
+              const stopCode = getters.currentStopCode;
+              const requestedStopId = stops[stopCode].id;
+
+              if (isNil(requestedStopId))
+                reject(new Error('Stop ATCOCODE is missing!'));
+
+              commit('update_current_stop', { id: requestedStopId });
+            })
+            .finally(() => resolve());
+        } catch (error) {
+          reject(new Error(error));
+        }
+      });
+    },
+    setStopInfo({ commit, getters }) {
+      return new Promise((resolve, reject) => {
+        try {
+          axios
+            .get('/.netlify/functions/fetch-single', {
+              params: { id: getters.currentStopId }
+            })
             .then(({ data }) => {
               commit('update_current_stop', data);
             })
+            .catch(error => new Error(error))
             .finally(() => resolve());
-        } else {
-          reject(new Error('Stop ID is missing!'));
+        } catch (error) {
+          reject(new Error(error));
         }
       });
     }
+  },
+  getters: {
+    currentStopCode: state => state.current.atcoCode,
+    currentStopId: state => state.current.id,
+    currentStops: state => state.stops
   },
   plugins: [autosave]
 });
