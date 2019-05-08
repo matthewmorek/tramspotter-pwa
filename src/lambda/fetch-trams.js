@@ -33,7 +33,7 @@ function toCamel(o) {
 export function handler(event, context, callback) {
   axios
     .get('https://api.tfgm.com/odata/Metrolinks', {
-      params: { $select: 'Id,AtcoCode' },
+      params: { $select: 'Id,AtcoCode,StationLocation' },
       headers: {
         'Ocp-Apim-Subscription-Key': 'aee97b95e83747b3997f2131137abcfe',
         'Access-Control-Allow-Origin': '*'
