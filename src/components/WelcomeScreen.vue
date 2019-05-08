@@ -4,20 +4,29 @@
     <p>
       Find your nearest Metrolink tram stop and check it for live departures.
     </p>
-    <p v-if="isEmpty(coordinates)">
-      <button @click="getNearestStop">
-        Find a tram stop
-      </button>
-    </p>
-    <ul v-else>
-      <li><span class="b">Lat:</span> {{ coordinates.latitude }}</li>
-      <li><span class="b">Lon:</span> {{ coordinates.longitude }}</li>
-      <li v-if="atcoCode"><span class="b">ATCODE:</span> {{ atcoCode }}</li>
-      <li v-if="stopId"><span class="b">Stop ID:</span> {{ stopId }}</li>
-    </ul>
-    <p>
-      A permission to access your device location is required.
-    </p>
+    <div v-if="isEmpty(coordinates)">
+      <p>
+        <button @click="getNearestStop">
+          Find a tram stop
+        </button>
+      </p>
+      <p>
+        A permission to access your device location is required.
+      </p>
+    </div>
+    <div v-else>
+      <ul>
+        <li><span class="b">Lat:</span> {{ coordinates.latitude }}</li>
+        <li><span class="b">Lon:</span> {{ coordinates.longitude }}</li>
+        <li v-if="atcoCode"><span class="b">ATCODE:</span> {{ atcoCode }}</li>
+        <li v-if="stopId"><span class="b">Stop ID:</span> {{ stopId }}</li>
+      </ul>
+      <p>
+        <button @click="getNearestStop">
+          Refresh
+        </button>
+      </p>
+    </div>
     <p>{{ error }}</p>
   </article>
 </template>
