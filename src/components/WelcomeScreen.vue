@@ -1,10 +1,10 @@
 <template>
   <article class="app-content">
     <h1>Tramspotter</h1>
-    <p>
-      Find your nearest Metrolink tram stop and check it for live departures.
-    </p>
-    <div v-if="isEmpty(coordinates)">
+    <div v-if="isEmpty(nearestStop)">
+      <p>
+        Find your nearest Metrolink tram stop and check it for live departures.
+      </p>
       <p>
         <button @click="getNearestStop">
           Find a tram stop
@@ -15,10 +15,13 @@
       </p>
     </div>
     <div v-else>
-      <ul>
-        <li><span class="b">Lat:</span> {{ coordinates.latitude }}</li>
-        <li><span class="b">Lon:</span> {{ coordinates.longitude }}</li>
+      <h2>{{ nearestStop.stationLocation }}</h2>
+      <ul v-if="!isEmpty(nearestStop.arrivals)">
+        <li v-for="tram in nearestStop.arrivals" :key="tram.id">
+          {{ tram.destination }}: {{ tram.wait }}min
+        </li>
       </ul>
+      <p v-else class="b">There are currently no more trams available.</p>
       <p>
         <button @click="getNearestStop">
           Refresh
@@ -42,9 +45,9 @@ export default {
     };
   },
   computed: {
-    coordinates: function() {
-      const { coordinates } = this.$store.state;
-      return coordinates;
+    nearestStop: function() {
+      const { compiled } = this.$store.state;
+      return compiled;
     }
   },
   mounted() {
