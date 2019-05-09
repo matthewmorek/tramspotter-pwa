@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import uuidv4 from 'uuid/v4';
 import { isEmpty } from 'lodash/fp';
 
 Vue.use(Vuex);
@@ -91,7 +92,10 @@ export default new Vuex.Store({
             wait
           });
 
-          if (!isEmpty(newArrival)) updatedArrivals.push(newArrival);
+          if (!isEmpty(newArrival)) {
+            newArrival['id'] = uuidv4();
+            updatedArrivals.push(newArrival);
+          }
         }
 
         const {
