@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import isNil from 'lodash/fp/isNil';
+import { isEmpty } from 'lodash/fp';
 
 Vue.use(Vuex);
 
@@ -12,10 +12,22 @@ const autosave = store => {
   });
 };
 
+const removeEmpty = obj =>
+  Object.keys(obj)
+    .filter(k => obj[k] !== null && obj[k] !== undefined && obj[k] !== '') // Remove undef. and null.
+    .reduce(
+      (newObj, k) =>
+        typeof obj[k] === 'object'
+          ? Object.assign(newObj, { [k]: removeEmpty(obj[k]) }) // Recurse.
+          : Object.assign(newObj, { [k]: obj[k] }), // Copy value.
+      {}
+    );
+
 export default new Vuex.Store({
   state: {
     coordinates: {},
-    current: {},
+    selected: {},
+    compiled: {},
     stops: {}
   },
   mutations: {
@@ -33,14 +45,77 @@ export default new Vuex.Store({
         longitude: lng
       };
     },
-    update_current_stop(state, props) {
-      const { current } = state;
-      state.current = Object.assign({}, current, { ...current, ...props });
+    create_selected_stops(state, stops) {
+      state.selected = stops.reduce((result, obj) => {
+        result[obj.atcoCode] = obj;
+        return result;
+      }, {});
+    },
+    update_selected_stops(state, stop) {
+      const { selected } = state;
+      const currentStop = selected[stop.atcoCode];
+      state.selected = Object.assign({}, selected, {
+        [stop.atcoCode]: { ...currentStop, ...stop }
+      });
     },
     update_stops(state, stops) {
       state.stops = stops.reduce((result, obj) => {
         result[obj.atcoCode] = obj;
         return result;
+      }, {});
+    },
+    update_compiled_data(state, stops) {
+      state.compiled = stops.reduce((results, obj) => {
+        const { arrivals } = results;
+        const updatedArrivals = isEmpty(arrivals) ? [] : [].concat(arrivals);
+
+        for (let i = 0; i < 4; i++) {
+          const fields = [
+            `carriages${i}`,
+            `dest${i}`,
+            `status${i}`,
+            `wait${i}`
+          ];
+
+          const {
+            [fields[0]]: carriages,
+            [fields[1]]: destination,
+            [fields[2]]: status,
+            [fields[3]]: wait
+          } = obj;
+
+          const newArrival = removeEmpty({
+            carriages,
+            destination,
+            status,
+            wait
+          });
+
+          if (!isEmpty(newArrival)) updatedArrivals.push(newArrival);
+        }
+
+        const {
+          distance,
+          lastUpdated,
+          line,
+          messageBoard,
+          stationLocation,
+          direction
+        } = obj;
+
+        return Object.assign(
+          {},
+          { ...results },
+          {
+            arrivals: updatedArrivals,
+            distance,
+            lastUpdated,
+            line,
+            messageBoard,
+            stationLocation,
+            direction
+          }
+        );
       }, {});
     }
   },
@@ -63,8 +138,14 @@ export default new Vuex.Store({
               }
             })
             .then(response => {
-              const { atcocode } = response.data.member[0];
-              commit('update_current_stop', { atcoCode: atcocode });
+              const stops = [];
+              const data = response.data.member.slice(0, 2);
+              data.forEach(function(item) {
+                const { atcocode, distance } = item;
+                stops.push({ atcoCode: atcocode, distance });
+              });
+
+              commit('create_selected_stops', stops);
             })
             .finally(() => resolve());
         } catch (error) {
@@ -72,7 +153,7 @@ export default new Vuex.Store({
         }
       });
     },
-    setAllStops({ commit, getters }) {
+    setAllStops({ commit, getters, dispatch }) {
       return new Promise((resolve, reject) => {
         try {
           axios
@@ -81,14 +162,12 @@ export default new Vuex.Store({
               await commit('update_stops', data);
             })
             .then(() => {
-              const stops = getters.currentStops;
-              const stopCode = getters.currentStopCode;
-              const requestedStopId = stops[stopCode].id;
+              const stops = getters.availableStops;
+              const selectedStops = getters.selectedStopsAtco.map(
+                stop => stops[stop].id
+              );
 
-              if (isNil(requestedStopId))
-                reject(new Error('Stop ATCOCODE is missing!'));
-
-              commit('update_current_stop', { id: requestedStopId });
+              dispatch('setStopInfo', selectedStops);
             })
             .finally(() => resolve());
         } catch (error) {
@@ -96,28 +175,34 @@ export default new Vuex.Store({
         }
       });
     },
-    setStopInfo({ commit, getters }) {
+    setStopInfo({ commit, getters }, selectedStops) {
       return new Promise((resolve, reject) => {
-        try {
-          axios
-            .get('/.netlify/functions/fetch-single', {
-              params: { id: getters.currentStopId }
-            })
-            .then(({ data }) => {
-              commit('update_current_stop', data);
-            })
-            .catch(error => new Error(error))
-            .finally(() => resolve());
-        } catch (error) {
-          reject(new Error(error));
-        }
+        selectedStops.map(id => {
+          try {
+            axios
+              .get('/.netlify/functions/fetch-single', {
+                params: { id }
+              })
+              .then(({ data }) => {
+                commit('update_selected_stops', data);
+              })
+              .catch(error => new Error(error))
+              .finally(() => {
+                commit('update_compiled_data', getters.selectedStops);
+                resolve();
+              });
+          } catch (error) {
+            reject(new Error(error));
+          }
+        });
       });
     }
   },
   getters: {
-    currentStopCode: state => state.current.atcoCode,
-    currentStopId: state => state.current.id,
-    currentStops: state => state.stops
+    availableStops: state => state.stops,
+    selectedStops: state => Object.values(state.selected),
+    selectedStopsAtco: state =>
+      Object.values(state.selected).map(stop => stop.atcoCode)
   },
   plugins: [autosave]
 });
