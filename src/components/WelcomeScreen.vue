@@ -18,8 +18,6 @@
       <ul>
         <li><span class="b">Lat:</span> {{ coordinates.latitude }}</li>
         <li><span class="b">Lon:</span> {{ coordinates.longitude }}</li>
-        <li v-if="atcoCode"><span class="b">ATCODE:</span> {{ atcoCode }}</li>
-        <li v-if="stopId"><span class="b">Stop ID:</span> {{ stopId }}</li>
       </ul>
       <p>
         <button @click="getNearestStop">
@@ -47,14 +45,6 @@ export default {
     coordinates: function() {
       const { coordinates } = this.$store.state;
       return coordinates;
-    },
-    atcoCode: function() {
-      const { atcoCode } = this.$store.state.current;
-      return atcoCode;
-    },
-    stopId: function() {
-      const { id } = this.$store.state.current;
-      return id;
     }
   },
   mounted() {
@@ -76,7 +66,14 @@ export default {
           maximumAge: 1800
         })
           .then(coordinates => {
-            this.$store.dispatch('setCoordinates', { coordinates });
+            this.$store.dispatch('setCoordinates', {
+              coordinates
+            });
+            // Sample coordinates
+            // const coordinates ={
+            //   lat: '53.4061151336091',
+            //   lng: '-2.3221654377188234'
+            // };
             resolve();
           })
           .catch(error => {
@@ -111,12 +108,10 @@ export default {
       const getCoordinates = this.getCoordinates;
       const fetchStopCode = this.fetchStopCode;
       const fetchAllStops = this.fetchAllStops;
-      const fetchStopInfo = this.fetchStopInfo;
 
       getCoordinates()
         .then(fetchStopCode)
-        .then(fetchAllStops)
-        .then(fetchStopInfo);
+        .then(fetchAllStops);
     }
   }
 };
