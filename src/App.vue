@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <AppHeader />
+    <WelcomeScreen />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AppHeader from './components/AppHeader.vue';
+import WelcomeScreen from './components/WelcomeScreen.vue';
 
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    AppHeader,
+    WelcomeScreen
   }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import '~reset-css/sass/reset';
+@import '~tachyons-sass/tachyons.scss';
+
+html,
+body {
+  font-family: 'Muli', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.4rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+
+  & + p {
+    margin-top: 1em;
+  }
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style-type: square;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 </style>
