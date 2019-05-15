@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="app-content">
     <article>
+      <AppIcon />
       <h1>Tramspotter</h1>
       <div v-if="isEmpty(nearestStop)">
         <p>
@@ -8,26 +9,20 @@
           departures.
         </p>
         <p>
-          <button @click="getNearestStop">
-            Find a tram stop
-          </button>
+          <button @click="getNearestStop">Find a tram stop</button>
         </p>
-        <p>
-          A permission to access your device location is required.
-        </p>
+        <p>A permission to access your device location is required.</p>
       </div>
       <div v-else>
         <h2>{{ nearestStop.stationLocation }}</h2>
         <ul v-if="!isEmpty(nearestStop.arrivals)">
           <li v-for="tram in nearestStop.arrivals" :key="tram.id">
-            {{ tram.destination }}: {{ tram.wait }}min
+            {{ tram.destination }}: {{ tram.wait }} min ({{ tram.carriages }})
           </li>
         </ul>
-        <p v-else class="b">There are currently no more trams available.</p>
+        <p v-else>There are currently no more trams available.</p>
         <p>
-          <button @click="getNearestStop">
-            Refresh
-          </button>
+          <button @click="getNearestStop">Refresh</button>
         </p>
       </div>
       <p>{{ error }}</p>
@@ -37,9 +32,13 @@
 
 <script>
 import isEmpty from 'lodash/fp/isEmpty';
+import AppIcon from './public/app-icon.svg';
 
 export default {
-  name: 'WelcomeScreen',
+  name: 'Tramspotter',
+  components: {
+    AppIcon
+  },
   data() {
     return {
       isLoading: false,
