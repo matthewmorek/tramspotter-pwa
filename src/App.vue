@@ -260,5 +260,16 @@ img {
   padding-bottom: 0.75rem;
   font-family: var(--font-family);
   width: 100%;
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background: #e6e6e6;
+    border-color: #e6e6e6;
+    box-shadow: none;
+    color: #222222;
+  }
 }
 </style>
