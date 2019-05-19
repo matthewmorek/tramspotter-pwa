@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueWait from 'vue-wait';
 import axios from 'axios';
 import uuidv4 from 'uuid/v4';
 import { isEmpty } from 'lodash/fp';
 
 Vue.use(Vuex);
+Vue.use(VueWait);
 
 const autosave = store => {
   store.subscribe((mutation, state) => {
