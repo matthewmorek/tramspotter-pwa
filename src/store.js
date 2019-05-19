@@ -91,7 +91,7 @@ export default new Vuex.Store({
             carriages,
             destination,
             status,
-            wait
+            wait: Number(wait)
           });
 
           if (!isEmpty(newArrival)) {
@@ -208,7 +208,20 @@ export default new Vuex.Store({
     availableStops: state => state.stops,
     selectedStops: state => Object.values(state.selected),
     selectedStopsAtco: state =>
-      Object.values(state.selected).map(stop => stop.atcoCode)
+      Object.values(state.selected).map(stop => stop.atcoCode),
+    getDistanceToStop: state => {
+      const { distance } = state.compiled;
+      let readableDistance = (distance / 1609.344).toFixed(2);
+      return readableDistance;
+    },
+    getDepartures: state => {
+      const { arrivals } = state.compiled;
+      let departures = arrivals
+        .filter(tram => tram.wait !== 0)
+        .sort((a, b) => a.wait > b.wait);
+
+      return departures;
+    }
   },
   plugins: [autosave]
 });
