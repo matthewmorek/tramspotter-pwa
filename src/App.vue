@@ -48,9 +48,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">{{
-                  tram.carriages
-                }}</span>
+                <span class="timetable-item--carriages">
+                  {{ tram.carriages }}
+                </span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 }"
@@ -128,11 +128,7 @@ export default {
           timeout: Infinity,
           maximumAge: 1800
         })
-          .then(() => {
-            const coordinates = {
-              lat: '53.4061151336091',
-              lng: '-2.3221654377188234'
-            };
+          .then(coordinates => {
             this.$store.dispatch('setCoordinates', {
               coordinates
             });
