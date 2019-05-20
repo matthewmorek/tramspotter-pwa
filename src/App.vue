@@ -37,7 +37,10 @@
           </div>
         </header>
         <section class="app-departures">
-          <h4 class="section-heading">Departures</h4>
+          <header class="section-header">
+            <h4 class="section-header--label">Departures</h4>
+            <h4 class="section-header--timestamp">Updated: {{ lastUpdate }}</h4>
+          </header>
           <ul v-if="!isEmpty(departures)" class="app-departures--timetable">
             <li
               v-for="tram in departures"
@@ -48,9 +51,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">
-                  {{ tram.carriages }}
-                </span>
+                <span class="timetable-item--carriages">{{
+                  tram.carriages
+                }}</span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 }"
@@ -61,7 +64,7 @@
           </ul>
           <p v-else>There are currently no more trams available.</p>
           <p>
-            <button class="btn-cta" @click="getNearestStop">Refresh</button>
+            <button class="btn-cta" @click="getNearestStop">Update now</button>
           </p>
           <p class="app-notice">{{ nearestStop.messageBoard }}</p>
         </section>
@@ -88,6 +91,7 @@
 import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
 import LocationIcon from './public/location.svg';
+import { format } from 'date-fns/esm//fp';
 
 export default {
   name: 'Tramspotter',
@@ -99,7 +103,8 @@ export default {
     return {
       isLoading: false,
       hasErrors: false,
-      error: null
+      error: null,
+      now: new Date()
     };
   },
   computed: {
@@ -112,13 +117,22 @@ export default {
     },
     departures: function() {
       return this.$store.getters.getDepartures;
+    },
+    lastUpdate: function() {
+      const timestamp = this.$store.getters.getTimestamp;
+      const relativeTime = format('kk:mm')(timestamp);
+      return relativeTime;
     }
   },
   mounted() {
+    setInterval(() => {
+      this.now = new Date();
+    }, 1000 * 60);
     this.fetchNearestStop();
   },
   methods: {
     isEmpty,
+    format,
     getData: ({ data }) => data,
     getCoordinates: function() {
       this.error = null;
@@ -390,11 +404,16 @@ img {
   margin-top: 1.75rem;
 }
 
-.section-heading {
+.section-header {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   border-bottom: 1px solid #e2e2e2;
+
+  &--label {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 }
 </style>
