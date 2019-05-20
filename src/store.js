@@ -119,7 +119,8 @@ export default new Vuex.Store({
             line,
             messageBoard,
             stationLocation,
-            direction
+            direction,
+            timestamp: Date.now()
           }
         );
       }, {});
@@ -221,7 +222,8 @@ export default new Vuex.Store({
         .sort((a, b) => a.wait > b.wait);
 
       return departures;
-    }
+    },
+    getTimestamp: state => state.compiled.timestamp
   },
   plugins: [autosave]
 });

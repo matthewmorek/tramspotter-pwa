@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "date-fns": "^2.0.0-alpha.27",
     "lodash": "^4.17.11",
     "register-service-worker": "^1.5.2",
     "reset-css": "^4.0.1",
