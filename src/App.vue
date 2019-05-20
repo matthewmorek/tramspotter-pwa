@@ -38,7 +38,13 @@
         </header>
         <section class="app-departures">
           <header class="section-header">
-            <h4 class="section-header--label">Departures</h4>
+            <h4 class="section-header--label">
+              <IconRecord
+                class="app-departures--live"
+                width="16"
+                height="16"
+              />Departures
+            </h4>
             <h4 class="section-header--timestamp">Updated: {{ lastUpdate }}</h4>
           </header>
           <ul v-if="!isEmpty(departures)" class="app-departures--timetable">
@@ -90,6 +96,7 @@
 <script>
 import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
+import IconRecord from './public/record.svg';
 import LocationIcon from './public/location.svg';
 import { format } from 'date-fns/esm//fp';
 
@@ -97,6 +104,7 @@ export default {
   name: 'Tramspotter',
   components: {
     AppIcon,
+    IconRecord,
     LocationIcon
   },
   data() {
@@ -414,6 +422,25 @@ img {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+  }
+}
+
+.app-departures--live {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: text-top;
+  margin-right: 0.25rem;
+  fill: #e74c3c;
+  animation: 1s ease-in-out infinite alternate breathe;
+}
+
+@keyframes breathe {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
   }
 }
 </style>
