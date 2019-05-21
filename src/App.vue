@@ -40,7 +40,7 @@
           <header class="section-header">
             <h4 class="section-header--label">
               <IconRecord
-                v-if="isRecent"
+                v-if="isLive"
                 class="app-departures--live"
                 width="16"
                 height="16"
@@ -132,17 +132,16 @@ export default {
       const relativeTime = format('kk:mm')(timestamp);
       return relativeTime;
     },
-    isRecent: function() {
+    isLive: function() {
       const timestamp = this.$store.getters.getTimestamp;
-      const isRecent = (this.now - timestamp) / 60;
-      return isRecent < 1;
+      const minutesPast = (this.now - timestamp) / 60;
+      return minutesPast < 1;
     }
   },
   mounted() {
     setInterval(() => {
       this.now = new Date();
     }, 1000 * 60);
-    this.fetchNearestStop();
   },
   methods: {
     isEmpty,
