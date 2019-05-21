@@ -40,6 +40,7 @@
           <header class="section-header">
             <h4 class="section-header--label">
               <IconRecord
+                v-if="isRecent"
                 class="app-departures--live"
                 width="16"
                 height="16"
@@ -57,9 +58,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">{{
-                  tram.carriages
-                }}</span>
+                <span class="timetable-item--carriages">
+                  {{ tram.carriages }}
+                </span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 }"
@@ -130,6 +131,11 @@ export default {
       const timestamp = this.$store.getters.getTimestamp;
       const relativeTime = format('kk:mm')(timestamp);
       return relativeTime;
+    },
+    isRecent: function() {
+      const timestamp = this.$store.getters.getTimestamp;
+      const isRecent = (this.now - timestamp) / 60;
+      return isRecent < 1;
     }
   },
   mounted() {
@@ -422,14 +428,16 @@ img {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
   }
 }
 
 .app-departures--live {
   display: inline-block;
   line-height: 1;
-  vertical-align: text-top;
   margin-right: 0.25rem;
+  margin-bottom: 1px;
   fill: #e74c3c;
   animation: 1s ease-in-out infinite alternate breathe;
 }
@@ -440,7 +448,7 @@ img {
   }
 
   to {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 </style>
