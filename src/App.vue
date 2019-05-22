@@ -46,7 +46,9 @@
                 height="16"
               />Departures
             </h4>
-            <h4 class="section-header--timestamp">Updated: {{ lastUpdate }}</h4>
+            <h4 class="section-header--timestamp">
+              Updated {{ lastUpdate }} ago
+            </h4>
           </header>
           <ul v-if="!isEmpty(departures)" class="app-departures--timetable">
             <li
@@ -99,7 +101,7 @@ import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
 import IconRecord from './public/record.svg';
 import LocationIcon from './public/location.svg';
-import { format } from 'date-fns/esm//fp';
+import { formatDistanceStrict } from 'date-fns/esm//fp';
 
 export default {
   name: 'Tramspotter',
@@ -129,8 +131,11 @@ export default {
     },
     lastUpdate: function() {
       const timestamp = this.$store.getters.getTimestamp;
-      const relativeTime = format('kk:mm')(timestamp);
-      return relativeTime;
+      return formatDistanceStrict(this.now, timestamp, {
+        addSuffix: true,
+        unit: 'minute',
+        roundingMethod: 'floor'
+      });
     },
     isLive: function() {
       const timestamp = this.$store.getters.getTimestamp;
@@ -145,7 +150,7 @@ export default {
   },
   methods: {
     isEmpty,
-    format,
+    formatDistanceStrict,
     getData: ({ data }) => data,
     getCoordinates: function() {
       this.error = null;
@@ -194,14 +199,18 @@ export default {
     fetchStopInfo: async function() {
       await this.$store.dispatch('setStopInfo');
     },
-    getNearestStop: function() {
+    getNearestStop: async function() {
       const getCoordinates = this.getCoordinates;
       const fetchStopCode = this.fetchStopCode;
       const fetchAllStops = this.fetchAllStops;
 
-      getCoordinates()
-        .then(fetchStopCode)
-        .then(fetchAllStops);
+      this.$wait.start('loading');
+
+      await getCoordinates();
+      await fetchStopCode();
+      await fetchAllStops();
+
+      this.$wait.end('loading');
     },
     fetchNearestStop: function() {
       const coordinates = this.$store.state.coordinates;
