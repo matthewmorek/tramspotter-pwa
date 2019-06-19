@@ -11,5 +11,16 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint'
+  },
+  globals: {
+    expect: true,
+    describe: true,
+    it: true,
+    test: true,
+    beforeEach: true,
+    afterEach: true,
+    before: true,
+    after: true,
+    jest: true
   }
 };
