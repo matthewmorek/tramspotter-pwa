@@ -1,29 +1,40 @@
-# tram-spotter
+# Tramspotter
+
+Find your nearest Metrolink tram stop and check it for live departures.
 
 ## Project setup
+
+This project requires `netlify-cli` to be present in order to use Nelitfy Dev to run Javacript functions in a local environment.
+
 ```
+yarn global add netlify-cli
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+netlify dev
 ```
 
-### Compiles and minifies for production
+### Deploy current state of the app to Netlify
+
 ```
-yarn run build
+netlify deploy
 ```
 
 ### Run your tests
+
 ```
 yarn run test
 ```
 
 ### Lints and fixes files
+
 ```
 yarn run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
