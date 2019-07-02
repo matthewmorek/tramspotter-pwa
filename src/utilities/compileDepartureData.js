@@ -21,7 +21,7 @@ export default function(stops) {
         carriages,
         destination,
         status,
-        wait: Number(wait)
+        wait: wait > 0 ? Number(wait) : null
       });
 
       if (!isEmpty(newArrival)) {
