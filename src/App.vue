@@ -11,7 +11,17 @@
       </div>
       <footer class="app-footer">
         <div class="mb3">
-          <button class="btn-cta" @click="getNearestStop">
+          <button
+            v-if="$wait.is('FETCHING')"
+            class="btn-cta"
+            :disabled="$wait.is('FETCHING')"
+          >
+            <span class="spinner">
+              <span class="double-bounce1"></span>
+              <span class="double-bounce2"></span>
+            </span>
+          </button>
+          <button v-else class="btn-cta" @click="getNearestStop">
             Find a tram stop
           </button>
         </div>
@@ -72,10 +82,22 @@
             </li>
           </ul>
           <p v-else>There are currently no more trams available.</p>
-          <p>
-            <button class="btn-cta" @click="getNearestStop">Update now</button>
-          </p>
           <p class="app-notice">{{ nearestStop.messageBoard }}</p>
+          <p>
+            <button
+              v-if="$wait.is('FETCHING')"
+              class="btn-cta"
+              :disabled="$wait.is('FETCHING')"
+            >
+              <span class="spinner">
+                <span class="double-bounce1"></span>
+                <span class="double-bounce2"></span>
+              </span>
+            </button>
+            <button v-else class="btn-cta" @click="getNearestStop">
+              Update now
+            </button>
+          </p>
         </section>
       </div>
       <footer class="app-footer">
@@ -152,65 +174,13 @@ export default {
     isEmpty,
     formatDistanceStrict,
     getData: ({ data }) => data,
-    getCoordinates: function() {
-      this.error = null;
-      return new Promise(resolve => {
-        this.$getLocation({
-          enableHighAccuracy: true,
-          timeout: Infinity,
-          maximumAge: 1800
-        })
-          .then(coordinates => {
-            this.$store.dispatch('setCoordinates', {
-              coordinates
-            });
-            // Sample coordinates
-            // const coordinates ={
-            //   lat: '53.4061151336091',
-            //   lng: '-2.3221654377188234'
-            // };
-            resolve();
-          })
-          .catch(error => {
-            console.error(error);
-            switch (error.code) {
-              case error.PERMISSION_DENIED:
-                this.error = 'User denied the request for Geolocation.';
-                break;
-              case error.POSITION_UNAVAILABLE:
-                this.error = 'Location information is unavailable.';
-                break;
-              case error.TIMEOUT:
-                this.error = 'The request to get user location timed out.';
-                break;
-              case error.UNKNOWN_ERROR:
-                this.error = 'An unknown error occurred.';
-                break;
-            }
-          });
-      });
-    },
-    fetchStopCode: async function() {
-      await this.$store.dispatch('setStopCode');
-    },
-    fetchAllStops: async function() {
-      await this.$store.dispatch('setAllStops');
-    },
-    fetchStopInfo: async function() {
-      await this.$store.dispatch('setStopInfo');
-    },
     getNearestStop: async function() {
-      const getCoordinates = this.getCoordinates;
-      const fetchStopCode = this.fetchStopCode;
-      const fetchAllStops = this.fetchAllStops;
+      this.$wait.start('FETCHING');
 
-      this.$wait.start('loading');
+      await this.$store.dispatch('getCoordinates');
+      await this.$store.dispatch('getNearestStopData');
 
-      await getCoordinates();
-      await fetchStopCode();
-      await fetchAllStops();
-
-      this.$wait.end('loading');
+      this.$wait.end('FETCHING');
     },
     fetchNearestStop: function() {
       const coordinates = this.$store.state.coordinates;
@@ -330,8 +300,8 @@ img {
   appearance: none;
   background: #11a2f8;
   border: 1px solid #138cd4;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 4rem;
   color: #fff;
   font-size: 1.125rem;
   font-weight: 500;
@@ -347,7 +317,7 @@ img {
   }
 
   &:disabled {
-    background: #e6e6e6;
+    background: transparent;
     border-color: #e6e6e6;
     box-shadow: none;
     color: #222222;
@@ -379,7 +349,7 @@ img {
 .app-departures {
   &--timetable {
     list-style: none;
-    margin: 0.5rem 0 1.5rem;
+    margin: 0.5rem 0 1rem;
     padding: 0;
   }
 }
@@ -423,7 +393,8 @@ img {
   background-color: #f9f2d0;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
-  margin-top: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-header {
@@ -457,6 +428,50 @@ img {
 
   to {
     opacity: 0.3;
+  }
+}
+
+.spinner {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  position: relative;
+  margin: 0 auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffa800;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  animation-delay: -1s;
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.btn-flat {
+  .double-bounce1,
+  .double-bounce2 {
+    background-color: #11a2f8;
   }
 }
 </style>
