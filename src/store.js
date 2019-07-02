@@ -75,7 +75,7 @@ export default new Vuex.Store({
     getNearestStopData({ commit, state }) {
       const { longitude, latitude } = state.coordinates;
       return axios
-        .get('/.netlify/functions/locate-stop', {
+        .get('/.netlify/functions/nearest-stop', {
           params: { longitude, latitude }
         })
         .then(({ data }) => {
