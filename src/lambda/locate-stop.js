@@ -37,6 +37,9 @@ export async function handler(event, context, callback) {
   try {
     const { longitude, latitude } = event.queryStringParameters;
     const nearestTramStopAtco = await findNearestStop({ longitude, latitude });
+    const distance = nearestTramStopAtco.reduce((stopA, stopB) =>
+      stopA.distance > stopB.distance ? stopA.distance : stopB.distance
+    );
 
     axios
       .all(nearestTramStopAtco.map(({ atcocode }) => fetchSingleStop(atcocode)))
@@ -48,7 +51,7 @@ export async function handler(event, context, callback) {
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(departureData)
+            body: JSON.stringify({ ...departureData, distance })
           });
         })
       );
