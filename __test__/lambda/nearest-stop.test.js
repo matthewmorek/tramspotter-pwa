@@ -1,6 +1,6 @@
 import path from 'path';
 import nock from 'nock';
-import { handler } from '../../src/lambda/fetch-trams';
+import { handler } from '../../src/lambda/nearest-stop';
 
 describe('Manchester Metrolink', () => {
   it('returns the metrolink data', async () => {
