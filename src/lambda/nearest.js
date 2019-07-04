@@ -2,6 +2,7 @@ import axios from 'axios';
 import union from 'lodash/fp/union';
 import toCamel from '../utilities/toCamel';
 import compileDepartureData from '../utilities/compileDepartureData';
+import { MIN_LAT, MIN_LNG, MAX_LAT, MAX_LNG, TAPI_QUERY } from '../constants';
 
 function findNearestStop({ latitude, longitude }) {
   return axios
@@ -11,7 +12,12 @@ function findNearestStop({ latitude, longitude }) {
         app_key: process.env.TA_APP_KEY,
         lat: latitude,
         lon: longitude,
-        type: 'tram_stop'
+        min_lat: MIN_LAT,
+        min_lng: MIN_LNG,
+        max_lat: MAX_LAT,
+        max_lng: MAX_LNG,
+        type: 'tram_stop',
+        query: TAPI_QUERY
       }
     })
     .then(response => toCamel(response.data.member.slice(0, 2)))
