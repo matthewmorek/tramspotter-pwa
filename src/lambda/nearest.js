@@ -39,35 +39,48 @@ function fetchSingleStop(atcoCode) {
     .catch(error => console.error(error));
 }
 
+// TODO: Investigate why ES6 async function export doesn't return anything without a callback
 export async function handler(event, context, callback) {
+  console.log('fired!');
   try {
     const { longitude, latitude } = event.queryStringParameters;
-    const nearestTramStopAtco = await findNearestStop({ longitude, latitude });
-    const distance = nearestTramStopAtco.reduce((stopA, stopB) =>
-      stopA.distance > stopB.distance ? stopA.distance : stopB.distance
+    const [rawStopA, rawStopB] = await findNearestStop({ longitude, latitude });
+
+    console.log([rawStopA, rawStopB]);
+
+    const distance =
+      rawStopA.distance > rawStopB.distance
+        ? rawStopA.distance
+        : rawStopB.distance;
+
+    const [stopA, stopB] = await Promise.all(
+      [rawStopA, rawStopB].map(({ atcocode }) => fetchSingleStop(atcocode))
     );
 
-    axios
-      .all(nearestTramStopAtco.map(({ atcocode }) => fetchSingleStop(atcocode)))
-      .then(
-        axios.spread((stopA, stopB) => {
-          const departureData = compileDepartureData(union(stopA, stopB));
-          callback(null, {
-            statusCode: 200,
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ ...departureData, distance })
-          });
-        })
-      );
+    const departureData = {
+      ...compileDepartureData(union(stopA, stopB)),
+      distance
+    };
+
+    // return {
+    //   statusCode: 200,
+    //   body: JSON.stringify(departureData)
+    // };
+
+    callback(null, {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(departureData)
+    });
   } catch (error) {
     callback(null, {
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(toCamel(error))
+      body: JSON.stringify(error)
     });
   }
 }
