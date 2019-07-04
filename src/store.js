@@ -75,11 +75,10 @@ export default new Vuex.Store({
     getNearestStopData({ commit, state }) {
       const { longitude, latitude } = state.coordinates;
       return axios
-        .get('/.netlify/functions/nearest-stop', {
+        .get('/.netlify/functions/nearest', {
           params: { longitude, latitude }
         })
         .then(({ data }) => {
-          // console.log(data);
           commit('update_metrolink_data', data);
         })
         .catch(error => new Error(error));
