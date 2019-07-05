@@ -1,3 +1,4 @@
+import { version } from '../package.json';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueWait from 'vue-wait';
@@ -19,14 +20,21 @@ const autosave = store => {
 export default new Vuex.Store({
   state: {
     coordinates: {},
-    compiled: {}
+    compiled: {},
+    version: ''
   },
   mutations: {
     init_store(state) {
       if (localStorage.getItem('store')) {
-        this.replaceState(
-          Object.assign(state, JSON.parse(localStorage.getItem('store')))
-        );
+        let store = JSON.parse(localStorage.getItem('store'));
+
+        // Check the version stored against current. If different, don't
+        // load the cached version
+        if (store.version == version) {
+          this.replaceState(Object.assign(state, store));
+        } else {
+          state.version = version;
+        }
       }
     },
     update_coordinates(state, { lat, lng }) {

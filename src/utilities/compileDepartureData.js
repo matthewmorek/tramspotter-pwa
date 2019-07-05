@@ -1,11 +1,14 @@
 import removeEmpty from './removeEmpty';
 import uuidv4 from 'uuid/v4';
 import isEmpty from 'lodash/fp/isEmpty';
+import uniqBy from 'lodash/fp/uniqBy';
 
 export default function(stops) {
-  return stops.reduce((results, obj) => {
+  const filteredStops = uniqBy('atcoCode', stops);
+
+  return filteredStops.reduce((results, obj) => {
     const { arrivals } = results;
-    const updatedArrivals = isEmpty(arrivals) ? [] : [].concat(arrivals);
+    let updatedArrivals = isEmpty(arrivals) ? [] : [].concat(arrivals);
 
     for (let i = 0; i < 4; i++) {
       const fields = [`carriages${i}`, `dest${i}`, `status${i}`, `wait${i}`];
@@ -29,6 +32,8 @@ export default function(stops) {
         updatedArrivals.push(newArrival);
       }
     }
+
+    updatedArrivals.sort((arrivalA, arrivalB) => arrivalA.wait < arrivalB.wait);
 
     const {
       distance,

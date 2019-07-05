@@ -41,12 +41,9 @@ function fetchSingleStop(atcoCode) {
 
 // TODO: Investigate why ES6 async function export doesn't return anything without a callback
 export async function handler(event, context, callback) {
-  console.log('fired!');
   try {
     const { longitude, latitude } = event.queryStringParameters;
     const [rawStopA, rawStopB] = await findNearestStop({ longitude, latitude });
-
-    console.log([rawStopA, rawStopB]);
 
     const distance =
       rawStopA.distance > rawStopB.distance
