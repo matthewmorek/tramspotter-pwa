@@ -42,10 +42,16 @@ const finalData = {
   timestamp: expect.any(Number)
 };
 
-test('Returns appropriately shaped data object', async () => {
-  expect(compileDepartureData(nearbyStops)).toEqual(
-    expect.objectContaining({
-      ...finalData
-    })
-  );
+describe('Utility method compileDepartureData', () => {
+  test('It exists', () => {
+    expect(compileDepartureData).toBeTruthy();
+  });
+
+  test('Returns appropriately shaped data object', async () => {
+    expect(compileDepartureData(nearbyStops)).toEqual(
+      expect.objectContaining({
+        ...finalData
+      })
+    );
+  });
 });
