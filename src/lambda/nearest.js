@@ -46,8 +46,6 @@ export async function handler(event, context, callback) {
     const { longitude, latitude } = event.queryStringParameters;
     const [rawStopA, rawStopB] = await findNearestStop({ longitude, latitude });
 
-    console.log([rawStopA, rawStopB]);
-
     const distance =
       rawStopA.distance > rawStopB.distance
         ? rawStopA.distance
