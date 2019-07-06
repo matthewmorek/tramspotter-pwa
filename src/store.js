@@ -50,7 +50,7 @@ export default new Vuex.Store({
   },
   actions: {
     getCoordinates({ commit }) {
-      return new Promise(resolve => {
+      return new Promise((resolve, reject) => {
         this._vm
           .$getLocation({
             enableHighAccuracy: true,
@@ -62,21 +62,25 @@ export default new Vuex.Store({
             resolve();
           })
           .catch(error => {
-            console.error(error);
             switch (error.code) {
               case error.PERMISSION_DENIED:
-                this.error = 'User denied the request for Geolocation.';
+                this.error =
+                  'Tramspotter was denied access to your location. Check browser permissions.';
                 break;
               case error.POSITION_UNAVAILABLE:
-                this.error = 'Location information is unavailable.';
+                this.error =
+                  'Tramspotter could not reliably determine your current location. Try again in a moment.';
                 break;
               case error.TIMEOUT:
-                this.error = 'The request to get user location timed out.';
+                this.error =
+                  'The request to get your location has timed out. Try again.';
                 break;
               case error.UNKNOWN_ERROR:
                 this.error = 'An unknown error occurred.';
                 break;
             }
+
+            reject(this.error);
           });
       });
     },

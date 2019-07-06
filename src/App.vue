@@ -175,12 +175,15 @@ export default {
     formatDistanceStrict,
     getData: ({ data }) => data,
     getNearestStop: async function() {
-      this.$wait.start('FETCHING');
-
-      await this.$store.dispatch('getCoordinates');
-      await this.$store.dispatch('getNearestStopData');
-
-      this.$wait.end('FETCHING');
+      try {
+        this.$wait.start('FETCHING');
+        await this.$store.dispatch('getCoordinates');
+        await this.$store.dispatch('getNearestStopData');
+      } catch (error) {
+        alert(error);
+      } finally {
+        this.$wait.end('FETCHING');
+      }
     },
     fetchNearestStop: function() {
       const coordinates = this.$store.state.coordinates;
@@ -298,11 +301,11 @@ img {
 
 .btn-cta {
   appearance: none;
-  background: #11a2f8;
-  border: 1px solid #138cd4;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  background: #faa800;
+  border: 1px solid #faa800;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4rem;
-  color: #fff;
+  color: #222222;
   font-size: 1.125rem;
   font-weight: 500;
   padding-left: 1rem;
