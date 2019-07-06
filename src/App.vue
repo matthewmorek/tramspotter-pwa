@@ -203,14 +203,22 @@ export default {
 :root {
   --font-family: 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --btn-color-bg: #373737;
+  --btn-color-border: rgba(0, 0, 0, 0);
+  --btn-color-text: #fff;
+  --pill-color-bg: #ececec;
+  --pill-color-text: #373737;
+  --text-size: 1rem;
+  --text-color: #373737;
 }
 
 html,
 body {
   font-family: var(--font-family);
   line-height: 1.4;
-  font-size: 1rem;
+  font-size: var(--text-size);
   font-weight: 400;
+  color: var(--text-color);
 }
 
 h1,
@@ -301,11 +309,11 @@ img {
 
 .btn-cta {
   appearance: none;
-  background: #faa800;
-  border: 1px solid #faa800;
-  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+  background: var(--btn-color-bg);
+  border: 1px solid var(--btn-color-border);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
   border-radius: 4rem;
-  color: #222222;
+  color: var(--btn-color-text);
   font-size: 1.125rem;
   font-weight: 500;
   padding-left: 1rem;
@@ -374,9 +382,10 @@ img {
 
   &--wait {
     font-size: 0.875rem;
+    font-weight: 500;
     border-radius: 64px;
-    color: #fff;
-    background-color: #222;
+    color: var(--pill-color-text);
+    background-color: var(--pill-color-bg);
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     padding-left: 0.625rem;
@@ -385,8 +394,7 @@ img {
 
     &.near {
       background-color: #ffa800;
-      color: #222;
-      font-weight: 500;
+      color: #373737;
     }
   }
 }
