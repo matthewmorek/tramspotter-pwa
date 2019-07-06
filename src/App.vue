@@ -265,9 +265,15 @@ img {
   display: block;
 }
 
+#app {
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app-content {
   padding: 1.5rem;
-  height: 100vh;
+  height: 100%;
 }
 
 .app-main {
