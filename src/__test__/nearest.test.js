@@ -1,6 +1,6 @@
 import path from 'path';
 import nock from 'nock';
-import { handler } from './nearest';
+import { handler } from '../lambda/nearest';
 
 describe('Manchester Metrolink', () => {
   // FIXME: There's a problem with the async/await and callback-based implementation
