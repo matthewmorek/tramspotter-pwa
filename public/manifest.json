@@ -1,7 +1,12 @@
 {
   "name": "Tramspotter",
-  "short_name": "tramspotter",
+  "short_name": "Tramspotter",
   "icons": [
+    {
+      "src": "./img/icons/msapplication-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
     {
       "src": "./img/icons/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -13,8 +18,10 @@
       "type": "image/png"
     }
   ],
+  "orientation": "portrait",
   "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#af9e00"
+  "display": "minimal-ui",
+  "background_color": "#ffd92b",
+  "theme_color": "#ffffff",
+  "scope": "/"
 }
