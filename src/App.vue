@@ -70,9 +70,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">
-                  {{ tram.carriages }}
-                </span>
+                <span class="timetable-item--carriages">{{
+                  tram.carriages
+                }}</span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 }"
@@ -95,7 +95,7 @@
               </span>
             </button>
             <button v-else class="btn-cta" @click="getNearestStop">
-              Update now
+              Update
             </button>
           </p>
         </section>
