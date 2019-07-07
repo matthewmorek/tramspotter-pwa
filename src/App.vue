@@ -27,7 +27,7 @@
         </div>
         <div class="app-footer--notice">
           <div class="app-footer--notice-icon">
-            <LocationIcon />
+            <LocationIcon class="app-footer-icon" />
           </div>
           <div class="app-footer--notice-text">
             A permission to access your device location is required.
@@ -103,11 +103,7 @@
       <footer class="app-footer">
         <div class="app-footer--notice">
           <div class="app-footer--notice-icon">
-            <img
-              src="/img/metrolink.png"
-              srcset="/img/metrolink@2x.png 2x, /img/metrolink@3x.png 3x"
-              alt="TfGM Metrolink logo"
-            />
+            <TfgmIcon width="42" class="app-footer-icon" />
           </div>
           <div class="app-footer--notice-text">
             This app uses TfGM Open Data 2.0 under Open Government License.
@@ -123,6 +119,7 @@ import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
 import IconRecord from './public/record.svg';
 import LocationIcon from './public/location.svg';
+import TfgmIcon from './public/tfgm-icon.svg';
 import { formatDistanceStrict } from 'date-fns/esm//fp';
 
 export default {
@@ -130,7 +127,8 @@ export default {
   components: {
     AppIcon,
     IconRecord,
-    LocationIcon
+    LocationIcon,
+    TfgmIcon
   },
   data() {
     return {
@@ -203,13 +201,60 @@ export default {
 :root {
   --font-family: 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --app-bg: #fff;
+
   --btn-color-bg: #373737;
   --btn-color-border: rgba(0, 0, 0, 0);
   --btn-color-text: #fff;
+
+  --btn-color-bg--disabled: transparent;
+  --btn-color-border--disabled: #e6e6e6;
+  --btn-color-text--disabled: #373737;
+
   --pill-color-bg: #ececec;
   --pill-color-text: #373737;
+
+  --pill-color-bg--special: #ffa800;
+  --pill-color-text--special: #373737;
+
   --text-size: 1rem;
   --text-color: #373737;
+
+  --notice-color-bg: #f9f2d0;
+  --notice-color-text: #373737;
+  --header-color-border: #e2e2e2;
+  --color-red: #e74c3c;
+  --color-blue: #11a2f8;
+  --color-orange: #ffa800;
+  --icon-contrast: #373737;
+
+  @media (prefers-color-scheme: dark) {
+    --app-bg: #373737;
+
+    --btn-color-bg: #fff;
+    --btn-color-border: rgba(0, 0, 0, 0);
+    --btn-color-text: #373737;
+
+    --btn-color-bg--disabled: transparent;
+    --btn-color-border--disabled: #464646;
+    --btn-color-text--disabled: #373737;
+
+    --pill-color-bg: #111;
+    --pill-color-text: #fafafa;
+
+    --pill-color-bg--special: #ffa800;
+    --pill-color-text--special: #373737;
+
+    --text-size: 1rem;
+    --text-color: #fafafa;
+
+    --notice-color-bg: #20201b;
+    --notice-color-text: #f9f2d0;
+
+    --header-color-border: #4a4a4a;
+    --icon-contrast: #fafafa;
+  }
 }
 
 html,
@@ -219,6 +264,7 @@ body {
   font-size: var(--text-size);
   font-weight: 400;
   color: var(--text-color);
+  background-color: var(--app-bg);
   height: 100%;
 }
 
@@ -316,8 +362,12 @@ img {
 
   &-text {
     font-size: 0.875rem;
-    padding-left: 0.5rem;
+    padding-left: 0.75rem;
   }
+}
+
+.app-footer-icon {
+  fill: var(--icon-contrast);
 }
 
 .btn-cta {
@@ -341,10 +391,10 @@ img {
   }
 
   &:disabled {
-    background: transparent;
-    border-color: #e6e6e6;
+    background: var(--btn-color-bg--disabled);
+    border-color: var(--btn-color-border--disabled);
     box-shadow: none;
-    color: #222222;
+    color: var(--btn-color-text--disabled);
   }
 }
 
@@ -406,16 +456,17 @@ img {
     margin-left: 0.5rem;
 
     &.near {
-      background-color: #ffa800;
-      color: #373737;
+      background-color: var(--pill-color-bg--special);
+      color: var(--pill-color-text--special);
     }
   }
 }
 
 .app-notice {
   font-size: 0.875rem;
-  background-color: #f9f2d0;
-  padding: 0.5rem 0.75rem;
+  color: var(--notice-color-text);
+  border: 1px solid var(--notice-color-bg);
+  padding: 0.75rem;
   border-radius: 4px;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -425,7 +476,7 @@ img {
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--header-color-border);
 
   &--label {
     font-weight: 500;
@@ -441,7 +492,7 @@ img {
   line-height: 1;
   margin-right: 0.25rem;
   margin-bottom: 1px;
-  fill: #e74c3c;
+  fill: var(--color-red);
   animation: 1s ease-in-out infinite alternate breathe;
 }
 
@@ -469,7 +520,7 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #ffa800;
+  background-color: var(--color-orange);
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -495,7 +546,7 @@ img {
 .btn-flat {
   .double-bounce1,
   .double-bounce2 {
-    background-color: #11a2f8;
+    background-color: var(--color-blue);
   }
 }
 </style>
