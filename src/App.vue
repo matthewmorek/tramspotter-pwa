@@ -10,7 +10,7 @@
         </p>
       </div>
       <footer class="app-footer">
-        <div class="mb3">
+        <div class="app-footer--cta">
           <button
             v-if="$wait.is('FETCHING')"
             class="btn-cta"
@@ -70,13 +70,13 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">
-                  {{ tram.carriages }}
-                </span>
+                <span class="timetable-item--carriages">{{
+                  tram.carriages
+                }}</span>
                 <span
                   class="timetable-item--wait"
-                  :class="{ near: tram.wait <= 5 }"
-                  >{{ tram.wait }} min</span
+                  :class="{ near: tram.wait <= 5 || tram.wait === null }"
+                  >{{ tram.wait ? `${tram.wait} min` : 'Due now' }}</span
                 >
               </div>
             </li>
@@ -228,7 +228,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: medium;
+  font-weight: 500;
   line-height: 1.5;
 }
 
@@ -285,11 +285,13 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .app-name {
   text-transform: uppercase;
   font-weight: 700;
+  line-height: 1;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -303,9 +305,14 @@ img {
   margin-top: auto;
 }
 
+.app-footer--cta {
+  margin-bottom: 1.5rem;
+}
+
 .app-footer--notice {
   display: flex;
   align-items: center;
+  margin-top: 1.5rem;
 
   &-text {
     font-size: 0.875rem;
