@@ -70,9 +70,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">
-                  {{ tram.carriages }}
-                </span>
+                <span class="timetable-item--carriages">{{
+                  tram.carriages
+                }}</span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 || tram.wait === null }"
@@ -465,8 +465,8 @@ img {
 .app-notice {
   font-size: 0.875rem;
   color: var(--notice-color-text);
-  background-color: var(--notice-color-bg);
-  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--notice-color-bg);
+  padding: 0.75rem;
   border-radius: 4px;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
