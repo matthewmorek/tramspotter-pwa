@@ -70,9 +70,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">
-                  {{ tram.carriages }}
-                </span>
+                <span class="timetable-item--carriages">{{
+                  tram.carriages
+                }}</span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 || tram.wait === null }"
@@ -97,7 +97,7 @@
               </span>
             </button>
             <button v-else class="btn-cta" @click="getNearestStop">
-              Update
+              <span>Update</span>
             </button>
           </p>
         </section>
@@ -232,30 +232,30 @@ export default {
   --icon-contrast: #373737;
 
   @media (prefers-color-scheme: dark) {
-    --app-bg: #373737;
+    --app-bg: #272727;
 
-    --btn-color-bg: #fff;
+    --btn-color-bg: #dedede;
     --btn-color-border: rgba(0, 0, 0, 0);
     --btn-color-text: #373737;
 
     --btn-color-bg--disabled: transparent;
     --btn-color-border--disabled: #464646;
-    --btn-color-text--disabled: #373737;
+    --btn-color-text--disabled: #272727;
 
     --pill-color-bg: #111;
-    --pill-color-text: #fafafa;
+    --pill-color-text: #dedede;
 
     --pill-color-bg--special: #ffa800;
     --pill-color-text--special: #373737;
 
     --text-size: 1rem;
-    --text-color: #fafafa;
+    --text-color: #dedede;
 
     --notice-color-bg: #20201b;
     --notice-color-text: #f9f2d0;
 
     --header-color-border: #4a4a4a;
-    --icon-contrast: #fafafa;
+    --icon-contrast: #dedede;
   }
 }
 
@@ -387,6 +387,7 @@ img {
   padding-bottom: 0.75rem;
   font-family: var(--font-family);
   width: 100%;
+  height: 3.125rem;
 
   &:active {
     box-shadow: none;
