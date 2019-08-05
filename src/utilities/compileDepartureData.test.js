@@ -5,17 +5,10 @@ const finalData = {
   arrivals: [
     {
       carriages: 'Single',
-      destination: 'Shaw and Crompton',
-      id: expect.any(String),
-      status: 'Due',
-      wait: 20
-    },
-    {
-      carriages: 'Single',
       destination: 'Rochdale Town Centre',
       id: expect.any(String),
       status: 'Due',
-      wait: 14
+      wait: 1
     },
     {
       carriages: 'Single',
@@ -29,7 +22,14 @@ const finalData = {
       destination: 'Rochdale Town Centre',
       id: expect.any(String),
       status: 'Due',
-      wait: 1
+      wait: 14
+    },
+    {
+      carriages: 'Single',
+      destination: 'Shaw and Crompton',
+      id: expect.any(String),
+      status: 'Due',
+      wait: 20
     }
   ],
   direction: 'Incoming',
