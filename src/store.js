@@ -108,9 +108,7 @@ export default new Vuex.Store({
       }
 
       const { arrivals } = state.compiled;
-      let departures = arrivals
-        .filter(tram => tram.wait !== 0)
-        .sort((a, b) => a.wait > b.wait);
+      let departures = arrivals.filter(tram => tram.wait !== 0);
       return departures;
     },
     getTimestamp: state => state.compiled.timestamp
