@@ -112,3 +112,60 @@ export default [
     lastUpdated: '2019-07-05T16:00:44Z'
   }
 ];
+
+export const stopsWithoutASpecialMessage = [
+  {
+    id: 903,
+    line: 'South Manchester',
+    tLAREF: 'EDD',
+    pIDREF: 'EDD-TPID03',
+    stationLocation: 'East Didsbury',
+    atcoCode: '9400ZZMAEDY1',
+    direction: 'Incoming',
+    dest0: 'Rochdale Town Centre',
+    carriages0: 'Single',
+    status0: 'Due',
+    wait0: '1',
+    dest1: 'Rochdale Town Centre',
+    carriages1: 'Single',
+    status1: 'Due',
+    wait1: '14',
+    dest2: 'Shaw and Crompton',
+    carriages2: 'Single',
+    status2: 'Due',
+    wait2: '20',
+    dest3: '',
+    carriages3: '',
+    status3: '',
+    messageBoard: '<no message>',
+    wait3: '',
+    lastUpdated: '2019-07-05T16:00:44Z'
+  },
+  {
+    id: 904,
+    line: 'South Manchester',
+    tLAREF: 'EDD',
+    pIDREF: 'EDD-TPID04',
+    stationLocation: 'East Didsbury',
+    atcoCode: '9400ZZMAEDY1',
+    direction: 'Incoming',
+    dest0: 'Rochdale Town Centre',
+    carriages0: 'Single',
+    status0: 'Due',
+    wait0: '1',
+    dest1: 'Rochdale Town Centre',
+    carriages1: 'Single',
+    status1: 'Due',
+    wait1: '14',
+    dest2: 'Shaw and Crompton',
+    carriages2: 'Single',
+    status2: 'Due',
+    wait2: '20',
+    dest3: '',
+    carriages3: '',
+    status3: '',
+    messageBoard: '<no message>',
+    wait3: '',
+    lastUpdated: '2019-07-05T16:00:44Z'
+  }
+];

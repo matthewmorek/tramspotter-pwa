@@ -70,9 +70,9 @@
                 {{ tram.destination }}
               </div>
               <div class="timetable-item--info">
-                <span class="timetable-item--carriages">{{
-                  tram.carriages
-                }}</span>
+                <span class="timetable-item--carriages">
+                  {{ tram.carriages }}
+                </span>
                 <span
                   class="timetable-item--wait"
                   :class="{ near: tram.wait <= 5 || tram.wait === null }"
@@ -82,7 +82,9 @@
             </li>
           </ul>
           <p v-else>There are currently no more trams available.</p>
-          <p class="app-notice">{{ nearestStop.messageBoard }}</p>
+          <p v-if="nearestStop.messageBoard" class="app-notice">
+            {{ nearestStop.messageBoard }}
+          </p>
           <p>
             <button
               v-if="$wait.is('FETCHING')"

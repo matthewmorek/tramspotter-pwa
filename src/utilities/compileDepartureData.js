@@ -49,13 +49,15 @@ export default function(stops) {
       { ...results },
       {
         arrivals: updatedArrivals,
-        distance,
-        lastUpdated,
-        line,
-        messageBoard,
-        stationLocation,
-        direction,
-        timestamp: Date.now()
+        ...removeEmpty({
+          distance,
+          lastUpdated,
+          line,
+          messageBoard: messageBoard === '<no message>' ? null : messageBoard,
+          stationLocation,
+          direction,
+          timestamp: Date.now()
+        })
       }
     );
   }, {});
