@@ -33,7 +33,7 @@ export default function(stops) {
       }
     }
 
-    updatedArrivals.sort((arrivalA, arrivalB) => arrivalA.wait < arrivalB.wait);
+    updatedArrivals.sort((arrivalA, arrivalB) => arrivalA.wait > arrivalB.wait);
 
     const {
       distance,
