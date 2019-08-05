@@ -4,6 +4,7 @@ import { handler } from '../lambda/nearest';
 
 describe('Manchester Metrolink', () => {
   // FIXME: There's a problem with the async/await and callback-based implementation
+  //  which seems to be a problem with Netlify's own infrastructure
   it.skip('returns the metrolink data', async () => {
     /*
      enabling nock.recorder.rec() will show what output you'll need to put below
