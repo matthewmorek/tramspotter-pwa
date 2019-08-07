@@ -113,6 +113,9 @@
         </div>
       </footer>
     </main>
+    <div v-if="updateExists" class="snackbar" @click="refreshApp">
+      New update available. Tap to upgrade.
+    </div>
   </div>
 </template>
 
@@ -137,7 +140,10 @@ export default {
       isLoading: false,
       hasErrors: false,
       error: null,
-      now: new Date()
+      now: new Date(),
+      updateExists: false,
+      worker: null,
+      refreshing: false
     };
   },
   computed: {
@@ -170,6 +176,27 @@ export default {
       this.now = new Date();
     }, 1000 * 60);
   },
+  created() {
+    // Listen for the updateReady event and update the local state accordingly
+    document.addEventListener('updateReady', this.showRefreshUI, {
+      once: true
+    });
+    // Refresh all open app tabs when a new service worker is installed.
+    navigator.serviceWorker &&
+      navigator.serviceWorker.addEventListener(
+        //triggered by registration.claim
+        'controllerchange',
+        () => {
+          if (this.refreshing) return;
+          this.refreshing = true;
+          console.log('controllerchange triggered, -> auto refresh!!');
+          window.location.reload();
+        }
+      );
+  },
+  beforeDestroy() {
+    document.removeEventListener('updateReady', this.showRefreshUI);
+  },
   methods: {
     isEmpty,
     formatDistanceStrict,
@@ -191,6 +218,31 @@ export default {
       if (!isEmpty(coordinates)) {
         this.getNearestStop();
       }
+    },
+    showRefreshUI(event) {
+      // Display a button inviting the user to refresh/reload the app due
+      // to an app update being available.
+      // The new service worker is installed, but not yet active.
+      // Store the ServiceWorkerRegistration instance for later use.
+      if (event.detail) {
+        this.worker = event.detail;
+        this.updateExists = true;
+        console.log(this.worker);
+      } else {
+        console.warn('No worker data found!');
+      }
+    },
+    refreshApp() {
+      console.log('skipWaiting started');
+      console.log(this.worker);
+      // Handle a user tap on the update app button.
+      this.updateExists = false;
+      // Protect against missing registration.waiting.
+      if (!this.worker) {
+        console.warn('No worker data found when trying to refresh!');
+        return;
+      }
+      this.worker.postMessage({ type: 'SKIP_WAITING' });
     }
   }
 };
@@ -221,6 +273,7 @@ export default {
   --pill-color-text--special: #373737;
 
   --text-size: 1rem;
+  --text-size-sm: 0.875rem;
   --text-color: #373737;
 
   --notice-color-bg: #f9f2d0;
@@ -248,7 +301,6 @@ export default {
     --pill-color-bg--special: #ffa800;
     --pill-color-text--special: #373737;
 
-    --text-size: 1rem;
     --text-color: #dedede;
 
     --notice-color-bg: #20201b;
@@ -320,6 +372,24 @@ img {
   margin-right: auto;
   display: flex;
   height: 100%;
+}
+
+.snackbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--pill-color-bg--special);
+  color: var(--pill-color-text--special);
+  text-align: center;
+  font-size: var(--text-size-sm);
+  font-weight: 500;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 -1px 3px;
+  cursor: default;
 }
 
 .app-content {
