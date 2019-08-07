@@ -10,6 +10,7 @@ export default function toCamel(o) {
   } else {
     newO = {};
     for (origKey in o) {
+      // eslint-disable-next-line no-prototype-builtins
       if (o.hasOwnProperty(origKey)) {
         newKey = (
           origKey.charAt(0).toLowerCase() + origKey.slice(1) || origKey
