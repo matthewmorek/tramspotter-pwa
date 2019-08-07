@@ -278,15 +278,15 @@ export default {
   --icon-contrast: #373737;
 
   @media (prefers-color-scheme: dark) {
-    --app-bg: #272727;
+    --app-bg: #1a1a1a;
 
     --btn-color-bg: #dedede;
     --btn-color-border: rgba(0, 0, 0, 0);
-    --btn-color-text: #373737;
+    --btn-color-text: #1a1a1a;
 
     --btn-color-bg--disabled: transparent;
     --btn-color-border--disabled: #464646;
-    --btn-color-text--disabled: #272727;
+    --btn-color-text--disabled: #1a1a1a;
 
     --pill-color-bg: #111;
     --pill-color-text: #dedede;
