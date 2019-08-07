@@ -125,7 +125,7 @@ import AppIcon from './public/app-icon.svg';
 import IconRecord from './public/record.svg';
 import LocationIcon from './public/location.svg';
 import TfgmIcon from './public/tfgm-icon.svg';
-import { formatDistanceStrict } from 'date-fns/esm//fp';
+import { formatDistanceStrict } from 'date-fns';
 
 export default {
   name: 'Tramspotter',
