@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: ['plugin:vue/recommended', '@vue/prettier'],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-console': 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'prettier/prettier': ['error', { singleQuote: true }]
   },
