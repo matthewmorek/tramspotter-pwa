@@ -303,8 +303,8 @@ export default {
 
     --text-color: #dedede;
 
-    --notice-color-bg: #20201b;
-    --notice-color-text: #f9f2d0;
+    --notice-color-bg: #111;
+    --notice-color-text: #dedede;
 
     --header-color-border: #4a4a4a;
     --icon-contrast: #dedede;
@@ -538,7 +538,7 @@ img {
 .app-notice {
   font-size: 0.875rem;
   color: var(--notice-color-text);
-  border: 1px solid var(--notice-color-bg);
+  background-color: var(--notice-color-bg);
   padding: 0.75rem;
   border-radius: 4px;
   margin-top: 1rem;
