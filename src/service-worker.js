@@ -14,7 +14,7 @@ workbox.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.core.setCacheNameDetails({
   prefix: 'tramspotter',
-  suffix: 'v0.2.4'
+  suffix: 'v0.3.0'
 });
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

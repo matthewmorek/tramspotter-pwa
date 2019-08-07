@@ -184,12 +184,11 @@ export default {
     // Refresh all open app tabs when a new service worker is installed.
     navigator.serviceWorker &&
       navigator.serviceWorker.addEventListener(
-        //triggered by registration.claim
+        // triggered by registration.claim
         'controllerchange',
         () => {
           if (this.refreshing) return;
           this.refreshing = true;
-          console.log('controllerchange triggered, -> auto refresh!!');
           window.location.reload();
         }
       );
@@ -227,19 +226,13 @@ export default {
       if (event.detail) {
         this.worker = event.detail;
         this.updateExists = true;
-        console.log(this.worker);
-      } else {
-        console.warn('No worker data found!');
       }
     },
     refreshApp() {
-      console.log('skipWaiting started');
-      console.log(this.worker);
       // Handle a user tap on the update app button.
       this.updateExists = false;
       // Protect against missing registration.waiting.
       if (!this.worker) {
-        console.warn('No worker data found when trying to refresh!');
         return;
       }
       this.worker.postMessage({ type: 'SKIP_WAITING' });
