@@ -5,6 +5,7 @@ import VueWait from 'vue-wait';
 import VueGeolocation from 'vue-browser-geolocation';
 import axios from 'axios';
 import isEmpty from 'lodash/fp/isEmpty';
+import bugsnagClient from './utilities/bugsnag';
 import { toDate } from 'date-fns';
 
 Vue.use(Vuex);
@@ -63,6 +64,11 @@ export default new Vuex.Store({
             resolve();
           })
           .catch(error => {
+            bugsnagClient.notify(error, {
+              metaData: {
+                context: 'request-geolocation'
+              }
+            });
             switch (error.code) {
               case error.PERMISSION_DENIED:
                 this.error =
@@ -80,7 +86,6 @@ export default new Vuex.Store({
                 this.error = 'An unknown error occurred.';
                 break;
             }
-
             reject(this.error);
           });
       });
@@ -114,5 +119,6 @@ export default new Vuex.Store({
     },
     getTimestamp: state => toDate(state.compiled.timestamp)
   },
-  plugins: [autosave]
+  plugins: [autosave],
+  strict: process.env.NODE_ENV !== 'production'
 });

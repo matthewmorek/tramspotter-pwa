@@ -997,6 +997,35 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@bugsnag/browser@^6.3.2":
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-6.3.2.tgz#50488c7eb8df34781fcac8bfb9d9bfce77a06b10"
+  integrity sha512-w0+klWpNfF7OD3OMKTg2WuJndDAK5eoet7INN0wSqQYqUGK0l6sActBsIwU6iEiCdISMmKx3f+LupHPhgAFEDQ==
+
+"@bugsnag/js@^6.3.2":
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-6.3.2.tgz#74a99511d2360b2404af92f4e9545f07722ec316"
+  integrity sha512-WTVWitr2jOSuwaXaa/r4o0GTtugt2Bi3/JbmKR1dNKk/dcnYRHmb+OpCN82COmNyD/L1K+DBqRnULMrHUPONqg==
+  dependencies:
+    "@bugsnag/browser" "^6.3.2"
+    "@bugsnag/node" "^6.3.1"
+
+"@bugsnag/node@^6.3.1":
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-6.3.1.tgz#d9835a2ba68e80a30852f61703d252df0899ecba"
+  integrity sha512-KtFh3fR+Yzb3O4IgFLnxMK/yXqDyoR4fl1yl+EghwgkwDc4nETZ/NXpqroaMUtHYNOY+7cTpHaGqlaSTWLGp1Q==
+  dependencies:
+    byline "^5.0.0"
+    error-stack-parser "^2.0.2"
+    iserror "^0.0.2"
+    pump "^3.0.0"
+    stack-generator "^2.0.3"
+
+"@bugsnag/plugin-vue@^6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-vue/-/plugin-vue-6.3.0.tgz#c33d25dcce19407a4a82ccfdc4cb6dd2fb89b272"
+  integrity sha512-SQW7oSw3Li2pCDRXaR9Xi767/aDej1+CZUhrqndhVVoGn27htKdqaMpQL+qnxiFt9WAyI6u4oFDjRsl5nIfOGw==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -4073,6 +4102,11 @@ busboy@^0.3.1:
   dependencies:
     dicer "0.3.0"
 
+byline@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/byline/-/byline-5.0.0.tgz#741c5216468eadc457b03410118ad77de8c1ddb1"
+  integrity sha1-dBxSFkaOrcRXsDQQEYrXfejB3bE=
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -5864,7 +5898,7 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-error-stack-parser@^2.0.0:
+error-stack-parser@^2.0.0, error-stack-parser@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.0.2.tgz#4ae8dbaa2bf90a8b450707b9149dcabca135520d"
   integrity sha512-E1fPutRDdIj/hohG0UpT5mayXNCxXP9d+snxFsPU9X0XgccOumKraa3juDMwTUyi7+Bu5+mCGagjg4IYeNbOdw==
@@ -8335,6 +8369,11 @@ isbinaryfile@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/isbinaryfile/-/isbinaryfile-4.0.1.tgz#85dadd12ba236c9225fdf4648d6069956eaba640"
   integrity sha512-bvJxbNWm72dy/1+qeBm9F8wUM4siDnlzid7NN5Ib4nQcc0tNIx/YWgEih1ZRHXr8xVbpGk1ccLlA9gOSlyx3gw==
+
+iserror@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/iserror/-/iserror-0.0.2.tgz#bd53451fe2f668b9f2402c1966787aaa2c7c0bf5"
+  integrity sha1-vVNFH+L2aLnyQCwZZnh6qix8C/U=
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -13220,6 +13259,13 @@ stable@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
+
+stack-generator@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/stack-generator/-/stack-generator-2.0.3.tgz#bb74385c67ffc4ccf3c4dee5831832d4e509c8a0"
+  integrity sha512-kdzGoqrnqsMxOEuXsXyQTmvWXZmG0f3Ql2GDx5NtmZs59sT2Bt9Vdyq0XdtxUi58q/+nxtbF9KOQ9HkV1QznGg==
+  dependencies:
+    stackframe "^1.0.4"
 
 stack-utils@^1.0.1:
   version "1.0.2"
