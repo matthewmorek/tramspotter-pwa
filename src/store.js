@@ -5,6 +5,7 @@ import VueWait from 'vue-wait';
 import VueGeolocation from 'vue-browser-geolocation';
 import axios from 'axios';
 import isEmpty from 'lodash/fp/isEmpty';
+import { toDate } from 'date-fns';
 
 Vue.use(Vuex);
 Vue.use(VueWait);
@@ -111,7 +112,7 @@ export default new Vuex.Store({
       let departures = arrivals.filter(tram => tram.wait !== 0);
       return departures;
     },
-    getTimestamp: state => state.compiled.timestamp
+    getTimestamp: state => toDate(state.compiled.timestamp)
   },
   plugins: [autosave]
 });
