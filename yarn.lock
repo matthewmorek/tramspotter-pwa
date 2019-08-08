@@ -52,7 +52,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
   integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
@@ -68,26 +68,6 @@
     debug "^4.1.0"
     json5 "^2.1.0"
     lodash "^4.17.13"
-    resolve "^1.3.2"
-    semver "^5.4.1"
-    source-map "^0.5.0"
-
-"@babel/core@^7.1.0", "@babel/core@^7.1.6":
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.0.tgz#6ed6a2881ad48a732c5433096d96d1b0ee5eb734"
-  integrity sha512-6Isr4X98pwXqHvtigw71CKgmhL1etZjPs5A67jL/w0TkLM9eqmFR40YrnJvEc1WnMZFsskjsmid8bHZyxKEAnw==
-  dependencies:
-    "@babel/code-frame" "^7.0.0"
-    "@babel/generator" "^7.5.0"
-    "@babel/helpers" "^7.5.0"
-    "@babel/parser" "^7.5.0"
-    "@babel/template" "^7.4.4"
-    "@babel/traverse" "^7.5.0"
-    "@babel/types" "^7.5.0"
-    convert-source-map "^1.1.0"
-    debug "^4.1.0"
-    json5 "^2.1.0"
-    lodash "^4.17.11"
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
@@ -281,7 +261,7 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.2.0"
 
-"@babel/helpers@^7.5.0", "@babel/helpers@^7.5.5":
+"@babel/helpers@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.5.5.tgz#63908d2a73942229d1e6685bc2a0e730dde3b75e"
   integrity sha512-nRq2BUhxZFnfEn/ciJuhklHvFOqjJUD5wpx+1bxUF2axL9C+v4DE/dmp5sT2dKnpOs4orZWzpAZqlCy8QqE/7g==
@@ -949,7 +929,7 @@
     "@babel/parser" "^7.4.4"
     "@babel/types" "^7.4.4"
 
-"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.0", "@babel/traverse@^7.5.5":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.5.5.tgz#f664f8f368ed32988cd648da9f72d5ca70f165bb"
   integrity sha512-MqB0782whsfffYfSjH4TM+LMjrJnhCNEDMDIjeTpl+ASaUvxcjoiVCo/sM1GhS1pHOXYfWVCYneLjMckuUxDaQ==
@@ -1554,10 +1534,10 @@
     babel-plugin-module-resolver "3.2.0"
     core-js "^2.6.5"
 
-"@vue/babel-preset-app@^4.0.0-beta.2":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.0.0-beta.2.tgz#c201b164bc52b0763f83ba9a5f11a280f771d6ff"
-  integrity sha512-YTOnJzutlpz9JB2ELVS9cujVSfXTWq/dC765qNFuBdnEwtifgxmasNPvrSUjEOwGz/3OptaV9YK9YREy3DmCjA==
+"@vue/babel-preset-app@^4.0.0-beta.3":
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.0.0-beta.3.tgz#963759ec7e82d1187a93140a9f59e3e9689a00a9"
+  integrity sha512-uGFIRukFFC6S3SvLWh+7TOqqLBIxh/9aMNvfCu3Jq4YwT5mCKtynTHcLE1Lt22+cgokKtCYAmEOhi04VLn9B6A==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.4.4"
@@ -1632,13 +1612,13 @@
   integrity sha512-qAXuwWc9QxyOU9rIDUfAvxFxRMGFXLYeW3nsSCzbWn8aWdypZwdWckP0aeCRp8mt1aGiJmIA0shTHbQRgmT9IQ==
 
 "@vue/cli-plugin-babel@@next":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.0.0-beta.2.tgz#fd4b0bb61564c607542814f0f99bbec4ba91d398"
-  integrity sha512-j1l91fpXUnolHVwoPQp4pWFG6yWc4tJOJaV0rlwEcp+jJuE0/gDwHf1++JHjDuDqPnaDzhsyAVyarZVdc7gg3w==
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.0.0-beta.3.tgz#bba712a642bb195277a38acc92e1620189739b0b"
+  integrity sha512-la4J8yPhxS6e152dSvrTrA8VlOjry0GMvMSjeP1/mIKjzeMIgbVJh4e/J7tU+mLp+zllkvYLgmblVb5lJkO1GQ==
   dependencies:
     "@babel/core" "^7.4.5"
-    "@vue/babel-preset-app" "^4.0.0-beta.2"
-    "@vue/cli-shared-utils" "^4.0.0-beta.2"
+    "@vue/babel-preset-app" "^4.0.0-beta.3"
+    "@vue/cli-shared-utils" "^4.0.0-beta.3"
     babel-loader "^8.0.6"
     webpack ">=4 < 4.29"
 
@@ -1814,10 +1794,10 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.2":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.2.tgz#7d1a8583127bf0c1e66b6021c52ee0c8da0d7ced"
-  integrity sha512-4bc7/x77YeblpbMidjusxcCSZCtvdqbFal1k7rCLnLRXTVRYC9Q2YGXGj9AKgb5ZkH2nSO5/ZWXo/I5R3EaKuA==
+"@vue/cli-shared-utils@^4.0.0-beta.2", "@vue/cli-shared-utils@^4.0.0-beta.3":
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.3.tgz#a49e63b12c49bd8c2e2b2793807c8d2db6862d33"
+  integrity sha512-Mjj+8SlAQd7wq0NbFDjIZmJMUAM3vcLwD65boz9iq/hvb9NyqlP0yPKlITgybKaZE/25zn/r8gF9adgsrn3YAg==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
