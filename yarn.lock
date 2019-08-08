@@ -1665,11 +1665,11 @@
     yorkie "^2.0.0"
 
 "@vue/cli-plugin-pwa@@next":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-4.0.0-beta.2.tgz#11a8cadf5e869b4c8d835aca8979cfc806fa9b94"
-  integrity sha512-V8CkPzWrFsn1xzFeZKNH36KeBZHdNqfwpOIWujMlSn6OJr0zWeoVoFPkPX/CWtv7iTGMi1ixJUr4+ont31dvoQ==
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-4.0.0-beta.3.tgz#aece5add607ce99e3599b5a6f905158d66142a42"
+  integrity sha512-w3+bmt/2Wm5yjScShldrzl7Vz+jZR1W6ufbMQgfgUMEzdfQ8YHmcAg+ozRlv5GV8MuskmVVwaLzM5ggoL9ut3g==
   dependencies:
-    "@vue/cli-shared-utils" "^4.0.0-beta.2"
+    "@vue/cli-shared-utils" "^4.0.0-beta.3"
     webpack ">=4 < 4.29"
     workbox-webpack-plugin "^4.3.1"
 
@@ -1814,10 +1814,10 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.2":
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.2.tgz#7d1a8583127bf0c1e66b6021c52ee0c8da0d7ced"
-  integrity sha512-4bc7/x77YeblpbMidjusxcCSZCtvdqbFal1k7rCLnLRXTVRYC9Q2YGXGj9AKgb5ZkH2nSO5/ZWXo/I5R3EaKuA==
+"@vue/cli-shared-utils@^4.0.0-beta.2", "@vue/cli-shared-utils@^4.0.0-beta.3":
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.3.tgz#a49e63b12c49bd8c2e2b2793807c8d2db6862d33"
+  integrity sha512-Mjj+8SlAQd7wq0NbFDjIZmJMUAM3vcLwD65boz9iq/hvb9NyqlP0yPKlITgybKaZE/25zn/r8gF9adgsrn3YAg==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
