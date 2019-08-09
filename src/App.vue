@@ -49,38 +49,38 @@
         <section class="app-departures">
           <header class="section-header">
             <h4 class="section-header--label">
-              <IconRecord
-                v-if="isLive"
-                class="app-departures--live"
-                width="16"
-                height="16"
-              />Departures
+              Departures
             </h4>
-            <h4 class="section-header--timestamp">
-              Updated {{ lastUpdate }} ago
-            </h4>
+            <div v-if="isLive" class="section-header--live">
+              <IconRecord width="12" height="12" />LIVE
+            </div>
           </header>
-          <ul v-if="!isEmpty(departures)" class="app-departures--timetable">
-            <li
-              v-for="tram in departures"
-              :key="tram.id"
-              class="timetable-item"
-            >
-              <div class="timetable-item--destination">
-                {{ tram.destination }}
-              </div>
-              <div class="timetable-item--info">
-                <span class="timetable-item--carriages">{{
-                  tram.carriages
-                }}</span>
-                <span
-                  class="timetable-item--wait"
-                  :class="{ near: tram.wait <= 5 || tram.wait === null }"
-                  >{{ tram.wait ? `${tram.wait} min` : 'Due now' }}</span
-                >
-              </div>
-            </li>
-          </ul>
+          <div v-if="!isEmpty(departures)">
+            <ul class="app-departures--timetable">
+              <li
+                v-for="tram in departures"
+                :key="tram.id"
+                class="timetable-item"
+              >
+                <div class="timetable-item--destination">
+                  {{ tram.destination }}
+                </div>
+                <div class="timetable-item--info">
+                  <span class="timetable-item--carriages">{{
+                    tram.carriages
+                  }}</span>
+                  <span
+                    class="timetable-item--wait"
+                    :class="{ near: tram.wait <= 5 || tram.wait === null }"
+                    >{{ tram.wait ? `${tram.wait} min` : 'Due now' }}</span
+                  >
+                </div>
+              </li>
+            </ul>
+            <p class="app-departures--timestamp">
+              Updated {{ lastUpdate }} ago
+            </p>
+          </div>
           <p v-else>There are currently no more trams available.</p>
           <p v-if="nearestStop.messageBoard" class="app-notice">
             {{ nearestStop.messageBoard }}
@@ -125,7 +125,7 @@ import AppIcon from './public/app-icon.svg';
 import IconRecord from './public/record.svg';
 import LocationIcon from './public/location.svg';
 import TfgmIcon from './public/tfgm-icon.svg';
-import { formatDistanceStrict } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 export default {
   name: 'Tramspotter',
@@ -159,8 +159,7 @@ export default {
     },
     lastUpdate: function() {
       const timestamp = this.$store.getters.getTimestamp;
-      return formatDistanceStrict(this.now, timestamp, {
-        addSuffix: true,
+      return formatDistance(this.now, timestamp, {
         unit: 'minute',
         roundingMethod: 'floor'
       });
@@ -198,7 +197,7 @@ export default {
   },
   methods: {
     isEmpty,
-    formatDistanceStrict,
+    formatDistance,
     getData: ({ data }) => data,
     getNearestStop: async function() {
       try {
@@ -295,6 +294,7 @@ export default {
     --pill-color-text--special: #373737;
 
     --text-color: #dedede;
+    --text-color-dimmed: #cacaca;
 
     --notice-color-bg: #111;
     --notice-color-text: #dedede;
@@ -492,6 +492,12 @@ img {
     margin: 0.5rem 0 1rem;
     padding: 0;
   }
+
+  &--timestamp {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+  }
 }
 
 .timetable-item {
@@ -541,8 +547,10 @@ img {
 .section-header {
   display: flex;
   justify-content: space-between;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   border-bottom: 1px solid var(--header-color-border);
+  padding-bottom: 0.25rem;
+  color: var(--text-color-dimmed);
 
   &--label {
     font-weight: 500;
@@ -550,16 +558,28 @@ img {
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
+    line-height: 2;
   }
-}
 
-.app-departures--live {
-  display: inline-block;
-  line-height: 1;
-  margin-right: 0.25rem;
-  margin-bottom: 1px;
-  fill: var(--color-red);
-  animation: 1s ease-in-out infinite alternate breathe;
+  &--live {
+    display: flex;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    padding: 0.125rem 0.33rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: 1s ease-in-out infinite alternate breathe;
+    line-height: 1.5;
+    text-transform: uppercase;
+    align-items: center;
+
+    svg {
+      fill: var(--color-red);
+      display: inline-block;
+      margin-right: 0.125rem;
+    }
+  }
 }
 
 @keyframes breathe {
