@@ -5,7 +5,7 @@ import toCamel from '../utilities/toCamel';
 import compileDepartureData from '../utilities/compileDepartureData';
 import { MIN_LAT, MIN_LNG, MAX_LAT, MAX_LNG, TAPI_QUERY } from '../constants';
 
-bugsnag.register({
+const bugsnagClient = bugsnag({
   apiKey: process.env.VUE_APP_BUGSNAG_ID,
   appVersion: process.env.VUE_APP_VERSION,
   appType: 'client',
@@ -29,7 +29,11 @@ function findNearestStop({ latitude, longitude }) {
       }
     })
     .then(response => toCamel(response.data.member.slice(0, 2)))
-    .catch(error => console.error(error));
+    .catch(error =>
+      bugsnagClient.notify(new Error(error), {
+        statusCode: 500
+      })
+    );
 }
 
 function fetchSingleStop(atcoCode) {
@@ -45,7 +49,7 @@ function fetchSingleStop(atcoCode) {
     })
     .then(response => toCamel(response.data.value))
     .catch(error =>
-      bugsnag.notify(new Error(error), {
+      bugsnagClient.notify(new Error(error), {
         statusCode: 500
       })
     );
@@ -84,7 +88,7 @@ export async function handler(event, context, callback) {
       body: JSON.stringify(departureData)
     });
   } catch (error) {
-    callback(bugsnag.notify(new Error(error)), {
+    callback(bugsnagClient.notify(new Error(error)), {
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json'

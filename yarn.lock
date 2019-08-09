@@ -1794,7 +1794,7 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.2", "@vue/cli-shared-utils@^4.0.0-beta.3":
+"@vue/cli-shared-utils@^4.0.0-beta.3":
   version "4.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.3.tgz#a49e63b12c49bd8c2e2b2793807c8d2db6862d33"
   integrity sha512-Mjj+8SlAQd7wq0NbFDjIZmJMUAM3vcLwD65boz9iq/hvb9NyqlP0yPKlITgybKaZE/25zn/r8gF9adgsrn3YAg==
