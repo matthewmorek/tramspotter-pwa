@@ -1,16 +1,8 @@
-import bugsnag from '@bugsnag/js';
 import axios from 'axios';
 import union from 'lodash/fp/union';
 import toCamel from '../utilities/toCamel';
 import compileDepartureData from '../utilities/compileDepartureData';
 import { MIN_LAT, MIN_LNG, MAX_LAT, MAX_LNG, TAPI_QUERY } from '../constants';
-
-const bugsnagClient = bugsnag({
-  apiKey: process.env.VUE_APP_BUGSNAG_ID,
-  appVersion: process.env.VUE_APP_VERSION,
-  appType: 'client',
-  collectUserIp: false
-});
 
 function findNearestStop({ latitude, longitude }) {
   return axios
@@ -29,11 +21,7 @@ function findNearestStop({ latitude, longitude }) {
       }
     })
     .then(response => toCamel(response.data.member.slice(0, 2)))
-    .catch(error =>
-      bugsnagClient.notify(new Error(error), {
-        statusCode: 500
-      })
-    );
+    .catch(error => console.error(new Error(error)));
 }
 
 function fetchSingleStop(atcoCode) {
@@ -48,11 +36,7 @@ function fetchSingleStop(atcoCode) {
       }
     })
     .then(response => toCamel(response.data.value))
-    .catch(error =>
-      bugsnagClient.notify(new Error(error), {
-        statusCode: 500
-      })
-    );
+    .catch(error => console.error(new Error(error)));
 }
 
 // TODO: Investigate why ES6 async function export doesn't return anything without a callback
@@ -88,7 +72,7 @@ export async function handler(event, context, callback) {
       body: JSON.stringify(departureData)
     });
   } catch (error) {
-    callback(bugsnagClient.notify(new Error(error)), {
+    callback(console.error(new Error(error)), {
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json'
