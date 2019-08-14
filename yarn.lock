@@ -1001,10 +1001,10 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/plugin-vue@^6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-vue/-/plugin-vue-6.3.0.tgz#c33d25dcce19407a4a82ccfdc4cb6dd2fb89b272"
-  integrity sha512-SQW7oSw3Li2pCDRXaR9Xi767/aDej1+CZUhrqndhVVoGn27htKdqaMpQL+qnxiFt9WAyI6u4oFDjRsl5nIfOGw==
+"@bugsnag/plugin-vue@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-vue/-/plugin-vue-6.4.0.tgz#a3610cfcaee0f1d6af45efcdb0828a147e9abb60"
+  integrity sha512-LW3pLG7oFfbsjEF2HMs9GaLiNMHQe6Iutbupf/Ay0/1QkBM40S9wd/aZSw1d35yT8OH4EF0PV+s0fe/DbxLnWw==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
