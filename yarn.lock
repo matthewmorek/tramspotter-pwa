@@ -1636,12 +1636,12 @@
     yorkie "^2.0.0"
 
 "@vue/cli-plugin-pwa@@next":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-4.0.0-beta.3.tgz#aece5add607ce99e3599b5a6f905158d66142a42"
-  integrity sha512-w3+bmt/2Wm5yjScShldrzl7Vz+jZR1W6ufbMQgfgUMEzdfQ8YHmcAg+ozRlv5GV8MuskmVVwaLzM5ggoL9ut3g==
+  version "4.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-4.0.0-rc.0.tgz#0a9b94f1a4031e29798b86681369b4fb460a4ad7"
+  integrity sha512-+KRikk1PQfoCLrpGyniJa3lSGxorBGAD1UWdaOlPx1sh7B5mxjXL431NOxEM3h8X/dViOKBGx4DIofBWuOe4qQ==
   dependencies:
-    "@vue/cli-shared-utils" "^4.0.0-beta.3"
-    webpack ">=4 < 4.29"
+    "@vue/cli-shared-utils" "^4.0.0-rc.0"
+    webpack "^4.0.0"
     workbox-webpack-plugin "^4.3.1"
 
 "@vue/cli-service@@next":
