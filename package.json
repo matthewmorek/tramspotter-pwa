@@ -49,7 +49,7 @@
     "lint-staged": "^9.2.5",
     "nock": "^10.0.6",
     "node-sass": "^4.12.0",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^8.0.0",
     "vue-cli-plugin-netlify-lambda": "^0.1.1",
     "vue-svg-loader": "^0.12.0",
     "vue-template-compiler": "^2.6.10"
