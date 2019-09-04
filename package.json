@@ -47,7 +47,7 @@
     "install-peers": "^1.0.3",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
-    "nock": "^10.0.6",
+    "nock": "^11.3.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.3.1",
     "vue-cli-plugin-netlify-lambda": "^0.1.1",
