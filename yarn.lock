@@ -1625,11 +1625,11 @@
     webpack ">=4 < 4.29"
 
 "@vue/cli-plugin-eslint@@next":
-  version "4.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.0.0-rc.0.tgz#7da356e7819f1e64262faa3fdca495838d6bf4d2"
-  integrity sha512-UXnm2704S+JxbEYsUSKA7YRoPR0DUmaIp+HvnttcvuuKL6tqjNEf7rGf4Qvn9zElJB+9mYEAZVbtQ+YUUj67cQ==
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.0.0-rc.1.tgz#02a14a9716f25fd42961e92f118f6fd32f32767c"
+  integrity sha512-Wggw/kfKUsFqOCx9wBL9SZ1af+Tf+cwRwk8fxQKhhQAZnLexp7Uq+N02wdIRMs2dQYIiSrUMomhAHxT+kKEYCw==
   dependencies:
-    "@vue/cli-shared-utils" "^4.0.0-rc.0"
+    "@vue/cli-shared-utils" "^4.0.0-rc.1"
     eslint-loader "^2.1.2"
     globby "^9.2.0"
     webpack "^4.0.0"
@@ -1785,10 +1785,10 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.3", "@vue/cli-shared-utils@^4.0.0-rc.0":
-  version "4.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-rc.0.tgz#f6e276d8f6c2f3f7dc5fb98c8fb8838f46cfd647"
-  integrity sha512-R6PJJ9cD7CrNj5UxApYa/MJ3NajnN02euQXmZDrhDw2wqCM+DllCZ4gK9fsPS/iXjWWVxTgy0VTmaskzA+bQDw==
+"@vue/cli-shared-utils@^4.0.0-rc.0", "@vue/cli-shared-utils@^4.0.0-rc.1":
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-rc.1.tgz#77c3f001a058e87d0d9c71ad0c6f72b3fce47ab5"
+  integrity sha512-EYBs3hYaFxgHIjKzVfK2NYDXt+B9Zae18cyr+OuYOH5FreqrRo+sWap84l3XteR031HSbBrg3QO3Ls/FrZBACA==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
