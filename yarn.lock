@@ -1597,10 +1597,10 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-3.10.0.tgz#9266c96fb2bffd35ca96edd8e1e1284ca8c00c94"
   integrity sha512-DQCY6WIl1UN1nOuPirW63CcYWSBdIn6s4zdGfFodCfV+0PAEXGcrfNStygG+IKUsydQaJGTneV7SFxcS+9gyzA==
 
-"@vue/cli-overlay@^4.0.0-rc.0":
-  version "4.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.0.0-rc.0.tgz#0ee4c77d1a8338d91ac35e40edc1f3b768884391"
-  integrity sha512-r/O2liPwGryLvQccJ3/8+L8VrOeAOBjXH7uupUgQuI/FDELvkZMXFVebQsGXG2Pw2ej/x4jOzm88ClFTFx3hew==
+"@vue/cli-overlay@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.0.0-rc.2.tgz#07631f935c5ea2d34fc3654c25c31cd74c8f6d26"
+  integrity sha512-TDnOJTTpiJPcdI6YHt5UN9wfd9Iduuv0wDj78Uxl1A5U8SRXuaR6Ut7SMWLsWQwag1WRcA26NGixWQZWDBIxVg==
 
 "@vue/cli-plugin-babel@@next":
   version "4.0.0-rc.0"
@@ -1645,14 +1645,14 @@
     workbox-webpack-plugin "^4.3.1"
 
 "@vue/cli-service@@next":
-  version "4.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.0.0-rc.0.tgz#c2114301247d093699f74502c0fe7ad5e72b8e71"
-  integrity sha512-8pJGZQKzsXcyNPiA0x9U4KvQwns2t72GqX/VXkzwtPe2RqFAWw1SGaaH4baOzCLlxeG1ms0ZrKfrDVT0CzcHqg==
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.0.0-rc.2.tgz#8aaa1bd77801292d2c2e38bda3985521487fbdf2"
+  integrity sha512-9/6Tf2yFhom2YFTUb08Gh+031dH8ObOqi65F8jh80Xya6WSOywqr6BAJe+HTKemnLxNo7yAuMp4fJhnVI/sGhg==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "^1.0.5"
     "@soda/friendly-errors-webpack-plugin" "^1.7.1"
-    "@vue/cli-overlay" "^4.0.0-rc.0"
-    "@vue/cli-shared-utils" "^4.0.0-rc.0"
+    "@vue/cli-overlay" "^4.0.0-rc.2"
+    "@vue/cli-shared-utils" "^4.0.0-rc.2"
     "@vue/component-compiler-utils" "^3.0.0"
     "@vue/preload-webpack-plugin" "^1.1.0"
     "@vue/web-component-wrapper" "^1.2.0"
@@ -1785,10 +1785,10 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.3", "@vue/cli-shared-utils@^4.0.0-rc.0":
-  version "4.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-rc.0.tgz#f6e276d8f6c2f3f7dc5fb98c8fb8838f46cfd647"
-  integrity sha512-R6PJJ9cD7CrNj5UxApYa/MJ3NajnN02euQXmZDrhDw2wqCM+DllCZ4gK9fsPS/iXjWWVxTgy0VTmaskzA+bQDw==
+"@vue/cli-shared-utils@^4.0.0-rc.0", "@vue/cli-shared-utils@^4.0.0-rc.2":
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-rc.2.tgz#0380b15725c5a032bff10c3ba06e0c44741a10f6"
+  integrity sha512-9WjEEp26TK2/73FHEXPFKTBu6odt3vMyLi69DsDztgo/HbOgHbCc1jqbtX6ALPiPAanq1AbyUCbZtVsaKy/sPQ==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
