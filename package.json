@@ -11,7 +11,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
+    "@babel/runtime": "^7.6.0",
     "@bugsnag/js": "^6.4.0",
     "@bugsnag/plugin-vue": "^6.4.0",
     "axios": "^0.19.0",
