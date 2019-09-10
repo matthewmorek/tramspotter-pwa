@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .app-footer--notice {
   display: flex;
   align-items: center;

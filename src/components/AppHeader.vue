@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .app-header {
   display: flex;
   align-items: center;

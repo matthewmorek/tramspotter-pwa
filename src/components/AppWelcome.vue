@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .app-main {
   display: flex;
   flex-direction: column;

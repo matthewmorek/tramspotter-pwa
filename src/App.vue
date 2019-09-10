@@ -240,10 +240,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '~reset-css/sass/reset';
-@import '~tachyons-sass/tachyons.scss';
-
+<style lang="postcss">
 :root {
   --font-family: 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
