@@ -48,9 +48,7 @@
         </header>
         <section class="app-departures">
           <header class="section-header">
-            <h4 class="section-header--label">
-              Departures
-            </h4>
+            <h4 class="section-header--label">Departures</h4>
             <div v-if="isLive" class="section-header--live">
               <IconRecord width="12" height="12" />LIVE
             </div>
@@ -66,13 +64,15 @@
                   {{ tram.destination }}
                 </div>
                 <div class="timetable-item--info">
-                  <span class="timetable-item--carriages">{{
-                    tram.carriages
-                  }}</span>
+                  <span class="timetable-item--carriages">
+                    {{ tram.carriages }}
+                  </span>
                   <span
                     class="timetable-item--wait"
                     :class="{ near: tram.wait <= 5 || tram.wait === null }"
-                    >{{ tram.wait ? `${tram.wait} min` : 'Due now' }}</span
+                    >{{
+                      tram.wait > 0 ? `${tram.wait} min` : tram.status
+                    }}</span
                   >
                 </div>
               </li>
