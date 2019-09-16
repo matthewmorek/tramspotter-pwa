@@ -3,6 +3,20 @@ import uuidv4 from 'uuid/v4';
 import isEmpty from 'lodash/fp/isEmpty';
 import uniqBy from 'lodash/fp/uniqBy';
 
+export const statusPriority = {
+  Due: 0,
+  Arrived: 1,
+  Departing: 2
+};
+
+export const hasPriority = (arrivalA, arrivalB) => {
+  if (arrivalA.wait === arrivalB.wait) {
+    return statusPriority[arrivalA.status] < statusPriority[arrivalB.status];
+  }
+
+  return arrivalA.wait > arrivalB.wait;
+};
+
 export default function(stops) {
   const filteredStops = uniqBy('atcoCode', stops);
 
@@ -24,16 +38,18 @@ export default function(stops) {
         carriages,
         destination,
         status,
-        wait: wait > 0 ? Number(wait) : null
+        wait: Number(wait)
       });
 
-      if (!isEmpty(newArrival)) {
+      if (!isEmpty(newArrival.destination || newArrival.status)) {
         newArrival['id'] = uuidv4();
         updatedArrivals.push(newArrival);
       }
     }
 
-    updatedArrivals.sort((arrivalA, arrivalB) => arrivalA.wait > arrivalB.wait);
+    updatedArrivals.sort((arrivalA, arrivalB) =>
+      hasPriority(arrivalA, arrivalB)
+    );
 
     const {
       distance,
