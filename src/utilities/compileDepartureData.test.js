@@ -13,39 +13,52 @@ describe('Utility method compileDepartureData', () => {
       arrivals: [
         {
           carriages: 'Single',
-          destination: 'Rochdale Town Centre',
+          destination: 'Altrincham',
           id: expect.any(String),
-          status: 'Due',
-          wait: 1
+          status: 'Departing',
+          wait: 0
+        },
+        {
+          carriages: 'Double',
+          destination: 'Old Trafford',
+          id: expect.any(String),
+          status: 'Arrived',
+          wait: 0
         },
         {
           carriages: 'Single',
-          destination: 'Shaw and Crompton',
+          destination: 'Piccadilly',
           id: expect.any(String),
           status: 'Due',
-          wait: 7
+          wait: 9
         },
         {
-          carriages: 'Single',
-          destination: 'Rochdale Town Centre',
+          carriages: 'Double',
+          destination: 'Altrincham',
           id: expect.any(String),
           status: 'Due',
           wait: 14
         },
         {
           carriages: 'Single',
-          destination: 'Shaw and Crompton',
+          destination: 'Piccadilly',
           id: expect.any(String),
           status: 'Due',
-          wait: 20
+          wait: 21
+        },
+        {
+          carriages: 'Single',
+          destination: 'Altrincham',
+          id: expect.any(String),
+          status: 'Due',
+          wait: 25
         }
       ],
-      direction: 'Incoming',
-      lastUpdated: '2019-07-05T16:00:44Z',
-      line: 'South Manchester',
-      messageBoard:
-        'On 6th & 7th July planned improvement works are taking place on the Bury line as part of the Trafford Park line project. For more information please visit www.tfgm.com or Tweet us at @MCRMetrolink',
-      stationLocation: 'East Didsbury',
+      direction: 'Outgoing',
+      lastUpdated: '2019-09-16T20:19:38Z',
+      line: 'Altrincham',
+      messageBoard: expect.any(String),
+      stationLocation: 'Timperley',
       timestamp: expect.any(Number)
     };
 
