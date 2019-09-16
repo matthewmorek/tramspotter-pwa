@@ -114,8 +114,7 @@ export default new Vuex.Store({
       }
 
       const { arrivals } = state.compiled;
-      let departures = arrivals.filter(tram => tram.wait !== 0);
-      return departures;
+      return arrivals;
     },
     getTimestamp: state => toDate(state.compiled.timestamp)
   },
