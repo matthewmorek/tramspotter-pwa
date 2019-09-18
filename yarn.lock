@@ -1663,6 +1663,19 @@
     react-lifecycles-compat "^3.0.4"
     react-select "^3.0.0"
 
+"@storybook/addon-storyshots@^5.2.1":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-5.2.1.tgz#6485490b3c0fef81fcee312aa77d2414adb44dec"
+  integrity sha512-+LLjzu5zfzIfiLubV9OLjFY71yZxbbXTiLJTFynRpDZE5er00HXnxwsEqM8N2vYhkJRv0SXYGunNQkPU48Kbyw==
+  dependencies:
+    "@storybook/addons" "5.2.1"
+    core-js "^3.0.1"
+    glob "^7.1.3"
+    global "^4.3.2"
+    jest-specific-snapshot "^2.0.0"
+    read-pkg-up "^6.0.0"
+    regenerator-runtime "^0.12.1"
+
 "@storybook/addon-viewport@^5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.2.1.tgz#3cc8ec9f2ee1dd0a474cb8dd47ecee8428defe77"
@@ -2300,6 +2313,11 @@
     "@types/node" "*"
     "@types/unist" "*"
     "@types/vfile-message" "*"
+
+"@types/webpack-env@^1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.14.0.tgz#8edfc5f8e6eae20eeed3ca0d02974ed4ee5e4efc"
+  integrity sha512-Fv+0gYJzE/czLoRKq+gnXWr4yBpPM3tO3C8pDLFwqVKlMICQUq5OsxwwFZYDaVr7+L6mgNDp16iOcJHEz3J5RQ==
 
 "@types/ws@^6.0.0":
   version "6.0.1"
@@ -4236,7 +4254,7 @@ babel-plugin-jsx-v-model@^2.0.1:
     html-tags "^2.0.0"
     svg-tags "^1.0.0"
 
-babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.5:
+babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.5, babel-plugin-macros@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.6.1.tgz#41f7ead616fc36f6a93180e89697f69f51671181"
   integrity sha512-6W2nwiXme6j1n2erPOnmRiWfObUhWH7Qw1LMi9XZy8cj+KtESu3T6asZvtk5bMQQjX8te35o7CFueiSdL/2NmQ==
@@ -4657,6 +4675,13 @@ babel-plugin-transform-remove-undefined@^0.5.0:
   integrity sha512-+M7fJYFaEE/M9CXa0/IRkDbiV3wRELzA1kKQFCJ4ifhrzLKn/9VCCgj9OFmYWwBd8IB48YdgPkHYtbYq+4vtHQ==
   dependencies:
     babel-helper-evaluate-path "^0.5.0"
+
+babel-plugin-transform-runtime@6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  integrity sha1-iEkNRGUC6puOfvsP4J7E2ZR5se4=
+  dependencies:
+    babel-runtime "^6.22.0"
 
 babel-plugin-transform-simplify-comparison-operators@^6.9.4:
   version "6.9.4"
@@ -8153,7 +8178,7 @@ finalhandler@~1.1.2:
     statuses "~1.5.0"
     unpipe "~1.0.0"
 
-find-babel-config@^1.1.0:
+find-babel-config@1.2.0, find-babel-config@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/find-babel-config/-/find-babel-config-1.2.0.tgz#a9b7b317eb5b9860cda9d54740a8c8337a2283a2"
   integrity sha512-jB2CHJeqy6a820ssiqwrKMeyC6nNdmrcgkKWJWmpoxpE8RKciYJXCcXRq1h2AzCo5I5BJeN2tkGEO3hLTuePRA==
@@ -10823,7 +10848,7 @@ jest-snapshot@^23.6.0:
     pretty-format "^23.6.0"
     semver "^5.5.0"
 
-jest-snapshot@^24.9.0:
+jest-snapshot@^24.1.0, jest-snapshot@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-24.9.0.tgz#ec8e9ca4f2ec0c5c87ae8f925cf97497b0e951ba"
   integrity sha512-uI/rszGSs73xCM0l+up7O7a40o90cnrk429LOiK3aeTvfC0HHmldbd81/B7Ix81KSFe1lwkbl7GnBGG4UfuDew==
@@ -10841,6 +10866,13 @@ jest-snapshot@^24.9.0:
     natural-compare "^1.4.0"
     pretty-format "^24.9.0"
     semver "^6.2.0"
+
+jest-specific-snapshot@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jest-specific-snapshot/-/jest-specific-snapshot-2.0.0.tgz#425fe524b25df154aa39f97fa6fe9726faaac273"
+  integrity sha512-aXaNqBg/svwEpY5iQEzEHc5I85cUBKgfeVka9KmpznxLnatpjiqjr7QLb/BYNYlsrZjZzgRHTjQJ+Svx+dbdvg==
+  dependencies:
+    jest-snapshot "^24.1.0"
 
 jest-util@^23.4.0:
   version "23.4.0"
@@ -10895,6 +10927,16 @@ jest-validate@^24.9.0:
     jest-get-type "^24.9.0"
     leven "^3.1.0"
     pretty-format "^24.9.0"
+
+jest-vue-preprocessor@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/jest-vue-preprocessor/-/jest-vue-preprocessor-1.5.0.tgz#242b1484e6fc832c15a95f28d108e022ee9f1e08"
+  integrity sha512-2O0pewvL8urvjjkDq/ZorvFpk3vKtXFawfJ3nVlv38o7V3j4YY0nAWh+7p/2yYLZrBOg2aDTiQTwxCRt4qZNWA==
+  dependencies:
+    babel-plugin-transform-runtime "6.23.0"
+    find-babel-config "1.2.0"
+    typescript "2.7.2"
+    vue-property-decorator "6.1.0"
 
 jest-watcher@^23.4.0:
   version "23.4.0"
@@ -14882,6 +14924,15 @@ read-pkg-up@^4.0.0:
     find-up "^3.0.0"
     read-pkg "^3.0.0"
 
+read-pkg-up@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-6.0.0.tgz#da75ce72762f2fa1f20c5a40d4dd80c77db969e3"
+  integrity sha512-odtTvLl+EXo1eTsMnoUHRmg/XmXdTkwXVxy4VFE9Kp6cCq7b3l7QMdBndND3eAFzrbSAXC/WCUOQQ9rLjifKZw==
+  dependencies:
+    find-up "^4.0.0"
+    read-pkg "^5.1.1"
+    type-fest "^0.5.0"
+
 read-pkg@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
@@ -14989,6 +15040,11 @@ redent@^2.0.0:
   dependencies:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
+
+reflect-metadata@^0.1.10:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 refractor@^2.4.1:
   version "2.10.0"
@@ -15277,6 +15333,13 @@ request@^2.87.0, request@^2.88.0:
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+require-context.macro@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/require-context.macro/-/require-context.macro-1.2.1.tgz#c54ef83df60887ce5e98d541aa1a9d35166940cf"
+  integrity sha512-a7vR6dOQvjwmytjkuFNFzXQ23rjucXgqHnNaHp89LPOcDOS7+DccG1VexsybREOusPGFkJBQ/S/KcpoaFH5Kcw==
+  dependencies:
+    "@types/webpack-env" "^1.14.0"
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -17006,6 +17069,11 @@ type-fest@^0.3.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
   integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
 
+type-fest@^0.5.0:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.5.2.tgz#d6ef42a0356c6cd45f49485c3b6281fc148e48a2"
+  integrity sha512-DWkS49EQKVX//Tbupb9TFa19c7+MK1XmzkrZUR8TAktmE/DizXoaoJV6TZ/tSIPXipqNiRI6CyAe7x69Jb6RSw==
+
 type-fest@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.6.0.tgz#8d2a2370d3df886eb5c90ada1c5bf6188acf838b"
@@ -17028,6 +17096,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
+  integrity sha512-p5TCYZDAO0m4G344hD+wx/LATebLWZNkkh2asWUFqSsD2OrDNhbAHuSjobrmsUmdzjJjEeZVU9g1h3O6vpstnw==
 
 typescript@^3.4.5:
   version "3.5.2"
@@ -17431,6 +17504,11 @@ vue-browser-geolocation@^1.8.0:
   dependencies:
     vue "^2.0.1"
 
+vue-class-component@^6.1.0:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.3.2.tgz#e6037e84d1df2af3bde4f455e50ca1b9eec02be6"
+  integrity sha512-cH208IoM+jgZyEf/g7mnFyofwPDJTM/QvBNhYMjqGB8fCsRyTf68rH2ISw/G20tJv+5mIThQ3upKwoL4jLTr1A==
+
 vue-cli-plugin-apollo@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-apollo/-/vue-cli-plugin-apollo-0.20.0.tgz#0539ec96d8502cbe2fd9ab6a431f5b989145e396"
@@ -17517,6 +17595,14 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-property-decorator@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-6.1.0.tgz#ef97bcc1bfe794ec060133ca04a5aca02e808828"
+  integrity sha512-NM4PYPOkOIO7SFtWiQqVrbp+ORzd7CJXcIz0X710PNW9pxGfbil0/x/ULFympzIUoHXBKN2dqoOQzh6oeMzpTQ==
+  dependencies:
+    reflect-metadata "^0.1.10"
+    vue-class-component "^6.1.0"
 
 vue-sfc-descriptor-to-string@^1.0.0:
   version "1.0.0"
