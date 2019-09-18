@@ -8,7 +8,7 @@ This project requires `netlify-cli` to be present in order to use Nelitfy Dev to
 
 ```
 yarn global add netlify-cli
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -26,13 +26,19 @@ netlify deploy
 ### Run your tests
 
 ```
-yarn run test
+yarn test
 ```
 
 ### Lints and fixes files
 
 ```
-yarn run lint
+yarn lint
+```
+
+### Runs Storybook
+
+```
+yarn storybook
 ```
 
 ### Customize configuration
