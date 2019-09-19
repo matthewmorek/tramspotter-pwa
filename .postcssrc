@@ -8,6 +8,7 @@
         "preserve": true
       }
     },
-    "autoprefixer": {}
+    "autoprefixer": {},
+    "cssnano": {}
   }
 }
