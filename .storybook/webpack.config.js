@@ -10,7 +10,7 @@ module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.css$/,
     loaders: ['style-loader', 'css-loader', 'postcss-loader'],
-    include: path.resolve(__dirname, '../src/'),
+    include: path.resolve(__dirname, '../src/')
   });
 
   return config;
