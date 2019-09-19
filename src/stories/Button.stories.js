@@ -2,7 +2,12 @@
 import { storiesOf } from '@storybook/vue';
 import Button from '../components/Button';
 
-storiesOf('Components/Button', module).add('default', () => ({
-  components: { Button },
-  template: '<button class="btn-cta">Update</my-button>'
-}));
+storiesOf('Elements|Button', module)
+  .add('default', () => ({
+    components: { Button },
+    template: '<Button>Update</Button>'
+  }))
+  .add('loading', () => ({
+    components: { Button },
+    template: '<Button :isLoading="true">Update</Button>'
+  }));

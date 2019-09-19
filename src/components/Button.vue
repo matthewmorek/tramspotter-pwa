@@ -1,17 +1,29 @@
 <template>
-  <button class="btn-cta">
-    <slot></slot>
+  <button :disabled="isLoading" :class="['btn-cta', { 'btn-flat': isLoading }]">
+    <bouncing-balls v-if="isLoading" />
+    <slot v-else></slot>
   </button>
 </template>
 
 <script>
-export default {};
+import BouncingBalls from './BouncingBalls';
+export default {
+  components: {
+    BouncingBalls
+  },
+  props: {
+    isLoading: {
+      type: Boolean,
+      required: false
+    }
+  }
+};
 </script>
 
 <style lang="postcss">
 .btn-cta {
   appearance: none;
-  background: var(--btn-color-bg);
+  background-color: var(--btn-color-bg);
   border: 1px solid var(--btn-color-border);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
   border-radius: 4rem;
@@ -35,6 +47,13 @@ export default {};
     border-color: var(--btn-color-border--disabled);
     box-shadow: none;
     color: var(--btn-color-text--disabled);
+  }
+}
+
+.btn-flat {
+  .double-bounce1,
+  .double-bounce2 {
+    background-color: var(--color-blue);
   }
 }
 </style>
