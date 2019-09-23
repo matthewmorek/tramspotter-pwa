@@ -54,7 +54,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "install-peers": "^1.0.3",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5",
+    "lint-staged": "^9.3.0",
     "nock": "^11.3.4",
     "postcss-loader": "^3.0.0",
     "vue-cli-plugin-netlify-lambda": "^0.1.1",
