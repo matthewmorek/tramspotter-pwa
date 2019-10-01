@@ -1,20 +1,26 @@
 <template>
-  <button :disabled="isLoading" :class="['btn-cta', { 'btn-flat': isLoading }]">
+  <app-button
+    :disabled="isLoading"
+    :class="['btn-cta', { 'btn-flat': isLoading }]"
+  >
     <bouncing-balls v-if="isLoading" />
+    <!-- @slot label -->
     <slot v-else></slot>
-  </button>
+  </app-button>
 </template>
 
 <script>
 import BouncingBalls from './BouncingBalls';
 export default {
+  name: 'AppButton',
   components: {
     BouncingBalls
   },
   props: {
     isLoading: {
       type: Boolean,
-      required: false
+      required: false,
+      default: false
     }
   }
 };
