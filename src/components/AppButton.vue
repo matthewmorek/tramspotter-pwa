@@ -4,7 +4,6 @@
     :class="['btn-cta', { 'btn-flat': isLoading }]"
   >
     <bouncing-balls v-if="isLoading" />
-    <!-- @slot label -->
     <slot v-else></slot>
   </app-button>
 </template>
