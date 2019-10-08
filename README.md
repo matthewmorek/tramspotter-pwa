@@ -1,3 +1,5 @@
+![](https://github.com/matthewmorek/tramspotter/workflows/.github/workflows/workflow.yml/badge.svg)
+
 # Tramspotter
 
 Find your nearest Metrolink tram stop and check it for live departures.
