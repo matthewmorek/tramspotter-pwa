@@ -9,62 +9,25 @@ describe('Utility method compileDepartureData', () => {
   });
 
   test('Returns appropriately shaped data object', async () => {
-    const finalData = {
-      arrivals: [
-        {
-          carriages: 'Single',
-          destination: 'Altrincham',
-          id: expect.any(String),
-          status: 'Departing',
-          wait: 0
-        },
-        {
-          carriages: 'Double',
-          destination: 'Old Trafford',
-          id: expect.any(String),
-          status: 'Arrived',
-          wait: 0
-        },
-        {
-          carriages: 'Single',
-          destination: 'Piccadilly',
-          id: expect.any(String),
-          status: 'Due',
-          wait: 9
-        },
-        {
-          carriages: 'Double',
-          destination: 'Altrincham',
-          id: expect.any(String),
-          status: 'Due',
-          wait: 14
-        },
-        {
-          carriages: 'Single',
-          destination: 'Piccadilly',
-          id: expect.any(String),
-          status: 'Due',
-          wait: 21
-        },
-        {
-          carriages: 'Single',
-          destination: 'Altrincham',
-          id: expect.any(String),
-          status: 'Due',
-          wait: 25
-        }
-      ],
-      direction: 'Outgoing',
-      lastUpdated: '2019-09-16T20:19:38Z',
-      line: 'Altrincham',
-      messageBoard: expect.any(String),
-      stationLocation: 'Timperley',
-      timestamp: expect.any(Number)
-    };
+    let actual = compileDepartureData(nearbyStops);
+    expect(actual).toHaveProperty('arrivals.0.carriages', 'Double');
+    expect(actual).toHaveProperty('arrivals.0.destination', 'Old Trafford');
+    expect(actual).toHaveProperty('arrivals.0.id', expect.any(String));
+    expect(actual).toHaveProperty('arrivals.0.status', 'Arrived');
+    expect(actual).toHaveProperty('arrivals.0.wait', 0);
 
-    expect(compileDepartureData(nearbyStops)).toEqual(
-      expect.objectContaining(finalData)
-    );
+    expect(actual).toHaveProperty('arrivals.5.carriages', 'Single');
+    expect(actual).toHaveProperty('arrivals.5.destination', 'Altrincham');
+    expect(actual).toHaveProperty('arrivals.5.id', expect.any(String));
+    expect(actual).toHaveProperty('arrivals.5.status', 'Due');
+    expect(actual).toHaveProperty('arrivals.5.wait', 25);
+
+    expect(actual).toHaveProperty('direction', 'Outgoing');
+    expect(actual).toHaveProperty('lastUpdated', '2019-09-16T20:19:38Z');
+    expect(actual).toHaveProperty('line', 'Altrincham');
+    expect(actual).toHaveProperty('messageBoard', expect.any(String));
+    expect(actual).toHaveProperty('stationLocation', 'Timperley');
+    expect(actual).toHaveProperty('timestamp', expect.any(Number));
   });
 
   test('Do not return `messageBoard` when there is `<no message>`', () => {
