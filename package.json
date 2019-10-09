@@ -37,7 +37,7 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
     "@babel/runtime-corejs2": "^7.6.0",
     "@storybook/vue": "^5.2.0",
     "@vue/cli-plugin-babel": "@next",
