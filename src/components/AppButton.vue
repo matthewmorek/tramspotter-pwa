@@ -42,23 +42,20 @@ export default {
   font-family: var(--font-family);
   width: 100%;
   height: 3.125rem;
-
-  &:active {
-    box-shadow: none;
-  }
-
-  &:disabled {
-    background: var(--btn-color-bg--disabled);
-    border-color: var(--btn-color-border--disabled);
-    box-shadow: none;
-    color: var(--btn-color-text--disabled);
-  }
+}
+.btn-cta:active {
+  box-shadow: none;
 }
 
-.btn-flat {
-  .double-bounce1,
-  .double-bounce2 {
-    background-color: var(--color-blue);
-  }
+.btn-cta:disabled {
+  background: var(--btn-color-bg--disabled);
+  border-color: var(--btn-color-border--disabled);
+  box-shadow: none;
+  color: var(--btn-color-text--disabled);
+}
+
+.btn-flat > .double-bounce1,
+.btn-cta > .double-bounce2 {
+  background-color: var(--color-blue);
 }
 </style>
