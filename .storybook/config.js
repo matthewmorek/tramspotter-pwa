@@ -1,6 +1,7 @@
 import { configure } from '@storybook/vue';
+import requireContext from 'require-context.macro';
 
-import '../src/styles/global.css';
+import '../src/styles/storybook.css';
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../src/stories', true, /\.stories\.js$/), module);
+configure(requireContext('../src', true, /\.stories\.js$/), module);
