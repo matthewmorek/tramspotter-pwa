@@ -1,15 +1,16 @@
 <template>
-  <app-button
+  <button
     :disabled="isLoading"
     :class="['btn-cta', { 'btn-flat': isLoading }]"
+    @click="onClick"
   >
     <bouncing-balls v-if="isLoading" />
     <slot v-else></slot>
-  </app-button>
+  </button>
 </template>
 
 <script>
-import BouncingBalls from './BouncingBalls';
+import BouncingBalls from '../BouncingBalls/BouncingBalls';
 export default {
   name: 'AppButton',
   components: {
@@ -20,6 +21,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    onClick: {
+      type: Function,
+      required: false,
+      default: () => false
     }
   }
 };
