@@ -13,7 +13,7 @@
     "watch": "vue-cli-service build --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.0",
+    "@babel/runtime": "^7.7.1",
     "@bugsnag/js": "^6.4.0",
     "@bugsnag/plugin-vue": "^6.4.0",
     "autoprefixer": "^9.6.0",
