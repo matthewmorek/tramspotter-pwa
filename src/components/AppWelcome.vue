@@ -1,11 +1,11 @@
 <template>
-  <main class="app-welcome">
+  <div class="app-welcome">
     <app-icon />
     <h1 class="app-welcome--title">Tramspotter</h1>
     <p class="app-welcome--info">
       Find your nearest Metrolink tram stop and check it for live departures.
     </p>
-  </main>
+  </div>
 </template>
 
 <script>
