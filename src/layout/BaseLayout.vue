@@ -22,6 +22,8 @@ export default {};
 .app-container {
   padding: 1.5rem;
   min-height: 100%;
+  max-width: 30em;
+  margin: 0 auto;
   display: grid;
   grid-template-areas:
     'header'
