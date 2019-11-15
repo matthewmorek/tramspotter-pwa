@@ -35,5 +35,3 @@ export default {
   }
 };
 </script>
-
-<style type="postcss"></style>

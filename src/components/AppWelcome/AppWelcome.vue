@@ -35,7 +35,7 @@ export default {
   &--title {
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
   }
