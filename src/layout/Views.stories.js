@@ -2,10 +2,10 @@
 import WelcomeScreen from './WelcomeScreen';
 
 export default {
-  title: 'WelcomeScreen'
+  title: 'Views'
 };
 
-export const standard = () => ({
+export const Welcome = () => ({
   components: { WelcomeScreen },
   template: '<welcome-screen />'
 });
