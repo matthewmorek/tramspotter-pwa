@@ -28,6 +28,7 @@
     "postcss-load-config": "^2.1.0",
     "precss": "^4.0.0",
     "register-service-worker": "^1.6.2",
+    "reset-css": "^5.0.1",
     "uuid": "^3.3.3",
     "vue": "^2.6.10",
     "vue-browser-geolocation": "^1.8.0",
