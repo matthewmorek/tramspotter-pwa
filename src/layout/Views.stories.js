@@ -2,7 +2,7 @@
 import WelcomeScreen from './WelcomeScreen';
 
 export default {
-  title: 'Views'
+  title: 'Views|States'
 };
 
 export const Welcome = () => ({
