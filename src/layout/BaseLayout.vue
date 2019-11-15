@@ -1,28 +1,40 @@
 <template>
-  <main class="app-container">
-    <header class="app-header">
+  <div class="app-container">
+    <header v-if="hasHeaderSlot" class="app-header">
       <slot name="header"></slot>
     </header>
 
-    <main class="app-main">
+    <main v-if="hasDefaultSlot" class="app-main">
       <slot name="default"></slot>
     </main>
 
-    <footer class="app-footer">
+    <footer v-if="hasFooterSlot" class="app-footer">
       <slot name="footer"></slot>
     </footer>
-  </main>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    hasHeaderSlot: function() {
+      return !!this.$slots.header;
+    },
+    hasDefaultSlot: function() {
+      return !!this.$slots.default;
+    },
+    hasFooterSlot: function() {
+      return !!this.$slots.footer;
+    }
+  }
+};
 </script>
 
 <style lang="postcss">
 .app-container {
   padding: 1.5rem;
-  min-height: 100%;
-  max-width: 30em;
+  min-height: 100vh;
+  max-width: 28em;
   margin: 0 auto;
   display: grid;
   grid-template-areas:

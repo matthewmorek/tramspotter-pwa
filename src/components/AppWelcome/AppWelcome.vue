@@ -1,6 +1,8 @@
 <template>
   <div class="app-welcome">
-    <app-icon />
+    <div class="app-welcome--icon">
+      <app-icon />
+    </div>
     <h1 class="app-welcome--title">Tramspotter</h1>
     <p class="app-welcome--info">
       Find your nearest Metrolink tram stop and check it for live departures.
@@ -23,17 +25,24 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  height: 100%;
 
-.app-welcome--title {
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-}
+  &--icon {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
-.app-welcome--info {
-  font-size: 1.125rem;
-  text-align: center;
+  &--title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &--info {
+    font-size: 1.125rem;
+    text-align: center;
+  }
 }
 </style>

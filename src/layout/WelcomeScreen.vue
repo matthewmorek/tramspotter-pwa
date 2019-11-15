@@ -1,6 +1,6 @@
 <template>
   <base-layout>
-    <template #header>
+    <template #default>
       <app-welcome />
     </template>
     <template #footer>
@@ -22,7 +22,7 @@
 <script>
 import BaseLayout from './BaseLayout';
 import LocationIcon from '../public/location.svg';
-import AppWelcome from '../components/AppWelcome';
+import AppWelcome from '../components/AppWelcome/AppWelcome';
 import FooterNotice from '../components/FooterNotice';
 import AppButton from '../components/AppButton/AppButton';
 export default {
