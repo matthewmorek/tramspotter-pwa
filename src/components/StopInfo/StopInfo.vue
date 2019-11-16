@@ -1,10 +1,10 @@
 <template>
   <header class="stop-info">
     <div>
-      <app-icon />
+      <app-icon width="52" height="52" />
     </div>
     <div>
-      <h2 class="stop-info--name">{{ stopLocation }}</h2>
+      <h1 class="stop-info--name">{{ stopLocation }}</h1>
       <p class="stop-info--distance">{{ distanceToStop }} mls away</p>
     </div>
   </header>
@@ -41,7 +41,7 @@ export default {
 .stop-info--name {
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .stop-info--distance {
