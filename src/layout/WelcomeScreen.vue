@@ -12,7 +12,7 @@
           <location-icon class="app-footer-icon" />
         </template>
         <template #text>
-          A permission to access your device location is required.
+          You will be asked to temporarily share your current device location.
         </template>
       </footer-notice>
     </template>

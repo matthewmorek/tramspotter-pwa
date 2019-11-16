@@ -5,7 +5,7 @@
     </div>
     <h1 class="app-welcome--title">Tramspotter</h1>
     <p class="app-welcome--info">
-      Find your nearest Metrolink tram stop and check it for live departures.
+      Get live departures at your nearest Metrolink tram stop.
     </p>
   </div>
 </template>
@@ -43,6 +43,8 @@ export default {
   &--info {
     font-size: 1.125rem;
     text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 </style>

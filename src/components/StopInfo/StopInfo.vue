@@ -1,11 +1,11 @@
 <template>
-  <header class="app-header">
+  <header class="stop-info">
     <div>
-      <app-icon class="app-icon" />
+      <app-icon />
     </div>
     <div>
-      <h2 class="app-header--stop-name">{{ stopLocation }}</h2>
-      <p class="app-header--stop-distance">{{ distanceToStop }} mls away</p>
+      <h2 class="stop-info--name">{{ stopLocation }}</h2>
+      <p class="stop-info--distance">{{ distanceToStop }} mls away</p>
     </div>
   </header>
 </template>
@@ -33,16 +33,18 @@ export default {
 </script>
 
 <style lang="postcss">
-.app-header {
+.stop-info {
   display: flex;
   align-items: center;
 }
-.app-header--stop-name {
+
+.stop-info--name {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.4;
 }
-.app-header--stop-distance {
+
+.stop-info--distance {
   font-size: 0.875rem;
   font-weight: 400;
 }

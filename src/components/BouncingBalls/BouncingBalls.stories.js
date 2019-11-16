@@ -3,7 +3,7 @@ import Vue from 'vue';
 import BouncingBalls from './BouncingBalls';
 
 export default {
-  title: 'BouncingBalls'
+  title: 'Elements|BouncingBalls'
 };
 
 export const standard = () => ({

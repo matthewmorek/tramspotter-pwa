@@ -2,7 +2,7 @@
 import AppWelcome from './AppWelcome';
 
 export default {
-  title: 'AppWelcome'
+  title: 'Patterns|AppWelcome'
 };
 
 export const standard = () => ({

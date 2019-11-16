@@ -2,7 +2,7 @@
 import AppButton from './AppButton';
 
 export default {
-  title: 'AppButton'
+  title: 'Elements|AppButton'
 };
 
 export const standard = () => ({

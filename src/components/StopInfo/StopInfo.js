@@ -2,7 +2,7 @@
 import AppHeader from './AppHeader';
 
 export default {
-  title: 'AppHeader'
+  title: 'Patterns|AppHeader'
 };
 
 export const standard = () => ({
