@@ -1,7 +1,7 @@
 <template>
   <base-layout>
     <template #default>
-      <app-welcome />
+      <app-info />
     </template>
     <template #footer>
       <div class="app-footer--cta">
@@ -22,13 +22,13 @@
 <script>
 import BaseLayout from './BaseLayout';
 import LocationIcon from '../public/location.svg';
-import AppWelcome from '../components/AppWelcome/AppWelcome';
+import AppInfo from '../components/AppInfo/AppInfo';
 import FooterNotice from '../components/FooterNotice';
 import AppButton from '../components/AppButton/AppButton';
 export default {
   components: {
     BaseLayout,
-    AppWelcome,
+    AppInfo,
     FooterNotice,
     LocationIcon,
     AppButton

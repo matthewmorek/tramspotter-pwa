@@ -1,10 +1,10 @@
 <template>
-  <div class="app-welcome">
-    <div class="app-welcome--icon">
+  <div class="app-info">
+    <div class="app-info--icon">
       <app-icon />
     </div>
-    <h1 class="app-welcome--title">Tramspotter</h1>
-    <p class="app-welcome--info">
+    <h1 class="app-info--title">Tramspotter</h1>
+    <p class="app-info--description">
       Get live departures at your nearest Metrolink tram stop.
     </p>
   </div>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.app-welcome {
+.app-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ export default {
     margin-bottom: 1rem;
   }
 
-  &--info {
+  &--description {
     font-size: 1.125rem;
     text-align: center;
     padding-left: 1.5rem;

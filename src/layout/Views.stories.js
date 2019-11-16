@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import WelcomeScreen from './WelcomeScreen';
+import AppWelcome from './AppWelcome';
 
 export default {
-  title: 'Templates|Welcome'
+  title: 'Templates|AppWelcome'
 };
 
-export const Standard = () => ({
-  components: { WelcomeScreen },
-  template: '<welcome-screen />'
+export const standard = () => ({
+  components: { AppWelcome },
+  template: '<app-welcome />'
 });
