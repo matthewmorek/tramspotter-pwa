@@ -22,9 +22,9 @@
 <script>
 import BaseLayout from './BaseLayout';
 import LocationIcon from '../public/location.svg';
-import AppInfo from '../components/AppInfo/AppInfo';
+import AppInfo from '../components/AppInfo';
 import FooterNotice from '../components/FooterNotice';
-import AppButton from '../components/AppButton/AppButton';
+import AppButton from '../components/AppButton';
 export default {
   components: {
     BaseLayout,

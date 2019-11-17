@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import StopInfo from './StopInfo';
+import StopInfo from '../StopInfo';
 
 export default {
   title: 'Patterns|StopInfo'

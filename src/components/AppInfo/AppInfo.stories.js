@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import AppInfo from './AppInfo';
+import AppInfo from '../AppInfo';
 
 export default {
   title: 'Patterns|AppInfo'

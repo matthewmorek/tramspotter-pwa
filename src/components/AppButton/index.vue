@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import BouncingBalls from '../BouncingBalls/BouncingBalls';
+import BouncingBalls from '../BouncingBalls';
 export default {
   name: 'AppButton',
   components: {

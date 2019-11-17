@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import AppButton from './AppButton';
+import AppButton from '../AppButton';
 
 export default {
   title: 'Elements|AppButton'
