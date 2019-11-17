@@ -1,6 +1,6 @@
 <template>
   <header class="stop-info">
-    <div>
+    <div class="stop-info--icon">
       <app-icon width="52" height="52" />
     </div>
     <div>
@@ -36,16 +36,20 @@ export default {
 .stop-info {
   display: flex;
   align-items: center;
-}
 
-.stop-info--name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
+  &--icon {
+    margin-right: 0.25rem;
+  }
 
-.stop-info--distance {
-  font-size: 0.875rem;
-  font-weight: 400;
+  &--name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &--distance {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
 }
 </style>
