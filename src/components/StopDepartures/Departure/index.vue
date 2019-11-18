@@ -20,13 +20,18 @@
 <script>
 export default {
   props: {
+    id: {
+      type: Number,
+      required: true,
+      default: null
+    },
     destination: {
       type: String,
       required: true,
       default: null
     },
     carriages: {
-      type: Number,
+      type: String,
       required: true,
       default: null
     },

@@ -1,21 +1,46 @@
-/* eslint-disable no-unused-vars */
-import Departure from './Departure';
+import StopDepartures from './';
+import { array } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Elements|Departure'
+  title: 'Patterns|StopDepartures'
 };
-export const Due = () => ({
-  components: { Departure },
-  template:
-    '<departure destination="Bury" carriages="1" wait="8" status="Due" />'
-});
-export const Departing = () => ({
-  components: { Departure },
-  template:
-    '<departure destination="Piccadilly" carriages="1" wait="0" status="Departing" />'
-});
-export const Arrived = () => ({
-  components: { Departure },
-  template:
-    '<departure destination="Manchester Airport" carriages="2" wait="0" status="Arrived" />'
+
+const departures = [
+  {
+    id: 1,
+    destination: 'Picadilly',
+    carriages: 'Single',
+    wait: 0,
+    status: 'Arriving'
+  },
+  {
+    id: 2,
+    destination: 'Bury',
+    carriages: 'Double',
+    wait: 4,
+    status: 'Due'
+  },
+  {
+    id: 3,
+    destination: 'Bury',
+    carriages: 'Single',
+    wait: 6,
+    status: 'Due'
+  },
+  {
+    id: 4,
+    destination: 'Picadilly',
+    carriages: 'Double',
+    wait: 8,
+    status: 'Due'
+  }
+];
+export const Timetable = () => ({
+  components: { StopDepartures },
+  props: {
+    departures: {
+      default: array('departures', departures)
+    }
+  },
+  template: `<stop-departures :departures="departures" />`
 });
