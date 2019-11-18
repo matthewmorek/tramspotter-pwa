@@ -43,7 +43,7 @@ export default {
 
   &--name {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
   }
 
