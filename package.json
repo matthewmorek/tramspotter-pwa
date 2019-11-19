@@ -6,8 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "jest",
-    "lint": "vue-cli-service lint",
+    "test:precommit": "jest --findRelatedTests",
+    "test:prepush": "jest --colors",
     "test:watch": "jest --watchAll",
+    "lint": "vue-cli-service lint",
     "watch": "vue-cli-service build --watch",
     "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
@@ -64,6 +66,7 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
+    "husky": "^3.1.0",
     "install-peers": "^1.0.3",
     "jest": "^24.9.0",
     "jest-css-modules": "^2.1.0",
@@ -81,17 +84,19 @@
     "vue-jest": "^3.0.5",
     "vue-svg-loader": "^0.15.0"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test:prepush && lint-staged",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,vue}": [
       "vue-cli-service lint",
       "git add"
     ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
+    "*": [
+      "yarn test:precommit"
     ]
   }
 }
