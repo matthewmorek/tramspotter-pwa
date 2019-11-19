@@ -1,0 +1,745 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Elements|AppButton Default 1`] = `
+<button
+  aria-label="Button label"
+  class="btn-cta"
+>
+  Button label
+</button>
+`;
+
+exports[`Storyshots Elements|AppUpdate Default 1`] = `
+<div
+  class="snackbar"
+>
+  New update available. Tap to upgrade.
+</div>
+`;
+
+exports[`Storyshots Elements|BouncingBalls Default 1`] = `
+<span
+  class="spinner"
+>
+  <span
+    class="double-bounce1"
+  />
+   
+  <span
+    class="double-bounce2"
+  />
+</span>
+`;
+
+exports[`Storyshots Elements|Departure Default 1`] = `
+<div
+  class="timetable-item"
+>
+  <div
+    class="timetable-item--destination"
+  >
+    
+    Bury
+  
+  </div>
+   
+  <div
+    class="timetable-item--info"
+  >
+    <span
+      class="timetable-item--carriages"
+    >
+      
+      Single
+    
+    </span>
+     
+    <span
+      class="timetable-item--wait"
+    >
+      
+      8 min
+    
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Elements|MessageBoard Default 1`] = `
+<div
+  class="message-board"
+>
+  
+  Surfaces may be icy - please take extra care
+
+</div>
+`;
+
+exports[`Storyshots Elements|UpdateTimestamp Default 1`] = `
+<div
+  class="update-timestamp"
+>
+  Updated less than a minute ago
+</div>
+`;
+
+exports[`Storyshots Patterns|AppInfo Default 1`] = `
+<div
+  class="app-info"
+>
+  <div
+    class="app-info--icon"
+  >
+    <svg
+      viewBox="0 0 112 112"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M34.696 69.655h41.087V45.38H34.696z"
+          fill="#63D3FD"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M30.13 69.655h4.566V45.38H30.13z"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M75.783 69.655h4.565V45.38h-4.565z"
+          fill="#3DB9F9"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M91 100H21l15.217-12.138h38.044zM75.783 45.38H34.696V31.723a4.558 4.558 0 0 1 4.565-4.552h31.956a4.558 4.558 0 0 1 4.566 4.552V45.38z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M39.26 27.172h-4.564a4.558 4.558 0 0 0-4.566 4.552V45.38h4.566V31.724a4.558 4.558 0 0 1 4.565-4.552"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M75.783 27.172h-4.566a4.558 4.558 0 0 1 4.566 4.552V45.38h4.565V31.724a4.558 4.558 0 0 0-4.565-4.552"
+          fill="#FFA800"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M34.696 69.655h41.087V83.31a4.558 4.558 0 0 1-4.566 4.552H39.261a4.558 4.558 0 0 1-4.565-4.552V69.655z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M71.217 87.862h4.566a4.558 4.558 0 0 0 4.565-4.552V69.655h-4.565V83.31a4.558 4.558 0 0 1-4.566 4.552"
+          fill="#FFA800"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M34.696 87.862h4.565a4.558 4.558 0 0 1-4.565-4.552V69.655H30.13V83.31a4.558 4.558 0 0 0 4.566 4.552"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M57.522 12l-6.087 6.069M66.652 12l-6.087 6.069"
+          stroke="#ffe05d"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035M74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035M43.826 39.31h22.826v-6.069H43.826z"
+          fill="#63D3FD"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M91 100H21l15.217-12.138h38.044z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M75.783 87.862H34.696a4.558 4.558 0 0 1-4.566-4.552V69.655h50.218V83.31a4.558 4.558 0 0 1-4.565 4.552zM80.348 45.38H30.13V31.723a4.558 4.558 0 0 1 4.566-4.552h41.087a4.558 4.558 0 0 1 4.565 4.552V45.38zM30.13 69.655h50.218V45.38H30.13z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M56 12l-6.087 6.069M65.13 12l-6.087 6.069"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035zM74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035zM42.304 87.862V100M68.174 87.862V100M28.609 93.931h53.26M43.826 39.31h22.826v-6.069H43.826z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+      </g>
+    </svg>
+  </div>
+   
+  <h1
+    class="app-info--title"
+  >
+    Tramspotter
+  </h1>
+   
+  <p
+    class="app-info--description"
+  >
+    
+    Get live departures at your nearest Metrolink tram stop.
+  
+  </p>
+</div>
+`;
+
+exports[`Storyshots Patterns|AppNotice Data Notice 1`] = `
+<div
+  class="app-notice"
+>
+  <div
+    class="app-notice--icon"
+  >
+    <svg
+      class="app-notice--icon"
+      height="42"
+      viewBox="0 0 56 50"
+      width="42"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M54.78 45.008l-1.994.002a5.188 5.188 0 0 1-5.188-5.188V15.083a7.183 7.183 0 1 0-14.366 0v24.739a5.188 5.188 0 0 1-10.375 0V15.083a7.184 7.184 0 0 0-14.365 0v24.739a5.187 5.187 0 0 1-5.188 5.187H1.312a.4.4 0 0 0-.4.4v3.99a.4.4 0 0 0 .4.4h1.995a9.976 9.976 0 0 0 9.976-9.976V15.08a2.395 2.395 0 0 1 4.788 0v24.74a9.976 9.976 0 1 0 19.951 0l.001-24.74a2.395 2.395 0 0 1 4.789 0v24.74a9.975 9.975 0 0 0 9.975 9.976h1.996a.4.4 0 0 0 .4-.4v-3.99a.4.4 0 0 0-.4-.4l-.002.002zM40.419.316a14.749 14.749 0 0 0-12.37 6.704A14.749 14.749 0 0 0 15.677.316C7.523.316.913 6.926.913 15.08v26.734c0 .22.18.4.4.4h1.994a2.395 2.395 0 0 0 2.395-2.395V15.08a9.976 9.976 0 1 1 19.951 0v24.74a2.395 2.395 0 0 0 4.789 0V15.08c0-5.509 4.466-9.975 9.976-9.975 5.509 0 9.975 4.466 9.975 9.976V39.82a2.395 2.395 0 0 0 2.395 2.395h1.994a.4.4 0 0 0 .4-.4V15.08c0-8.155-6.613-14.765-14.765-14.765h.001z"
+        fill-rule="nonzero"
+      />
+    </svg>
+  </div>
+   
+  <div
+    class="app-notice--text"
+  >
+    This app uses TfGM Open Data 2.0 under Open Government License.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Patterns|AppNotice Location Access Notice 1`] = `
+<div
+  class="app-notice"
+>
+  <div
+    class="app-notice--icon"
+  >
+    <svg
+      class="app-notice--icon"
+      height="42"
+      viewbox="0 0 42 42"
+      width="42"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21.973 21.277v5.433a.63.63 0 0 1 .627.282c.44.684.846 1.29 1.353 1.8a.632.632 0 0 1-.893.892 9.424 9.424 0 0 1-1.087-1.35v8.075l6.937-3.157V13.314l-2.022.92c-1.68 3.118-4.238 6.308-4.655 6.82a.944.944 0 0 1-.26.223zm-1.261-.29c-.538-.666-2.88-3.622-4.496-6.562l-2.441-1.111v9.447a.627.627 0 0 1 .353-.14 14.36 14.36 0 0 1 1.224-.041c.443 0 .872.023 1.273.07a.632.632 0 0 1-.144 1.254c-.354-.04-.734-.062-1.13-.062-.388-.003-.767.013-1.134.04a.627.627 0 0 1-.442-.14v9.51l6.937 3.157V26.016a.635.635 0 0 1-.498-.217c-.511-.588-1.039-1.006-1.662-1.316a.632.632 0 0 1 .56-1.131c.583.289 1.11.664 1.6 1.138v-3.503zm-5.705-9.194c-.24-.696-.382-1.345-.382-1.908C14.625 6.088 17.71 3 21.5 3c3.79 0 6.875 3.088 6.875 6.885 0 .517-.12 1.106-.325 1.739l1.1-.5a.945.945 0 0 1 .782 0l8.198 3.731a.948.948 0 0 1 .555.863v22.019a.948.948 0 0 1-1.338.862l-7.806-3.554-7.807 3.554a.945.945 0 0 1-.783 0l-7.807-3.554L5.337 38.6A.944.944 0 0 1 4 37.737v-22.02c0-.37.217-.708.555-.862l8.198-3.732a.945.945 0 0 1 .782 0l1.472.67zM30.17 33.251l6.622 3.015V22.74a2.447 2.447 0 0 0-.828.188.628.628 0 0 1-.825-.339.632.632 0 0 1 .337-.826 3.75 3.75 0 0 1 1.316-.287v-5.15l-6.622-3.014v15.64a8 8 0 0 0 .851-1.17.63.63 0 1 1 1.074.661c-.545.888-1.072 1.521-1.659 1.994a.627.627 0 0 1-.266.126v2.687zM12.514 13.314l-6.622 3.014v10.576a9.16 9.16 0 0 1 1.314-1.541.63.63 0 1 1 .862.922c-.534.5-1 1.08-1.383 1.72a.63.63 0 0 1-.793.255v8.006l6.622-3.014V13.314zM27.649 31.42c-.877 0-1.64-.11-2.336-.338a.632.632 0 0 1 .391-1.2c.567.185 1.203.275 1.945.275.06 0 .119-.001.177-.004a.63.63 0 1 1 .062 1.262 4.597 4.597 0 0 1-.24.005zm5.053-4.778a.632.632 0 0 1-.56-.923c.376-.723.782-1.484 1.249-2.142a.63.63 0 1 1 1.027.732c-.42.592-.801 1.309-1.156 1.992a.63.63 0 0 1-.56.34zM9.585 25.085a.63.63 0 0 1-.29-1.193 10.98 10.98 0 0 1 2.367-.887.631.631 0 0 1 .309 1.225c-.755.19-1.46.454-2.096.783a.623.623 0 0 1-.29.072zM21.5 4.895a4.992 4.992 0 0 0-4.983 4.99c0 1.918 2.809 6.214 4.983 9.044 2.174-2.831 4.982-7.127 4.982-9.044a4.992 4.992 0 0 0-4.982-4.99zm0 7.794a2.805 2.805 0 0 1 0-5.608 2.805 2.805 0 0 1 0 5.608zm0-4.345a1.541 1.541 0 0 0 0 3.082 1.541 1.541 0 0 0 0-3.082z"
+        fill="#000"
+        fill-rule="nonzero"
+      />
+    </svg>
+  </div>
+   
+  <div
+    class="app-notice--text"
+  >
+    You will be asked to temporarily share your current device location.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Patterns|Departures Default 1`] = `
+<div
+  class="departures"
+>
+  <header
+    class="departures-header"
+  >
+    <h4
+      class="departures-header--title"
+    >
+      Departures
+    </h4>
+     
+    <div
+      class="departures-header--live"
+    >
+      <svg
+        height="12"
+        viewBox="0 0 20 20"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 3a7 7 0 1 0 .001 13.999A7 7 0 0 0 10 3z"
+        />
+      </svg>
+      LIVE
+    
+    </div>
+  </header>
+   
+  <div
+    class="departures-timetable"
+  >
+    <div
+      class="timetable-item"
+    >
+      <div
+        class="timetable-item--destination"
+      >
+        
+    Picadilly
+  
+      </div>
+       
+      <div
+        class="timetable-item--info"
+      >
+        <span
+          class="timetable-item--carriages"
+        >
+          
+      Single
+    
+        </span>
+         
+        <span
+          class="timetable-item--wait near"
+        >
+          
+      Arriving
+    
+        </span>
+      </div>
+    </div>
+    <div
+      class="timetable-item"
+    >
+      <div
+        class="timetable-item--destination"
+      >
+        
+    Bury
+  
+      </div>
+       
+      <div
+        class="timetable-item--info"
+      >
+        <span
+          class="timetable-item--carriages"
+        >
+          
+      Double
+    
+        </span>
+         
+        <span
+          class="timetable-item--wait near"
+        >
+          
+      4 min
+    
+        </span>
+      </div>
+    </div>
+    <div
+      class="timetable-item"
+    >
+      <div
+        class="timetable-item--destination"
+      >
+        
+    Bury
+  
+      </div>
+       
+      <div
+        class="timetable-item--info"
+      >
+        <span
+          class="timetable-item--carriages"
+        >
+          
+      Single
+    
+        </span>
+         
+        <span
+          class="timetable-item--wait"
+        >
+          
+      6 min
+    
+        </span>
+      </div>
+    </div>
+    <div
+      class="timetable-item"
+    >
+      <div
+        class="timetable-item--destination"
+      >
+        
+    Picadilly
+  
+      </div>
+       
+      <div
+        class="timetable-item--info"
+      >
+        <span
+          class="timetable-item--carriages"
+        >
+          
+      Double
+    
+        </span>
+         
+        <span
+          class="timetable-item--wait"
+        >
+          
+      8 min
+    
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Patterns|StopInfo Default 1`] = `
+<header
+  class="stop-info"
+>
+  <div
+    class="stop-info--icon"
+  >
+    <svg
+      height="52"
+      viewBox="0 0 112 112"
+      width="52"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M34.696 69.655h41.087V45.38H34.696z"
+          fill="#63D3FD"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M30.13 69.655h4.566V45.38H30.13z"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M75.783 69.655h4.565V45.38h-4.565z"
+          fill="#3DB9F9"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M91 100H21l15.217-12.138h38.044zM75.783 45.38H34.696V31.723a4.558 4.558 0 0 1 4.565-4.552h31.956a4.558 4.558 0 0 1 4.566 4.552V45.38z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M39.26 27.172h-4.564a4.558 4.558 0 0 0-4.566 4.552V45.38h4.566V31.724a4.558 4.558 0 0 1 4.565-4.552"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M75.783 27.172h-4.566a4.558 4.558 0 0 1 4.566 4.552V45.38h4.565V31.724a4.558 4.558 0 0 0-4.565-4.552"
+          fill="#FFA800"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M34.696 69.655h41.087V83.31a4.558 4.558 0 0 1-4.566 4.552H39.261a4.558 4.558 0 0 1-4.565-4.552V69.655z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M71.217 87.862h4.566a4.558 4.558 0 0 0 4.565-4.552V69.655h-4.565V83.31a4.558 4.558 0 0 1-4.566 4.552"
+          fill="#FFA800"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M34.696 87.862h4.565a4.558 4.558 0 0 1-4.565-4.552V69.655H30.13V83.31a4.558 4.558 0 0 0 4.566 4.552"
+          fill="#FFF"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+          fill="#ffe05d"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M57.522 12l-6.087 6.069M66.652 12l-6.087 6.069"
+          stroke="#ffe05d"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035M74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035M43.826 39.31h22.826v-6.069H43.826z"
+          fill="#63D3FD"
+          fill-rule="nonzero"
+        />
+        <path
+          d="M91 100H21l15.217-12.138h38.044z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M75.783 87.862H34.696a4.558 4.558 0 0 1-4.566-4.552V69.655h50.218V83.31a4.558 4.558 0 0 1-4.565 4.552zM80.348 45.38H30.13V31.723a4.558 4.558 0 0 1 4.566-4.552h41.087a4.558 4.558 0 0 1 4.565 4.552V45.38zM30.13 69.655h50.218V45.38H30.13z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M56 12l-6.087 6.069M65.13 12l-6.087 6.069"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+        <path
+          d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035zM74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035zM42.304 87.862V100M68.174 87.862V100M28.609 93.931h53.26M43.826 39.31h22.826v-6.069H43.826z"
+          stroke="#000"
+          stroke-linejoin="round"
+          stroke-width="3.043"
+        />
+      </g>
+    </svg>
+  </div>
+   
+  <div>
+    <h1
+      class="stop-info--name"
+    >
+      Deansgate-Castlefield
+    </h1>
+     
+    <p
+      class="stop-info--distance"
+    >
+      0.5 mls away
+    </p>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Templates|AppWelcome Default 1`] = `
+<div
+  class="app-container"
+>
+  <!---->
+   
+  <main
+    class="app-main"
+  >
+    <div
+      class="app-info"
+    >
+      <div
+        class="app-info--icon"
+      >
+        <svg
+          viewBox="0 0 112 112"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <path
+              d="M34.696 69.655h41.087V45.38H34.696z"
+              fill="#63D3FD"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M30.13 69.655h4.566V45.38H30.13z"
+              fill="#FFF"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M75.783 69.655h4.565V45.38h-4.565z"
+              fill="#3DB9F9"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M91 100H21l15.217-12.138h38.044zM75.783 45.38H34.696V31.723a4.558 4.558 0 0 1 4.565-4.552h31.956a4.558 4.558 0 0 1 4.566 4.552V45.38z"
+              fill="#ffe05d"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M39.26 27.172h-4.564a4.558 4.558 0 0 0-4.566 4.552V45.38h4.566V31.724a4.558 4.558 0 0 1 4.565-4.552"
+              fill="#FFF"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M75.783 27.172h-4.566a4.558 4.558 0 0 1 4.566 4.552V45.38h4.565V31.724a4.558 4.558 0 0 0-4.565-4.552"
+              fill="#FFA800"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M34.696 69.655h41.087V83.31a4.558 4.558 0 0 1-4.566 4.552H39.261a4.558 4.558 0 0 1-4.565-4.552V69.655z"
+              fill="#ffe05d"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M71.217 87.862h4.566a4.558 4.558 0 0 0 4.565-4.552V69.655h-4.565V83.31a4.558 4.558 0 0 1-4.566 4.552"
+              fill="#FFA800"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M34.696 87.862h4.565a4.558 4.558 0 0 1-4.565-4.552V69.655H30.13V83.31a4.558 4.558 0 0 0 4.566 4.552"
+              fill="#FFF"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+              fill="#ffe05d"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M57.522 12l-6.087 6.069M66.652 12l-6.087 6.069"
+              stroke="#ffe05d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+            <path
+              d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035M74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035M43.826 39.31h22.826v-6.069H43.826z"
+              fill="#63D3FD"
+              fill-rule="nonzero"
+            />
+            <path
+              d="M91 100H21l15.217-12.138h38.044z"
+              stroke="#000"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+            <path
+              d="M75.783 87.862H34.696a4.558 4.558 0 0 1-4.566-4.552V69.655h50.218V83.31a4.558 4.558 0 0 1-4.565 4.552zM80.348 45.38H30.13V31.723a4.558 4.558 0 0 1 4.566-4.552h41.087a4.558 4.558 0 0 1 4.565 4.552V45.38zM30.13 69.655h50.218V45.38H30.13z"
+              stroke="#000"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+            <path
+              d="M66.652 27.172H43.826l3.044-9.103h16.739z"
+              stroke="#000"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+            <path
+              d="M56 12l-6.087 6.069M65.13 12l-6.087 6.069"
+              stroke="#000"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+            <path
+              d="M42.304 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.044-3.034 3.038 3.038 0 0 1 3.044-3.035 3.038 3.038 0 0 1 3.043 3.035zM74.26 78.759a3.038 3.038 0 0 1-3.043 3.034 3.038 3.038 0 0 1-3.043-3.034 3.038 3.038 0 0 1 3.043-3.035 3.038 3.038 0 0 1 3.044 3.035zM42.304 87.862V100M68.174 87.862V100M28.609 93.931h53.26M43.826 39.31h22.826v-6.069H43.826z"
+              stroke="#000"
+              stroke-linejoin="round"
+              stroke-width="3.043"
+            />
+          </g>
+        </svg>
+      </div>
+       
+      <h1
+        class="app-info--title"
+      >
+        Tramspotter
+      </h1>
+       
+      <p
+        class="app-info--description"
+      >
+        
+    Get live departures at your nearest Metrolink tram stop.
+  
+      </p>
+    </div>
+  </main>
+   
+  <footer
+    class="app-footer"
+  >
+    <div
+      class="app-footer--cta"
+    >
+      <button
+        class="btn-cta"
+      >
+        Find a tram stop
+      </button>
+    </div>
+     
+    <div
+      class="app-notice"
+    >
+      <div
+        class="app-notice--icon"
+      >
+        <svg
+          class="app-notice--icon"
+          height="42"
+          viewbox="0 0 42 42"
+          width="42"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21.973 21.277v5.433a.63.63 0 0 1 .627.282c.44.684.846 1.29 1.353 1.8a.632.632 0 0 1-.893.892 9.424 9.424 0 0 1-1.087-1.35v8.075l6.937-3.157V13.314l-2.022.92c-1.68 3.118-4.238 6.308-4.655 6.82a.944.944 0 0 1-.26.223zm-1.261-.29c-.538-.666-2.88-3.622-4.496-6.562l-2.441-1.111v9.447a.627.627 0 0 1 .353-.14 14.36 14.36 0 0 1 1.224-.041c.443 0 .872.023 1.273.07a.632.632 0 0 1-.144 1.254c-.354-.04-.734-.062-1.13-.062-.388-.003-.767.013-1.134.04a.627.627 0 0 1-.442-.14v9.51l6.937 3.157V26.016a.635.635 0 0 1-.498-.217c-.511-.588-1.039-1.006-1.662-1.316a.632.632 0 0 1 .56-1.131c.583.289 1.11.664 1.6 1.138v-3.503zm-5.705-9.194c-.24-.696-.382-1.345-.382-1.908C14.625 6.088 17.71 3 21.5 3c3.79 0 6.875 3.088 6.875 6.885 0 .517-.12 1.106-.325 1.739l1.1-.5a.945.945 0 0 1 .782 0l8.198 3.731a.948.948 0 0 1 .555.863v22.019a.948.948 0 0 1-1.338.862l-7.806-3.554-7.807 3.554a.945.945 0 0 1-.783 0l-7.807-3.554L5.337 38.6A.944.944 0 0 1 4 37.737v-22.02c0-.37.217-.708.555-.862l8.198-3.732a.945.945 0 0 1 .782 0l1.472.67zM30.17 33.251l6.622 3.015V22.74a2.447 2.447 0 0 0-.828.188.628.628 0 0 1-.825-.339.632.632 0 0 1 .337-.826 3.75 3.75 0 0 1 1.316-.287v-5.15l-6.622-3.014v15.64a8 8 0 0 0 .851-1.17.63.63 0 1 1 1.074.661c-.545.888-1.072 1.521-1.659 1.994a.627.627 0 0 1-.266.126v2.687zM12.514 13.314l-6.622 3.014v10.576a9.16 9.16 0 0 1 1.314-1.541.63.63 0 1 1 .862.922c-.534.5-1 1.08-1.383 1.72a.63.63 0 0 1-.793.255v8.006l6.622-3.014V13.314zM27.649 31.42c-.877 0-1.64-.11-2.336-.338a.632.632 0 0 1 .391-1.2c.567.185 1.203.275 1.945.275.06 0 .119-.001.177-.004a.63.63 0 1 1 .062 1.262 4.597 4.597 0 0 1-.24.005zm5.053-4.778a.632.632 0 0 1-.56-.923c.376-.723.782-1.484 1.249-2.142a.63.63 0 1 1 1.027.732c-.42.592-.801 1.309-1.156 1.992a.63.63 0 0 1-.56.34zM9.585 25.085a.63.63 0 0 1-.29-1.193 10.98 10.98 0 0 1 2.367-.887.631.631 0 0 1 .309 1.225c-.755.19-1.46.454-2.096.783a.623.623 0 0 1-.29.072zM21.5 4.895a4.992 4.992 0 0 0-4.983 4.99c0 1.918 2.809 6.214 4.983 9.044 2.174-2.831 4.982-7.127 4.982-9.044a4.992 4.992 0 0 0-4.982-4.99zm0 7.794a2.805 2.805 0 0 1 0-5.608 2.805 2.805 0 0 1 0 5.608zm0-4.345a1.541 1.541 0 0 0 0 3.082 1.541 1.541 0 0 0 0-3.082z"
+            fill="#000"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </div>
+       
+      <div
+        class="app-notice--text"
+      >
+        
+        You will be asked to temporarily share your current device location.
+      
+      </div>
+    </div>
+  </footer>
+</div>
+`;

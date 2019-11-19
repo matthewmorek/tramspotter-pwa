@@ -1,0 +1,59 @@
+:root {
+  --font-family: 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+
+  --app-bg: #fff;
+
+  --btn-color-bg: #373737;
+  --btn-color-border: rgba(0, 0, 0, 0);
+  --btn-color-text: #fff;
+
+  --btn-color-bg--disabled: transparent;
+  --btn-color-border--disabled: #e6e6e6;
+  --btn-color-text--disabled: #373737;
+
+  --pill-color-bg: #ececec;
+  --pill-color-text: #373737;
+
+  --pill-color-bg--special: #ffa800;
+  --pill-color-text--special: #373737;
+
+  --text-size: 1rem;
+  --text-size-sm: 0.875rem;
+  --text-color: #373737;
+
+  --notice-color-bg: #f9f2d0;
+  --notice-color-text: #373737;
+  --header-color-border: #e2e2e2;
+  --color-red: #e74c3c;
+  --color-blue: #11a2f8;
+  --color-orange: #ffa800;
+  --icon-contrast: #373737;
+
+  @media (prefers-color-scheme: dark) {
+    --app-bg: rgb(28, 28, 30);
+
+    --btn-color-bg: #dedede;
+    --btn-color-border: rgba(0, 0, 0, 0);
+    --btn-color-text: rgb(44, 44, 46);
+
+    --btn-color-bg--disabled: transparent;
+    --btn-color-border--disabled: #464646;
+    --btn-color-text--disabled: #1a1a1a;
+
+    --pill-color-bg: #111;
+    --pill-color-text: #dedede;
+
+    --pill-color-bg--special: #ffa800;
+    --pill-color-text--special: #373737;
+
+    --text-color: #dedede;
+    --text-color-dimmed: #cacaca;
+
+    --notice-color-bg: #111;
+    --notice-color-text: #dedede;
+
+    --header-color-border: #4a4a4a;
+    --icon-contrast: #dedede;
+  }
+}
