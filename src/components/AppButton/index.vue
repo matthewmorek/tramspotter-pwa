@@ -2,10 +2,11 @@
   <button
     :disabled="isLoading"
     :class="['btn-cta', { 'btn-flat': isLoading }]"
-    @click="onClick"
+    :aria-label="btnLabel"
+    @click="btnClick"
   >
     <bouncing-balls v-if="isLoading" />
-    <slot v-else></slot>
+    <slot v-else>{{ btnLabel }}</slot>
   </button>
 </template>
 
@@ -22,10 +23,15 @@ export default {
       required: false,
       default: false
     },
-    onClick: {
+    btnClick: {
       type: Function,
       required: false,
       default: () => false
+    },
+    btnLabel: {
+      type: String,
+      required: false,
+      default: null
     }
   }
 };
