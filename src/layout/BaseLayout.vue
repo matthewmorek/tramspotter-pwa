@@ -63,5 +63,9 @@ export default {
 .app-footer {
   grid-area: footer;
   margin-top: auto;
+
+  > .app-notice {
+    margin-top: 1.5rem;
+  }
 }
 </style>
