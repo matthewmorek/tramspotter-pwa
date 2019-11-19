@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import StopInfo from '../StopInfo';
-import { text, number } from '@storybook/addon-knobs';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'Patterns|StopInfo'
+  title: 'Patterns|StopInfo',
+  decorators: [withKnobs(), withA11y()]
 };
 
 export const standard = () => ({
