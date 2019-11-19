@@ -1,21 +1,27 @@
-/* eslint-disable no-unused-vars */
 import AppButton from '../AppButton';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Elements|AppButton'
+  title: 'Elements|AppButton',
+  decorators: [withKnobs(), withA11y()]
 };
 
 export const standard = () => ({
   components: { AppButton },
-  template: '<app-button>App button</app-button>'
-});
+  props: {
+    label: {
+      default: text('Label', 'Button label')
+    },
 
-export const isLoading = () => ({
-  components: { AppButton },
-  template: '<app-button :is-loading="true">App button</app-button>'
-});
-
-export const withAction = () => ({
-  components: { AppButton },
-  template: '<app-button @click="() => false">App button</app-button>'
+    isLoading: {
+      default: boolean('isLoading', false)
+    }
+  },
+  methods: {
+    onClick: action('button-click')
+  },
+  template:
+    '<app-button :is-loading="isLoading" :btn-click="onClick" :btn-label="label">{{ label }}</app-button>'
 });
