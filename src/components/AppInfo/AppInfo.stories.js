@@ -5,7 +5,7 @@ export default {
   title: 'Patterns|AppInfo'
 };
 
-export const standard = () => ({
+export const Default = () => ({
   components: { AppInfo },
   template: '<app-info />'
 });

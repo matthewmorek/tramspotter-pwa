@@ -1,4 +1,4 @@
-import UpdateTimestamp from '.';
+import Timestamp from '.';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
@@ -7,12 +7,12 @@ export default {
   decorators: [withKnobs(), withA11y()]
 };
 
-export const standard = () => ({
-  components: { UpdateTimestamp },
+export const Default = () => ({
+  components: { Timestamp },
   props: {
     lastUpdate: {
       default: text('Timestamp', 'less than a minute')
     }
   },
-  template: '<update-timestamp :last-update="lastUpdate" />'
+  template: '<timestamp :last-update="lastUpdate" />'
 });

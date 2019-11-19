@@ -7,7 +7,7 @@ export default {
   decorators: [withKnobs(), withA11y()]
 };
 
-export const standard = () => ({
+export const Default = () => ({
   components: { MessageBoard },
   props: {
     message: {

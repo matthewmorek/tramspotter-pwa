@@ -5,7 +5,7 @@ export default {
   title: 'Elements|BouncingBalls'
 };
 
-export const standard = () => ({
+export const Default = () => ({
   components: { BouncingBalls },
   template: '<bouncing-balls />'
 });

@@ -8,7 +8,7 @@ export default {
   decorators: [withKnobs(), withA11y()]
 };
 
-export const standard = () => ({
+export const Default = () => ({
   components: { AppButton },
   props: {
     label: {

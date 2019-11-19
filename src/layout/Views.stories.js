@@ -5,7 +5,7 @@ export default {
   title: 'Templates|AppWelcome'
 };
 
-export const standard = () => ({
+export const Default = () => ({
   components: { AppWelcome },
   template: '<app-welcome />'
 });
