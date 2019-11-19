@@ -1,8 +1,10 @@
 import StopDepartures from './';
-import { array } from '@storybook/addon-knobs';
+import { withKnobs, array, boolean } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 
 export default {
-  title: 'Patterns|StopDepartures'
+  title: 'Patterns|StopDepartures',
+  decorators: [withKnobs(), withA11y()]
 };
 
 const departures = [
@@ -39,8 +41,11 @@ export const Timetable = () => ({
   components: { StopDepartures },
   props: {
     departures: {
-      default: array('departures', departures)
+      default: array('Departures', departures)
+    },
+    isLive: {
+      default: boolean('Live', true)
     }
   },
-  template: `<stop-departures :departures="departures" />`
+  template: `<stop-departures :departures="departures" :is-live="isLive" />`
 });
