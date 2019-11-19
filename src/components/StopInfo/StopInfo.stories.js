@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import StopInfo from '../StopInfo';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
