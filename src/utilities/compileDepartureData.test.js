@@ -16,11 +16,11 @@ describe('Utility method compileDepartureData', () => {
     expect(actual).toHaveProperty('arrivals.0.status', 'Arrived');
     expect(actual).toHaveProperty('arrivals.0.wait', 0);
 
-    expect(actual).toHaveProperty('arrivals.5.carriages', 'Single');
+    expect(actual).toHaveProperty('arrivals.5.carriages', 'Double');
     expect(actual).toHaveProperty('arrivals.5.destination', 'Altrincham');
     expect(actual).toHaveProperty('arrivals.5.id', expect.any(String));
     expect(actual).toHaveProperty('arrivals.5.status', 'Due');
-    expect(actual).toHaveProperty('arrivals.5.wait', 25);
+    expect(actual).toHaveProperty('arrivals.5.wait', 14);
 
     expect(actual).toHaveProperty('direction', 'Outgoing');
     expect(actual).toHaveProperty('lastUpdated', '2019-09-16T20:19:38Z');
