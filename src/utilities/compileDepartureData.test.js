@@ -10,12 +10,11 @@ describe('Utility method compileDepartureData', () => {
 
   test('Returns appropriately shaped data object', async () => {
     let actual = compileDepartureData(nearbyStops);
-
-    expect(actual).toHaveProperty('arrivals.1.carriages', 'Double');
-    expect(actual).toHaveProperty('arrivals.1.destination', 'Old Trafford');
-    expect(actual).toHaveProperty('arrivals.1.id', expect.any(String));
-    expect(actual).toHaveProperty('arrivals.1.status', 'Arrived');
-    expect(actual).toHaveProperty('arrivals.1.wait', 0);
+    expect(actual).toHaveProperty('arrivals.0.carriages', 'Double');
+    expect(actual).toHaveProperty('arrivals.0.destination', 'Old Trafford');
+    expect(actual).toHaveProperty('arrivals.0.id', expect.any(String));
+    expect(actual).toHaveProperty('arrivals.0.status', 'Arrived');
+    expect(actual).toHaveProperty('arrivals.0.wait', 0);
 
     expect(actual).toHaveProperty('arrivals.5.carriages', 'Single');
     expect(actual).toHaveProperty('arrivals.5.destination', 'Altrincham');
