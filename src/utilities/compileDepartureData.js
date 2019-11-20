@@ -10,11 +10,11 @@ export const statusPriority = {
 };
 
 export const hasPriority = (arrivalA, arrivalB) => {
-  if (arrivalA.wait === arrivalB.wait) {
-    return statusPriority[arrivalA.status] < statusPriority[arrivalB.status];
+  if (arrivalA.wait - arrivalB.wait === 0) {
+    return statusPriority[arrivalA.status] - statusPriority[arrivalB.status];
   }
 
-  return arrivalA.wait > arrivalB.wait;
+  return arrivalA.wait - arrivalB.wait;
 };
 
 export default function(stops) {

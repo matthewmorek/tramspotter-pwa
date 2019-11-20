@@ -19,12 +19,12 @@ export default [
     carriages2: 'Single',
     status2: 'Due',
     wait2: '21',
-    dest3: '',
-    carriages3: '',
-    status3: '',
+    dest3: 'Piccadilly',
+    carriages3: 'Single',
+    status3: 'Departing',
     messageBoard:
       'On 21st & 22nd September planned engineering works are taking place in the Cornbrook area affecting some tram services. For more information please visit www.TfGM.com or tweet us @MCRMetrolink',
-    wait3: '',
+    wait3: '0',
     lastUpdated: '2019-09-16T20:19:38Z'
   },
   {
@@ -47,12 +47,12 @@ export default [
     carriages2: 'Single',
     status2: 'Due',
     wait2: '25',
-    dest3: '',
-    carriages3: '',
-    status3: '',
+    dest3: 'Altrincham',
+    carriages3: 'Single',
+    status3: 'Arrived',
     messageBoard:
       'On 21st & 22nd September planned engineering works are taking place in the Cornbrook area affecting some tram services. For more information please visit www.TfGM.com or tweet us @MCRMetrolink',
-    wait3: '',
+    wait3: '0',
     lastUpdated: '2019-09-16T20:19:38Z'
   }
 ];
