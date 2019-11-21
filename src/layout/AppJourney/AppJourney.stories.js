@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import AppJourney from '.';
 import { version } from '../../../package.json';
 import { withKnobs, text, number } from '@storybook/addon-knobs';

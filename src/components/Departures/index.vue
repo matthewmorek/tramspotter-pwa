@@ -1,7 +1,7 @@
 <template>
   <div class="departures">
     <header class="departures-header">
-      <h4 class="departures-header--title">Departures</h4>
+      <h3 class="departures-header--title">Departures</h3>
       <div v-if="isLive" class="departures-header--live">
         <icon-record width="12" height="12" />LIVE
       </div>
