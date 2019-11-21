@@ -1,6 +1,10 @@
 <template>
   <base-layout>
-    <template #header></template>
+    <template #header>
+      <h1 class="app-title">
+        Tramspotter <span class="app-version">v{{ appVersion }}</span>
+      </h1>
+    </template>
     <template #default>
       <stop-info
         :stop-location="stopLocation"
@@ -38,8 +42,19 @@ export default {
     AppButton,
     StopInfo
   },
-  props: ['stopLocation', 'distanceToStop']
+  props: ['stopLocation', 'distanceToStop', 'appVersion']
 };
 </script>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+.app-title {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.app-version {
+  font-weight: 400;
+}
+</style>
