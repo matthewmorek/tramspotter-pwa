@@ -21,29 +21,24 @@
 export default {
   props: {
     id: {
-      type: Number,
-      required: true,
-      default: null
+      type: String,
+      required: true
     },
     destination: {
       type: String,
-      required: true,
-      default: null
+      required: true
     },
     carriages: {
       type: String,
-      required: true,
-      default: null
+      required: true
     },
     wait: {
       type: Number,
-      required: true,
-      default: null
+      required: true
     },
     status: {
       type: String,
-      required: true,
-      default: null
+      required: true
     }
   }
 };
