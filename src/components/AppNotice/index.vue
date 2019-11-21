@@ -21,11 +21,12 @@ export default {};
   &--text {
     font-size: 0.875rem;
     padding-left: 0.75rem;
+    color: var(--text-color-dimmed);
   }
 
   &--icon {
     .icon {
-      fill: var(--icon-contrast);
+      fill: var(--text-color-dimmed);
     }
   }
 }

@@ -58,6 +58,7 @@ export default {
 
   &--carriages {
     font-size: 0.875rem;
+    color: var(--text-color-dimmed);
   }
 
   &--wait {
