@@ -11,10 +11,12 @@
         :distance-to-stop="distanceToStop"
       />
       <departures :departures="departures" :is-live="isLive" />
+      <message-board :message="message" />
+      <timestamp :last-update="lastUpdate" />
     </template>
     <template #footer>
       <div class="app-footer--cta">
-        <app-button @click="() => false">Update</app-button>
+        <app-button @click="() => false">Refresh</app-button>
       </div>
       <app-notice>
         <template #icon>
@@ -35,6 +37,8 @@ import AppNotice from '../../components/AppNotice';
 import AppButton from '../../components/AppButton';
 import StopInfo from '../../components/StopInfo';
 import Departures from '../../components/Departures';
+import MessageBoard from '../../components/MessageBoard';
+import Timestamp from '../../components/Timestamp';
 
 export default {
   components: {
@@ -43,14 +47,18 @@ export default {
     AppNotice,
     AppButton,
     StopInfo,
-    Departures
+    Departures,
+    MessageBoard,
+    Timestamp
   },
   props: [
     'stopLocation',
     'distanceToStop',
     'appVersion',
     'departures',
-    'isLive'
+    'isLive',
+    'message',
+    'lastUpdate'
   ]
 };
 </script>

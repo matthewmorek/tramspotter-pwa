@@ -19,8 +19,21 @@ export const Default = () => ({
     },
     appVersion: {
       default: text('Version', version)
+    },
+    message: {
+      default: text(
+        'Message',
+        'Due to an earlier signalling fault at Victoria we are currently experiencing delays to Metrolink Services. Please visit www.tfgm.com for up to date travel information.'
+      )
+    },
+    lastUpdate: {
+      default: text('Timestamp', 'less than a minute')
     }
   },
-  template:
-    '<app-journey :stop-location="location" :distance-to-stop="distance" :appVersion="appVersion" />'
+  template: `<app-journey
+      :stop-location="location"
+      :distance-to-stop="distance"
+      :app-version="appVersion"
+      :message="message"
+      :last-update="lastUpdate" />`
 });
