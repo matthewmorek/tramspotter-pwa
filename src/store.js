@@ -106,7 +106,7 @@ export default new Vuex.Store({
     getDistanceToStop: state => {
       const { distance } = state.compiled;
       let readableDistance = (distance / 1609.344).toFixed(2);
-      return readableDistance;
+      return Number(readableDistance);
     },
     getDepartures: state => {
       if (isEmpty(state.compiled)) {

@@ -26,7 +26,7 @@ export default {
       required: true
     },
     distanceToStop: {
-      type: String,
+      type: Number,
       required: true
     }
   }
