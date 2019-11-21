@@ -37,6 +37,10 @@ export default {
     LocationIcon,
     AppButton
   },
-  props: ['isLoading']
+  props: {
+    isLoading: {
+      type: Boolean
+    }
+  }
 };
 </script>
