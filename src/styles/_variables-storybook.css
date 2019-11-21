@@ -32,10 +32,10 @@
 }
 
 .dark-mode {
-  --app-bg: rgb(28, 28, 30);
+  --app-bg: rgb(0, 0, 0);
 
   --btn-color-bg: #dedede;
-  --btn-color-border: rgba(0, 0, 0, 0);
+  --btn-color-border: rgb(28, 28, 30);
   --btn-color-text: rgb(44, 44, 46);
 
   --btn-color-bg--disabled: transparent;
