@@ -6,7 +6,7 @@
       </div>
       <div>
         <h2 class="stop-info--name">{{ stopLocation }}</h2>
-        <p class="stop-info--distance">{{ distanceToStop }} mls away</p>
+        <p class="stop-info--distance">{{ distanceToStop }} miles away</p>
       </div>
     </div>
     <div class="stop-info--bg"></div>
