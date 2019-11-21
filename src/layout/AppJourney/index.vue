@@ -50,16 +50,34 @@ export default {
     MessageBoard,
     Timestamp
   },
-  props: [
-    'isLoading',
-    'stopLocation',
-    'distanceToStop',
-    // 'appVersion',
-    'departures',
-    'isLive',
-    'message',
-    'lastUpdate'
-  ]
+  props: {
+    isLoading: {
+      type: Boolean
+    },
+    stopLocation: {
+      type: String,
+      required: true
+    },
+    distanceToStop: {
+      type: Number,
+      required: true
+    },
+    departures: {
+      type: Array,
+      default: null
+    },
+    isLive: {
+      type: Boolean
+    },
+    message: {
+      type: String,
+      default: null
+    },
+    lastUpdate: {
+      type: String,
+      default: null
+    }
+  }
 };
 </script>
 
