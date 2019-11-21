@@ -2,7 +2,8 @@
   --font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
     Roboto, sans-serif;
 
-  --app-bg: #fff;
+  --app-bg: rgb(255, 255, 255);
+  --app-bg-blur: rgba(255, 255, 255, 0.75);
 
   --btn-color-bg: #373737;
   --btn-color-border: rgba(0, 0, 0, 0);
@@ -33,6 +34,7 @@
 
 .dark-mode {
   --app-bg: rgb(0, 0, 0);
+  --app-bg-blur: rgba(0, 0, 0, 0.85);
 
   --btn-color-bg: #dedede;
   --btn-color-border: rgb(28, 28, 30);
