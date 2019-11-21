@@ -1,22 +1,29 @@
 :root {
-  --font-family: 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont,
-    'Segoe UI', Roboto, sans-serif;
+  --font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
 
-  --app-bg: #fff;
+  --app-bg: rgb(255, 255, 255);
+  --app-bg-blur: rgba(255, 255, 255, 0.75);
 
   --btn-color-bg: #373737;
   --btn-color-border: rgba(0, 0, 0, 0);
   --btn-color-text: #fff;
 
   --btn-color-bg--disabled: transparent;
-  --btn-color-border--disabled: #e6e6e6;
+  --btn-color-border--disabled: #ececec;
   --btn-color-text--disabled: #373737;
 
   --pill-color-bg: #ececec;
   --pill-color-text: #373737;
 
-  --pill-color-bg--special: #ffa800;
-  --pill-color-text--special: #373737;
+  --pill-color-bg--due: #ffbb32;
+  --pill-color-text--due: #373737;
+
+  --pill-color-bg--arrived: #dcf2b0;
+  --pill-color-text--arrived: #373737;
+
+  --pill-color-bg--departing: #eee;
+  --pill-color-text--departing: #6a6a6a;
 
   --text-size: 1rem;
   --text-size-sm: 0.875rem;
@@ -31,10 +38,11 @@
   --icon-contrast: #373737;
 
   @media (prefers-color-scheme: dark) {
-    --app-bg: rgb(28, 28, 30);
+    --app-bg: rgb(0, 0, 0);
+    --app-bg-blur: rgba(0, 0, 0, 0.85);
 
     --btn-color-bg: #dedede;
-    --btn-color-border: rgba(0, 0, 0, 0);
+    --btn-color-border: rgb(28, 28, 30);
     --btn-color-text: rgb(44, 44, 46);
 
     --btn-color-bg--disabled: transparent;
@@ -44,16 +52,22 @@
     --pill-color-bg: #111;
     --pill-color-text: #dedede;
 
-    --pill-color-bg--special: #ffa800;
-    --pill-color-text--special: #373737;
+    --pill-color-bg--due: #ffbb32;
+    --pill-color-text--due: #373737;
+
+    --pill-color-bg--arrived: #c5e6a6;
+    --pill-color-text--arrived: #373737;
+
+    --pill-color-bg--departing: #111;
+    --pill-color-text--departing: #aeaeae;
 
     --text-color: #dedede;
-    --text-color-dimmed: #cacaca;
+    --text-color-dimmed: #a6a5a5;
 
     --notice-color-bg: #111;
-    --notice-color-text: #dedede;
+    --notice-color-text: #a6a5a5;
 
-    --header-color-border: #4a4a4a;
+    --header-color-border: #1a1a1a;
     --icon-contrast: #dedede;
   }
 }
