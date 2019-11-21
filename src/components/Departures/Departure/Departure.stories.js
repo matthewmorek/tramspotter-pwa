@@ -7,6 +7,9 @@ export default {
 };
 export const Default = () => ({
   components: { Departure },
+  data: () => ({
+    id: 'some-fancy-string'
+  }),
   props: {
     destination: {
       default: text('Destination', 'Bury')
@@ -22,5 +25,5 @@ export const Default = () => ({
     }
   },
   template:
-    '<departure :destination="destination" :carriages="carriage" :wait="wait" :status="status" :id="1" />'
+    '<departure :destination="destination" :carriages="carriage" :wait="wait" :status="status" :id="id" />'
 });
