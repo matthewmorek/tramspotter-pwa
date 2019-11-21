@@ -1,10 +1,5 @@
 <template>
   <base-layout>
-    <template #header>
-      <h1 class="app-title">
-        Tramspotter <span class="app-version">v{{ appVersion }}</span>
-      </h1>
-    </template>
     <template #default>
       <stop-info
         :stop-location="stopLocation"
