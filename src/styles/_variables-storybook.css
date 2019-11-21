@@ -10,14 +10,20 @@
   --btn-color-text: #fff;
 
   --btn-color-bg--disabled: transparent;
-  --btn-color-border--disabled: #e6e6e6;
+  --btn-color-border--disabled: #ececec;
   --btn-color-text--disabled: #373737;
 
   --pill-color-bg: #ececec;
   --pill-color-text: #373737;
 
-  --pill-color-bg--special: #ffa800;
-  --pill-color-text--special: #373737;
+  --pill-color-bg--due: #ffbb32;
+  --pill-color-text--due: #373737;
+
+  --pill-color-bg--arrived: #dcf2b0;
+  --pill-color-text--arrived: #373737;
+
+  --pill-color-bg--departing: #eee;
+  --pill-color-text--departing: #6a6a6a;
 
   --text-size: 1rem;
   --text-size-sm: 0.875rem;
@@ -47,8 +53,14 @@
   --pill-color-bg: #111;
   --pill-color-text: #dedede;
 
-  --pill-color-bg--special: #ffa800;
-  --pill-color-text--special: #373737;
+  --pill-color-bg--due: #ffbb32;
+  --pill-color-text--due: #373737;
+
+  --pill-color-bg--arrived: #c5e6a6;
+  --pill-color-text--arrived: #373737;
+
+  --pill-color-bg--departing: #111;
+  --pill-color-text--departing: #aeaeae;
 
   --text-color: #dedede;
   --text-color-dimmed: #a6a5a5;
