@@ -79,7 +79,9 @@ exports[`Storyshots Elements|UpdateTimestamp Default 1`] = `
 <div
   class="update-timestamp"
 >
+  
   Updated less than a minute ago
+
 </div>
 `;
 
@@ -277,11 +279,11 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
   <header
     class="departures-header"
   >
-    <h4
+    <h3
       class="departures-header--title"
     >
       Departures
-    </h4>
+    </h3>
      
     <div
       class="departures-header--live"
@@ -566,7 +568,21 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
 <div
   class="app-container"
 >
-  <!---->
+  <header
+    class="app-header"
+  >
+    <h1
+      class="app-title"
+    >
+      
+      Tramspotter 
+      <span
+        class="app-version"
+      >
+        v0.4.11
+      </span>
+    </h1>
+  </header>
    
   <main
     class="app-main"
@@ -698,6 +714,46 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
         </p>
       </div>
     </div>
+     
+    <div
+      class="departures"
+    >
+      <header
+        class="departures-header"
+      >
+        <h3
+          class="departures-header--title"
+        >
+          Departures
+        </h3>
+         
+        <!---->
+      </header>
+       
+      <div
+        class="departures--empty"
+      >
+        
+    There are currently no trams available.
+  
+      </div>
+    </div>
+     
+    <div
+      class="message-board"
+    >
+      
+  Due to an earlier signalling fault at Victoria we are currently experiencing delays to Metrolink Services. Please visit www.tfgm.com for up to date travel information.
+
+    </div>
+     
+    <div
+      class="update-timestamp"
+    >
+      
+  Updated less than a minute ago
+
+    </div>
   </main>
    
   <footer
@@ -709,7 +765,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
       <button
         class="btn-cta"
       >
-        Update
+        Refresh
       </button>
     </div>
      
@@ -720,7 +776,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
         class="app-notice--icon"
       >
         <svg
-          class="app-notice--icon"
+          class="icon"
           height="42"
           viewBox="0 0 56 50"
           width="42"
@@ -901,7 +957,7 @@ exports[`Storyshots Templates|AppWelcome Default 1`] = `
         class="app-notice--icon"
       >
         <svg
-          class="app-notice--icon"
+          class="icon"
           height="42"
           viewbox="0 0 42 42"
           width="42"
