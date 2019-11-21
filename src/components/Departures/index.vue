@@ -70,7 +70,6 @@ export default {
 
     &--live {
       display: flex;
-      border: 1px solid var(--text-color);
       border-radius: 3px;
       padding: 0.125rem 0.33rem;
       font-size: 0.75rem;

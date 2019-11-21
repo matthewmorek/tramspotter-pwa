@@ -95,6 +95,7 @@ exports[`Storyshots Patterns|AppInfo Default 1`] = `
   >
     <svg
       viewBox="0 0 112 112"
+      width="100%"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
@@ -686,7 +687,7 @@ exports[`Storyshots Patterns|StopInfo Default 1`] = `
       <p
         class="stop-info--distance"
       >
-        0.5 mls away
+        0.5 miles away
       </p>
     </div>
   </div>
@@ -699,7 +700,7 @@ exports[`Storyshots Patterns|StopInfo Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Default 1`] = `
 <div
-  app-version="0.5.0"
+  app-version="0.5.1"
   class="app-container"
 >
   <!---->
@@ -833,7 +834,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
           <p
             class="stop-info--distance"
           >
-            0.5 mls away
+            0.5 miles away
           </p>
         </div>
       </div>
@@ -1176,7 +1177,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Empty 1`] = `
 <div
-  app-version="0.5.0"
+  app-version="0.5.1"
   class="app-container"
 >
   <!---->
@@ -1310,7 +1311,7 @@ exports[`Storyshots Templates|AppJourney Empty 1`] = `
           <p
             class="stop-info--distance"
           >
-            0.5 mls away
+            0.5 miles away
           </p>
         </div>
       </div>
@@ -1417,6 +1418,7 @@ exports[`Storyshots Templates|AppWelcome Default 1`] = `
       >
         <svg
           viewBox="0 0 112 112"
+          width="100%"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g

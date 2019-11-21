@@ -1,7 +1,7 @@
 <template>
   <div class="app-info">
     <div class="app-info--icon">
-      <app-icon />
+      <app-icon width="100%" />
     </div>
     <h1 class="app-info--title">Tramspotter</h1>
     <p class="app-info--description">
