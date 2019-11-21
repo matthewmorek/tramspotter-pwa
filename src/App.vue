@@ -5,93 +5,27 @@
       :is-loading="isLoading"
       @fetch-stop-info="getNearestStop"
     />
-
-    <main v-else class="app-content">
-      <div class="app-main--departures">
-        <header class="app-header">
-          <div class="app-header--icon">
-            <AppIcon class="app-icon" width="52" height="52" />
-          </div>
-          <div class="app-header--stop">
-            <h2 class="stop-name">{{ nearestStop.stationLocation }}</h2>
-            <div class="stop-distance">{{ distanceToStop }} mls away</div>
-          </div>
-        </header>
-        <section class="app-departures">
-          <header class="section-header">
-            <h4 class="section-header--label">Departures</h4>
-            <div v-if="isLive" class="section-header--live">
-              <IconRecord width="12" height="12" />LIVE
-            </div>
-          </header>
-          <div v-if="!isEmpty(departures)">
-            <ul class="app-departures--timetable">
-              <li
-                v-for="tram in departures"
-                :key="tram.id"
-                class="timetable-item"
-              >
-                <div class="timetable-item--destination">
-                  {{ tram.destination }}
-                </div>
-                <div class="timetable-item--info">
-                  <span class="timetable-item--carriages">
-                    {{ tram.carriages }}
-                  </span>
-                  <span
-                    class="timetable-item--wait"
-                    :class="{ near: tram.wait <= 5 || tram.wait === null }"
-                    >{{
-                      tram.wait > 0 ? `${tram.wait} min` : tram.status
-                    }}</span
-                  >
-                </div>
-              </li>
-            </ul>
-            <p class="app-departures--timestamp">
-              Updated {{ lastUpdate }} ago
-            </p>
-          </div>
-          <p v-else>There are currently no more trams available.</p>
-          <p v-if="nearestStop.messageBoard" class="app-notice">
-            {{ nearestStop.messageBoard }}
-          </p>
-          <p>
-            <button
-              v-if="$wait.is('FETCHING')"
-              class="btn-cta"
-              :disabled="$wait.is('FETCHING')"
-            >
-              <span class="spinner">
-                <span class="double-bounce1"></span>
-                <span class="double-bounce2"></span>
-              </span>
-            </button>
-            <button v-else class="btn-cta" @click="getNearestStop">
-              <span>Update</span>
-            </button>
-          </p>
-        </section>
-      </div>
-      <footer class="app-footer">
-        <div class="app-footer--notice">
-          <div class="app-footer--notice-icon">
-            <TfgmIcon width="42" class="app-footer-icon" />
-          </div>
-          <div class="app-footer--notice-text">
-            This app uses TfGM Open Data 2.0 under Open Government License.
-          </div>
-        </div>
-      </footer>
-    </main>
-    <div v-if="updateExists" class="snackbar" @click="refreshApp">
-      New update available. Tap to upgrade.
-    </div>
+    <app-journey
+      v-else
+      :is-live="isLive"
+      :is-loading="isLoading"
+      :stop-location="nearestStop.stationLocation"
+      :distance-to-stop="distanceToStop"
+      :message="nearestStop.messageBoard"
+      :last-update="lastUpdate"
+      :departures="departures"
+      @fetch-stop-info="getNearestStop"
+    />
+    <app-update :update-exists="updateExists" @update-app="refreshApp"
+      >New update available. Tap to upgrade.</app-update
+    >
   </div>
 </template>
 
 <script>
 import AppWelcome from './layout/AppWelcome';
+import AppJourney from './layout/AppJourney';
+import AppUpdate from './components/AppUpdate';
 
 import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
@@ -104,13 +38,11 @@ export default {
   name: 'Tramspotter',
   components: {
     AppWelcome,
-    AppIcon,
-    IconRecord,
-    TfgmIcon
+    AppJourney,
+    AppUpdate
   },
   data() {
     return {
-      // isLoading: false,
       hasErrors: false,
       error: null,
       now: new Date(),
