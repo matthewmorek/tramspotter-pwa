@@ -5,7 +5,11 @@
     </template>
     <template #footer>
       <div class="app-footer--cta">
-        <app-button @click="() => false">Find a tram stop</app-button>
+        <app-button
+          :is-loading="isLoading"
+          @btn-click="$emit('fetch-stop-info')"
+          >Find a tram stop</app-button
+        >
       </div>
       <app-notice>
         <template #icon>
@@ -32,6 +36,7 @@ export default {
     AppNotice,
     LocationIcon,
     AppButton
-  }
+  },
+  props: ['isLoading']
 };
 </script>
