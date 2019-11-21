@@ -687,7 +687,7 @@ exports[`Storyshots Patterns|StopInfo Default 1`] = `
       <p
         class="stop-info--distance"
       >
-        0.5 mls away
+        0.5 miles away
       </p>
     </div>
   </div>
@@ -834,7 +834,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
           <p
             class="stop-info--distance"
           >
-            0.5 mls away
+            0.5 miles away
           </p>
         </div>
       </div>
@@ -1311,7 +1311,7 @@ exports[`Storyshots Templates|AppJourney Empty 1`] = `
           <p
             class="stop-info--distance"
           >
-            0.5 mls away
+            0.5 miles away
           </p>
         </div>
       </div>
