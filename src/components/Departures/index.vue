@@ -9,7 +9,9 @@
     <div v-if="!isEmpty(departures)" class="departures-timetable">
       <departure v-for="item in departures" :key="item.id" v-bind="item" />
     </div>
-    <div v-else>There are currently no trams available.</div>
+    <div v-else class="departures--empty">
+      There are currently no trams available.
+    </div>
   </div>
 </template>
 
@@ -88,6 +90,12 @@ export default {
   &-timetable {
     margin-top: 0.5rem;
     margin-top: 0.225rem;
+  }
+
+  &--empty {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
   }
 }
 

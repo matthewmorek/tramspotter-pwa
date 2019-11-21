@@ -10,6 +10,7 @@
         :stop-location="stopLocation"
         :distance-to-stop="distanceToStop"
       />
+      <departures :departures="departures" :is-live="isLive" />
     </template>
     <template #footer>
       <div class="app-footer--cta">
@@ -33,6 +34,7 @@ import TfgmIcon from '../../public/tfgm-icon.svg';
 import AppNotice from '../../components/AppNotice';
 import AppButton from '../../components/AppButton';
 import StopInfo from '../../components/StopInfo';
+import Departures from '../../components/Departures';
 
 export default {
   components: {
@@ -40,9 +42,16 @@ export default {
     TfgmIcon,
     AppNotice,
     AppButton,
-    StopInfo
+    StopInfo,
+    Departures
   },
-  props: ['stopLocation', 'distanceToStop', 'appVersion']
+  props: [
+    'stopLocation',
+    'distanceToStop',
+    'appVersion',
+    'departures',
+    'isLive'
+  ]
 };
 </script>
 
