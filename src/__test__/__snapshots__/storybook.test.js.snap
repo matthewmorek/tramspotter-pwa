@@ -3,6 +3,7 @@
 exports[`Storyshots Elements|AppButton Default 1`] = `
 <button
   aria-label="Button label"
+  btn-click="function () { [native code] }"
   class="btn-cta"
 >
   Button label
@@ -698,6 +699,7 @@ exports[`Storyshots Patterns|StopInfo Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Default 1`] = `
 <div
+  app-version="0.4.11"
   class="app-container"
 >
   <!---->
@@ -1174,6 +1176,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Empty 1`] = `
 <div
+  app-version="0.4.11"
   class="app-container"
 >
   <!---->
