@@ -1,13 +1,13 @@
 <template>
-  <header class="stop-info">
+  <div class="stop-info">
     <div class="stop-info--icon">
       <app-icon width="52" height="52" />
     </div>
     <div>
-      <h1 class="stop-info--name">{{ stopLocation }}</h1>
+      <h2 class="stop-info--name">{{ stopLocation }}</h2>
       <p class="stop-info--distance">{{ distanceToStop }} mls away</p>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -36,6 +36,7 @@ export default {
 .stop-info {
   display: flex;
   align-items: center;
+  width: 100%;
 
   &--icon {
     margin-right: 0.25rem;
