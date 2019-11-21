@@ -46,7 +46,7 @@ export default {
   border-radius: 4rem;
   color: var(--btn-color-text);
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 600;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.75rem;

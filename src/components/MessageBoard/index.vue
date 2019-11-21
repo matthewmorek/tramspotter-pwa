@@ -9,8 +9,7 @@ export default {
   props: {
     message: {
       type: String,
-      required: false,
-      default: null
+      required: false
     }
   }
 };
@@ -23,7 +22,7 @@ export default {
   background-color: var(--notice-color-bg);
   padding: 0.75rem;
   border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 </style>

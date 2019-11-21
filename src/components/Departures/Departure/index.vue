@@ -1,5 +1,8 @@
 <template>
-  <div class="timetable-item">
+  <div
+    class="timetable-item"
+    :class="{ departing: status.toLowerCase() === 'departing' }"
+  >
     <div class="timetable-item--destination">
       {{ destination }}
     </div>
@@ -9,7 +12,10 @@
       </span>
       <span
         class="timetable-item--wait"
-        :class="{ near: wait <= 5 || wait === null }"
+        :class="{
+          near: (wait <= 5 && wait >= 1) || wait === null,
+          arrived: status.toLowerCase() === 'arrived'
+        }"
       >
         {{ wait > 0 ? `${wait} min` : status }}
       </span>
@@ -21,29 +27,24 @@
 export default {
   props: {
     id: {
-      type: Number,
-      required: true,
-      default: null
+      type: String,
+      required: true
     },
     destination: {
       type: String,
-      required: true,
-      default: null
+      required: true
     },
     carriages: {
       type: String,
-      required: true,
-      default: null
+      required: true
     },
     wait: {
       type: Number,
-      required: true,
-      default: null
+      required: true
     },
     status: {
       type: String,
-      required: true,
-      default: null
+      required: true
     }
   }
 };
@@ -63,6 +64,11 @@ export default {
 
   &--carriages {
     font-size: 0.875rem;
+    color: var(--text-color-dimmed);
+  }
+
+  &.departing {
+    opacity: 0.5;
   }
 
   &--wait {
@@ -78,8 +84,13 @@ export default {
     margin-left: 0.5rem;
 
     &.near {
-      background-color: var(--pill-color-bg--special);
-      color: var(--pill-color-text--special);
+      background-color: var(--pill-color-bg--due);
+      color: var(--pill-color-text--due);
+    }
+
+    &.arrived {
+      background-color: var(--pill-color-bg--arrived);
+      color: var(--pill-color-text--arrived);
     }
   }
 }

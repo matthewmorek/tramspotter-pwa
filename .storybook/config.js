@@ -26,7 +26,11 @@ addParameters({
   viewport: {
     viewports: customViewports,
     defaultViewport: 'iphone8'
-  }
+  },
+  themes: [
+    { name: 'light-mode', class: ['light-mode'], color: '#fff' },
+    { name: 'dark-mode', class: ['dark-mode'], color: '#1C1C1E' }
+  ]
 });
 
 // automatically import all files ending in *.stories.js

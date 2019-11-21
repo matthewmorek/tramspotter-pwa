@@ -7,5 +7,12 @@ module.exports = {
       'jest-transform-stub'
   },
   transformIgnorePatterns: ['/node_modules/(?!(@storybook/.*\\.vue$))'],
-  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node']
+  moduleFileExtensions: ['vue', 'js', 'jsx', 'json', 'node'],
+  collectCoverageFrom: [
+    'src/**/*.{js,vue}',
+    '!src/registerServiceWorker.js',
+    '!src/service-worker.js',
+    '!src/**/*.stories.js',
+    '!src/**/__test__/**/*'
+  ]
 };

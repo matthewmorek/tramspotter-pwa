@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import AppWelcome from './AppWelcome';
+import AppWelcome from '.';
 
 export default {
   title: 'Templates|AppWelcome'

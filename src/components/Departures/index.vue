@@ -1,7 +1,7 @@
 <template>
   <div class="departures">
     <header class="departures-header">
-      <h4 class="departures-header--title">Departures</h4>
+      <h3 class="departures-header--title">Departures</h3>
       <div v-if="isLive" class="departures-header--live">
         <icon-record width="12" height="12" />LIVE
       </div>
@@ -9,7 +9,9 @@
     <div v-if="!isEmpty(departures)" class="departures-timetable">
       <departure v-for="item in departures" :key="item.id" v-bind="item" />
     </div>
-    <div v-else>There are currently no trams available.</div>
+    <div v-else class="departures--empty">
+      There are currently no trams available.
+    </div>
   </div>
 </template>
 
@@ -41,8 +43,8 @@ export default {
 
 <style lang="postcss">
 .departures {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   &-header {
     display: flex;
@@ -88,6 +90,13 @@ export default {
   &-timetable {
     margin-top: 0.5rem;
     margin-top: 0.225rem;
+  }
+
+  &--empty {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
   }
 }
 

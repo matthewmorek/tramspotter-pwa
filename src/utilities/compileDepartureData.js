@@ -5,8 +5,8 @@ import uniqBy from 'lodash/fp/uniqBy';
 
 export const statusPriority = {
   Due: 0,
-  Arrived: 1,
-  Departing: 2
+  Departing: 1,
+  Arrived: 2
 };
 
 export const hasPriority = (arrivalA, arrivalB) => {
