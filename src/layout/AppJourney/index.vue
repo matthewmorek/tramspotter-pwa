@@ -11,7 +11,11 @@
     </template>
     <template #footer>
       <div class="app-footer--cta">
-        <app-button @click="() => false">Refresh</app-button>
+        <app-button
+          :is-loading="isLoading"
+          @btn-click="$emit('fetch-stop-info')"
+          >Refresh</app-button
+        >
       </div>
       <app-notice>
         <template #icon>
@@ -47,9 +51,10 @@ export default {
     Timestamp
   },
   props: [
+    'isLoading',
     'stopLocation',
     'distanceToStop',
-    'appVersion',
+    // 'appVersion',
     'departures',
     'isLive',
     'message',

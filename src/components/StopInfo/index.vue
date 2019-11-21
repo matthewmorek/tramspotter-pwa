@@ -23,13 +23,11 @@ export default {
   props: {
     stopLocation: {
       type: String,
-      required: true,
-      default: null
+      required: true
     },
     distanceToStop: {
       type: Number,
-      required: true,
-      default: null
+      required: true
     }
   }
 };
