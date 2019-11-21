@@ -23,15 +23,15 @@ export default {
       required: false,
       default: false
     },
-    btnClick: {
-      type: Function,
-      required: false,
-      default: () => false
-    },
     btnLabel: {
       type: String,
       required: false,
       default: null
+    }
+  },
+  methods: {
+    btnClick() {
+      this.$emit('btn-click');
     }
   }
 };
