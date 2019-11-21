@@ -9,7 +9,8 @@ export default {
   props: {
     message: {
       type: String,
-      required: false
+      required: false,
+      default: null
     }
   }
 };

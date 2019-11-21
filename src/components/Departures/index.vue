@@ -28,11 +28,13 @@ export default {
   props: {
     departures: {
       type: Array,
-      required: false
+      required: false,
+      default: null
     },
     isLive: {
       type: Boolean,
-      required: false
+      required: false,
+      default: false
     }
   },
   methods: {
