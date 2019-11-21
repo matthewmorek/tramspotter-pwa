@@ -18,6 +18,7 @@ export const Default = () => ({
   methods: {
     updateApp: action('button-click')
   },
-  template:
-    '<app-update :update-app="updateApp" :update-exists="true">{{ message }}</app-update>'
+  template: `<app-update :update-exists="updateExists" @update-app="updateApp"
+      >{{ message }}</app-update
+    >`
 });
