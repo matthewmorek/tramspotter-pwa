@@ -17,7 +17,7 @@
       </div>
       <app-notice>
         <template #icon>
-          <tfgm-icon width="42" height="42" class="app-notice--icon" />
+          <tfgm-icon width="42" height="42" class="icon" />
         </template>
         <template #text>
           This app uses TfGM Open Data 2.0 under Open Government License.

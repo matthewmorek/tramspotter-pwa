@@ -9,7 +9,7 @@
       </div>
       <app-notice>
         <template #icon>
-          <location-icon width="42" height="42" class="app-notice--icon" />
+          <location-icon width="42" height="42" class="icon" />
         </template>
         <template #text>
           You will be asked to temporarily share your current device location.
