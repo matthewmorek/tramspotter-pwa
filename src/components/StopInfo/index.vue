@@ -37,6 +37,8 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   &--icon {
     margin-right: 0.25rem;

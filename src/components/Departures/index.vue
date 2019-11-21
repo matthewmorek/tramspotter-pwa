@@ -43,8 +43,8 @@ export default {
 
 <style lang="postcss">
 .departures {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   &-header {
     display: flex;
@@ -93,7 +93,8 @@ export default {
   }
 
   &--empty {
-    padding-top: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     text-align: center;
     font-size: 0.875rem;
   }
