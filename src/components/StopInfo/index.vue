@@ -37,11 +37,15 @@ export default {
 
 <style lang="postcss">
 .stop-info {
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   position: sticky;
   top: 0;
+  left: 0;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 
   &--bg {
     position: absolute;
