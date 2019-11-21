@@ -15,7 +15,7 @@ describe('Utility method compileDepartureData', () => {
     expect(actual).toHaveProperty('arrivals.4.destination', 'Piccadilly');
     expect(actual).toHaveProperty('arrivals.4.id', expect.any(String));
     expect(actual).toHaveProperty('arrivals.4.status', 'Due');
-    expect(actual).toHaveProperty('arrivals.4.wait', 9);
+    expect(actual).toHaveProperty('arrivals.4.wait', 5);
 
     expect(actual).toHaveProperty('arrivals.5.carriages', 'Double');
     expect(actual).toHaveProperty('arrivals.5.destination', 'Altrincham');

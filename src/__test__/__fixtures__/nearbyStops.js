@@ -14,7 +14,7 @@ export default [
     dest1: 'Piccadilly',
     carriages1: 'Single',
     status1: 'Due',
-    wait1: '9',
+    wait1: '5',
     dest2: 'Piccadilly',
     carriages2: 'Single',
     status2: 'Due',

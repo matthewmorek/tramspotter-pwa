@@ -307,7 +307,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
     class="departures-timetable"
   >
     <div
-      class="timetable-item"
+      class="timetable-item departing"
     >
       <div
         class="timetable-item--destination"
@@ -329,7 +329,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
         </span>
          
         <span
-          class="timetable-item--wait near"
+          class="timetable-item--wait"
         >
           
       Departing
@@ -338,7 +338,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
       </div>
     </div>
     <div
-      class="timetable-item"
+      class="timetable-item departing"
     >
       <div
         class="timetable-item--destination"
@@ -360,7 +360,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
         </span>
          
         <span
-          class="timetable-item--wait near"
+          class="timetable-item--wait"
         >
           
       Departing
@@ -391,7 +391,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
         </span>
          
         <span
-          class="timetable-item--wait near"
+          class="timetable-item--wait arrived"
         >
           
       Arrived
@@ -422,7 +422,7 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
         </span>
          
         <span
-          class="timetable-item--wait near"
+          class="timetable-item--wait arrived"
         >
           
       Arrived
@@ -453,10 +453,10 @@ exports[`Storyshots Patterns|Departures Default 1`] = `
         </span>
          
         <span
-          class="timetable-item--wait"
+          class="timetable-item--wait near"
         >
           
-      9 min
+      5 min
     
         </span>
       </div>
@@ -860,7 +860,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
         class="departures-timetable"
       >
         <div
-          class="timetable-item"
+          class="timetable-item departing"
         >
           <div
             class="timetable-item--destination"
@@ -882,7 +882,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
             </span>
              
             <span
-              class="timetable-item--wait near"
+              class="timetable-item--wait"
             >
               
       Departing
@@ -891,7 +891,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
           </div>
         </div>
         <div
-          class="timetable-item"
+          class="timetable-item departing"
         >
           <div
             class="timetable-item--destination"
@@ -913,7 +913,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
             </span>
              
             <span
-              class="timetable-item--wait near"
+              class="timetable-item--wait"
             >
               
       Departing
@@ -944,7 +944,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
             </span>
              
             <span
-              class="timetable-item--wait near"
+              class="timetable-item--wait arrived"
             >
               
       Arrived
@@ -975,7 +975,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
             </span>
              
             <span
-              class="timetable-item--wait near"
+              class="timetable-item--wait arrived"
             >
               
       Arrived
@@ -1006,10 +1006,10 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
             </span>
              
             <span
-              class="timetable-item--wait"
+              class="timetable-item--wait near"
             >
               
-      9 min
+      5 min
     
             </span>
           </div>
