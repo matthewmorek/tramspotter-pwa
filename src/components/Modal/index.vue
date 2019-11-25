@@ -48,21 +48,23 @@ export default {
   background: var(--app-bg-blur);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  animation-duration: 1s;
 }
 
 .modal {
   background-color: var(--app-bg);
   position: absolute;
-  bottom: -2rem;
+  bottom: -4rem;
   left: 0;
+  right: 0;
   width: calc(100vw - 1rem);
+  border: 1px solid var(--header-color-border);
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  animation-duration: 1.5s;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
+  max-width: 28em;
+  margin: 0 auto;
 
   &--header {
     display: flex;
@@ -103,11 +105,11 @@ export default {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0, 1.5);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1.5);
 }
 
 .slide-enter,
 .slide-leave-to {
-  transform: translate3d(0, 100px, 0);
+  transform: translateY(100%);
 }
 </style>
