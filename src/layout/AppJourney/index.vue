@@ -17,38 +17,34 @@
           >Refresh</app-button
         >
       </div>
-      <app-notice>
-        <template #icon>
-          <tfgm-icon width="42" height="42" class="icon" />
-        </template>
-        <template #text>
-          This app uses TfGM Open Data 2.0 under Open Government License.
-        </template>
-      </app-notice>
+      <div class="app-footer--about">
+        <div>Made with ♥️ in MCR.</div>
+        <button class="btn-about" @click="$emit('show-modal')">
+          <info-icon width="32" height="32" class="icon" />
+        </button>
+      </div>
     </template>
   </base-layout>
 </template>
 
 <script>
 import BaseLayout from '../BaseLayout';
-import TfgmIcon from '../../public/tfgm-icon.svg';
-import AppNotice from '../../components/AppNotice';
 import AppButton from '../../components/AppButton';
 import StopInfo from '../../components/StopInfo';
 import Departures from '../../components/Departures';
 import MessageBoard from '../../components/MessageBoard';
 import Timestamp from '../../components/Timestamp';
+import InfoIcon from '../../public/info-icon.svg';
 
 export default {
   components: {
     BaseLayout,
-    TfgmIcon,
-    AppNotice,
     AppButton,
     StopInfo,
     Departures,
     MessageBoard,
-    Timestamp
+    Timestamp,
+    InfoIcon
   },
   props: {
     isLoading: {
@@ -91,5 +87,27 @@ export default {
 
 .app-version {
   font-weight: 400;
+}
+
+.app-footer--about {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color-dimmed);
+
+  .btn-about {
+    display: block;
+    padding: 0;
+    background-color: var(--pill-color-bg);
+    border-radius: 64px;
+
+    .icon {
+      display: block;
+      fill: var(--text-color-dimmed);
+    }
+  }
 }
 </style>
