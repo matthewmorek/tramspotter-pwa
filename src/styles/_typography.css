@@ -47,3 +47,15 @@ ol {
 ul {
   list-style-type: square;
 }
+
+.app-link {
+  color: var(--notice-color-text);
+  background-color: var(--notice-color-bg);
+  display: inline-block;
+  border-radius: 64px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-weight: 500;
+}
