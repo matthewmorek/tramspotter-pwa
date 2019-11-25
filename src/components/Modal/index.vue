@@ -9,7 +9,7 @@
               <close-icon width="27" height="27" class="icon" />
             </button>
           </header>
-          <div class="modal--body">
+          <div class="modal--body" :class="bodyClass">
             <slot name="default">This is a modal content</slot>
           </div>
         </div>
@@ -28,6 +28,11 @@ export default {
     show: {
       type: Boolean,
       required: true
+    },
+    bodyClass: {
+      type: String,
+      required: false,
+      default: null
     }
   }
 };
