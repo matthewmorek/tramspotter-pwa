@@ -4,7 +4,9 @@
       <transition name="slide">
         <div v-show="show" class="modal" @keyup.esc="$emit('close-modal')">
           <header class="modal--header">
-            <slot name="header">Modal header</slot>
+            <span>
+              <slot name="header">Modal header</slot>
+            </span>
             <button class="btn-close-modal" @click="$emit('close-modal')">
               <close-icon width="27" height="27" class="icon" />
             </button>
@@ -70,6 +72,7 @@ export default {
     display: flex;
     line-height: 25px;
     justify-content: space-between;
+    align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
@@ -89,13 +92,13 @@ export default {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s linear;
 }
 
 .fade-enter,
@@ -105,7 +108,7 @@ export default {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1.5);
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .slide-enter,

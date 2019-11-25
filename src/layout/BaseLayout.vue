@@ -74,27 +74,5 @@ export default {
   > .app-notice {
     margin-top: 1.5rem;
   }
-
-  > .app-about {
-    text-align: center;
-    padding-top: 1rem;
-    font-size: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-color-dimmed);
-
-    .btn-about {
-      display: block;
-      padding: 0;
-      background-color: var(--pill-color-bg);
-      border-radius: 64px;
-
-      .icon {
-        display: block;
-        fill: var(--text-color-dimmed);
-      }
-    }
-  }
 }
 </style>
