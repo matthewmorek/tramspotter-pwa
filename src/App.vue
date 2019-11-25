@@ -4,6 +4,7 @@
       v-if="isEmpty(nearestStop)"
       :is-loading="isLoading"
       @fetch-stop-info="getNearestStop"
+      @show-modal="showModal"
     />
     <app-journey
       v-else
@@ -15,10 +16,38 @@
       :last-update="lastUpdate"
       :departures="departures"
       @fetch-stop-info="getNearestStop"
+      @show-modal="showModal"
     />
     <app-update :update-exists="updateExists" @update-app="refreshApp"
       >New update available. Tap to upgrade.</app-update
     >
+    <!-- prettier-ignore -->
+    <modal :show="isVisible" @close-modal="hideModal">
+      <template #header>About</template>
+      <template #default>
+        <div class="about-box">
+          <app-icon width="48" height="48" class="icon" />
+          <h2>Tramspotter {{ `v${appVersion}` }}</h2>
+          <p>Get live departures at your nearest Metrolink tram stop.</p>
+          <p>
+            Copyright &copy; {{currentYear}}
+            <a
+              href="https://twitter.com/matthewmorek"
+              class="app-link"
+            >Matthew Morek</a>
+          </p>
+          <div class="section-cta">
+            <a href="https://ko-fi.com/matthewmorek" class="btn-cta">Buy me a coffee ☕️</a>
+          </div>
+        </div>
+        <app-notice>
+          <template #icon>
+            <tfgm-icon width="42" height="42" class="icon" />
+          </template>
+          <template #text>This app uses TfGM Open Data 2.0 under Open Government License.</template>
+        </app-notice>
+      </template>
+    </modal>
   </div>
 </template>
 
@@ -26,20 +55,25 @@
 import AppWelcome from './layout/AppWelcome';
 import AppJourney from './layout/AppJourney';
 import AppUpdate from './components/AppUpdate';
+import Modal from './components/Modal';
+import TfgmIcon from './public/tfgm-icon.svg';
+import AppNotice from './components/AppNotice';
+import { version } from '../package.json';
 
 import isEmpty from 'lodash/fp/isEmpty';
 import AppIcon from './public/app-icon.svg';
-import IconRecord from './public/record.svg';
-import LocationIcon from './public/location.svg';
-import TfgmIcon from './public/tfgm-icon.svg';
-import { formatDistance } from 'date-fns';
+import { formatDistance, getYear } from 'date-fns';
 
 export default {
   name: 'Tramspotter',
   components: {
     AppWelcome,
     AppJourney,
-    AppUpdate
+    AppUpdate,
+    AppIcon,
+    Modal,
+    TfgmIcon,
+    AppNotice
   },
   data() {
     return {
@@ -48,7 +82,10 @@ export default {
       now: new Date(),
       updateExists: false,
       worker: null,
-      refreshing: false
+      refreshing: false,
+      isVisible: false,
+      appVersion: version,
+      currentYear: getYear(new Date())
     };
   },
   computed: {
@@ -106,6 +143,7 @@ export default {
   methods: {
     isEmpty,
     formatDistance,
+    getYear,
     getData: ({ data }) => data,
     getNearestStop: async function() {
       try {
@@ -143,6 +181,12 @@ export default {
         return;
       }
       this.worker.postMessage({ type: 'SKIP_WAITING' });
+    },
+    hideModal() {
+      this.isVisible = false;
+    },
+    showModal() {
+      this.isVisible = true;
     }
   }
 };
@@ -150,4 +194,31 @@ export default {
 
 <style lang="postcss">
 @import './styles/global';
+
+.about-box {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+
+  h2 {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .section-cta {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+
+    .btn-cta {
+      font-size: 1rem;
+    }
+  }
+}
 </style>

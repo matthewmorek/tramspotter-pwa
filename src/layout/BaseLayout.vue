@@ -26,6 +26,12 @@ export default {
     hasFooterSlot: function() {
       return !!this.$slots.footer;
     }
+  },
+  created() {
+    // This is a fix for having a consistent `vh` units
+    // Ref: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 };
 </script>
@@ -33,7 +39,8 @@ export default {
 <style lang="postcss">
 .app-container {
   padding: 1.5rem;
-  min-height: 100vh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   max-width: 28em;
   margin: 0 auto;
   display: grid;
