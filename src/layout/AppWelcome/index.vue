@@ -11,31 +11,28 @@
           >Find a tram stop</app-button
         >
       </div>
+      <!-- prettier-ignore -->
       <app-notice>
         <template #icon>
           <location-icon width="42" height="42" class="icon" />
         </template>
         <template #text>
-          You will be asked to temporarily share your current device location.
+          You will be asked to temporarily share your current device
+          location.
         </template>
       </app-notice>
-      <div class="app-about">
-        <div>Made with ♥️ in MCR.</div>
-        <button class="btn-about" @click="$emit('show-modal')">
-          <info-icon width="32" height="32" class="icon" />
-        </button>
-      </div>
+      <app-about @show-modal="$emit('show-modal')" />
     </template>
   </base-layout>
 </template>
 
 <script>
 import BaseLayout from '../BaseLayout';
-import LocationIcon from '../../public/location.svg';
 import AppInfo from '../../components/AppInfo';
 import AppNotice from '../../components/AppNotice';
 import AppButton from '../../components/AppButton';
-import InfoIcon from '../../public/info-icon.svg';
+import AppAbout from '../../components/AppAbout';
+import LocationIcon from '../../public/location.svg';
 
 export default {
   components: {
@@ -44,7 +41,7 @@ export default {
     AppNotice,
     LocationIcon,
     AppButton,
-    InfoIcon
+    AppAbout
   },
   props: {
     isLoading: {
@@ -53,3 +50,9 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss">
+.app-notice + .app-about {
+  margin-bottom: 0;
+}
+</style>

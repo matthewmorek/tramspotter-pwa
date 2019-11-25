@@ -17,12 +17,7 @@
           >Refresh</app-button
         >
       </div>
-      <div class="app-about">
-        <div>Made with ♥️ in MCR.</div>
-        <button class="btn-about" @click="$emit('show-modal')">
-          <info-icon width="32" height="32" class="icon" />
-        </button>
-      </div>
+      <app-about @show-modal="$emit('show-modal')" />
     </template>
   </base-layout>
 </template>
@@ -34,7 +29,7 @@ import StopInfo from '../../components/StopInfo';
 import Departures from '../../components/Departures';
 import MessageBoard from '../../components/MessageBoard';
 import Timestamp from '../../components/Timestamp';
-import InfoIcon from '../../public/info-icon.svg';
+import AppAbout from '../../components/AppAbout';
 
 export default {
   components: {
@@ -44,7 +39,7 @@ export default {
     Departures,
     MessageBoard,
     Timestamp,
-    InfoIcon
+    AppAbout
   },
   props: {
     isLoading: {
