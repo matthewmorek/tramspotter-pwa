@@ -31,7 +31,10 @@
           <p>Get live departures at your nearest Metrolink tram stop.</p>
           <p>
             Copyright &copy; {{currentYear}}
-            <a href="https://twitter.com/matthewmorek">Matthew Morek</a>.
+            <a
+              href="https://twitter.com/matthewmorek"
+              class="app-link"
+            >Matthew Morek</a>
           </p>
           <div class="section-cta">
             <a href="https://ko-fi.com/matthewmorek" class="btn-cta">Buy me a coffee ☕️</a>
