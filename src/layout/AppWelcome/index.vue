@@ -19,6 +19,12 @@
           You will be asked to temporarily share your current device location.
         </template>
       </app-notice>
+      <div class="app-about">
+        <div>Made with ♥️ in MCR.</div>
+        <button class="btn-about" @click="$emit('show-modal')">
+          <info-icon width="32" height="32" class="icon" />
+        </button>
+      </div>
     </template>
   </base-layout>
 </template>
@@ -29,13 +35,16 @@ import LocationIcon from '../../public/location.svg';
 import AppInfo from '../../components/AppInfo';
 import AppNotice from '../../components/AppNotice';
 import AppButton from '../../components/AppButton';
+import InfoIcon from '../../public/info-icon.svg';
+
 export default {
   components: {
     BaseLayout,
     AppInfo,
     AppNotice,
     LocationIcon,
-    AppButton
+    AppButton,
+    InfoIcon
   },
   props: {
     isLoading: {

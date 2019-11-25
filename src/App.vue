@@ -4,6 +4,7 @@
       v-if="isEmpty(nearestStop)"
       :is-loading="isLoading"
       @fetch-stop-info="getNearestStop"
+      @show-modal="showModal"
     />
     <app-journey
       v-else
