@@ -58,12 +58,10 @@ export default {
   bottom: -4rem;
   left: 0;
   right: 0;
-  width: calc(100vw - 1rem);
+  width: 100vw;
   border: 1px solid var(--header-color-border);
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
   padding-bottom: 4rem;
   max-width: 28em;
   margin: 0 auto;

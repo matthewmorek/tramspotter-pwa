@@ -220,5 +220,10 @@ export default {
       font-size: 1rem;
     }
   }
+
+  & + .app-notice {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 </style>

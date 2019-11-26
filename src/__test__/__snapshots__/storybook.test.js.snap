@@ -770,7 +770,7 @@ exports[`Storyshots Patterns|StopInfo Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Default 1`] = `
 <div
-  app-version="0.6.1"
+  app-version="0.6.2"
   class="app-container"
 >
   <!---->
@@ -1244,7 +1244,7 @@ exports[`Storyshots Templates|AppJourney Default 1`] = `
 
 exports[`Storyshots Templates|AppJourney Empty 1`] = `
 <div
-  app-version="0.6.1"
+  app-version="0.6.2"
   class="app-container"
 >
   <!---->
