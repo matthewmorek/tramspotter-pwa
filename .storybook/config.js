@@ -1,5 +1,6 @@
 import { configure, addParameters } from '@storybook/vue';
 import requireContext from 'require-context.macro';
+import defaultTheme from './tramspotter';
 
 import '../src/styles/storybook.css';
 
@@ -30,7 +31,10 @@ addParameters({
   themes: [
     { name: 'light-mode', class: ['light-mode'], color: '#fff' },
     { name: 'dark-mode', class: ['dark-mode'], color: '#1C1C1E' }
-  ]
+  ],
+  options: {
+    theme: defaultTheme
+  }
 });
 
 // automatically import all files ending in *.stories.js
