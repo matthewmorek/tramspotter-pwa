@@ -1,4 +1,5 @@
 import { configure, addParameters } from '@storybook/vue';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import requireContext from 'require-context.macro';
 import defaultTheme from './tramspotter';
 
@@ -33,7 +34,12 @@ addParameters({
     { name: 'dark-mode', class: ['dark-mode'], color: '#1C1C1E' }
   ],
   options: {
-    theme: defaultTheme
+    theme: defaultTheme,
+    showPanel: false
+  },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage
   }
 });
 

@@ -11,8 +11,8 @@
     "test:watch": "jest --watchAll",
     "lint": "vue-cli-service lint",
     "watch": "vue-cli-service build --watch",
-    "storybook": "start-storybook -p 6006 --ci",
-    "build-storybook": "build-storybook --loglevel error --static-dir ./public"
+    "storybook": "start-storybook -p 6006 --ci --static-dir ./public",
+    "build-storybook": "build-storybook --static-dir ./public --loglevel error"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
@@ -47,6 +47,7 @@
     "@babel/runtime-corejs2": "^7.7.4",
     "@storybook/addon-a11y": "^5.2.6",
     "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-docs": "^5.2.6",
     "@storybook/addon-knobs": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addon-storyshots": "^5.2.6",
