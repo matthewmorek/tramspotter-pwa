@@ -3,7 +3,7 @@
     Roboto, sans-serif;
 
   --app-bg: rgb(255, 255, 255);
-  --app-bg-blur: rgba(0, 0, 0, 0.15);
+  --app-bg-blur: rgba(255, 255, 255, 0.75);
 
   --btn-color-bg: #373737;
   --btn-color-border: rgba(0, 0, 0, 0);
