@@ -81,7 +81,7 @@
     "require-context.macro": "^1.2.2",
     "storybook-addon-themes": "^5.2.0",
     "stylelint": "^12.0.0",
-    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-prettier": "^7.0.0",
     "stylelint-prettier": "^1.1.1",
     "vue-jest": "^3.0.5",
     "vue-svg-loader": "^0.15.0"
