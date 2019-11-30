@@ -1,5 +1,7 @@
-name: Test
-on: push
+name: Push Audit CI
+
+on: [push]
+
 jobs:
   lint:
     name: Lint
