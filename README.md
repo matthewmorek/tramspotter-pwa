@@ -72,3 +72,8 @@ npm run lint
 ```
 npm run storybook
 ```
+
+## Misc
+
+[![](https://github.com/exterkamp/lighthouse-ci-action/workflows/CI/badge.svg)](https://github.com/matthewmorek/tramspotter/actions?query=workflow%3A%22Push+Audit+CI%22)
+[![](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
