@@ -1,6 +1,8 @@
 <p align="center"><img src="https://github.com/matthewmorek/tramspotter/raw/master/public/img/og-image.png" alt="tramspotter banner" /></p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0617dc70-0e10-45f5-8c7e-5e8b8c46378a/deploy-status)](https://app.netlify.com/sites/tramspotter/deploys)
+![Netlify](https://img.shields.io/netlify/0617dc70-0e10-45f5-8c7e-5e8b8c46378a?&logo=netlify)
+[![GitHub Actions](https://github.com/exterkamp/lighthouse-ci-action/workflows/CI/badge.svg)](https://github.com/matthewmorek/tramspotter/actions?query=workflow%3A%22Push+Audit+CI%22)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 # Tramspotter
 
@@ -72,8 +74,3 @@ npm run lint
 ```
 npm run storybook
 ```
-
-## Misc
-
-[![](https://github.com/exterkamp/lighthouse-ci-action/workflows/CI/badge.svg)](https://github.com/matthewmorek/tramspotter/actions?query=workflow%3A%22Push+Audit+CI%22)
-[![](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
