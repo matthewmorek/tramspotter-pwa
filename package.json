@@ -62,7 +62,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "babel-plugin-macros": "^2.7.1",
+    "babel-plugin-macros": "^2.8.0",
     "babel-preset-vue": "^2.0.2",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
